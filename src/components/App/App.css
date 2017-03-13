@@ -1,0 +1,6 @@
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: red;
+  margin-top: 5rem;
+}
