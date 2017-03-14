@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 5rem;
-  background-color: blue;
+  height: 4rem;
+  background-color: #333333;
   width: 100%;
 }
 
@@ -11,4 +11,5 @@
   padding: 10px;
   font-size: 30px;
   float:right;
+  color: white;
 }

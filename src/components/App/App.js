@@ -12,31 +12,26 @@ class App extends React.Component {
         };
     }
     updateContent(text) {
-        this.setState({content: "Content has been changed"});
+        this.setState({content: "Hong멍충잉ㅎ_ㅎ"});
+    }
+
+    search(){
+      alert('hello');
     }
 
     render() {
         return (
             <div>
                 <div className={styles.container}>
-                  <center>
-                  <h1>{this.state.header}</h1>
-                  <h2>{this.state.content}</h2>
-                  <button onClick={this.updateContent.bind(this)}>Update</button>
-                  <br/><br/>
-                  <input type="text" placeholder="소환사이름"/>
-                  <button onClick={this.updateContent.bind(this)}>검색</button>
-                  </center>
+                  <div className={styles.header}>{this.state.header}</div>
+                  <h2 onClick={this.updateContent.bind(this)}>{this.state.content}</h2>
+                  <br/>
+                  <input type="text" placeholder="소환사닉네임" className={styles.searchForm}/>
+                  <img onClick={this.search} src={require('../img/search.png')} className={styles.searchBtn}/>
                 </div>
             </div>
         );
     }
 }
-
-App.defaultProps = {
-    headerTitle: 'Default headerrrrrrrr',
-    contentTitle: 'Default contentTitle',
-    contentBody: 'Default contentBody'
-};
 
 export default App;
