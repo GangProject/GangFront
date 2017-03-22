@@ -1,0 +1,39 @@
+.container {
+  max-width: 50rem;
+  margin: 1rem auto;
+  //background-color: red;
+  border: 1px solid black;
+  margin-top: 5rem;
+  padding: 2rem;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.header {
+  font-size: 5rem;
+  color:gray;
+  font-weight:bold;
+  font-family: monospace;
+}
+
+.searchForm {
+  width: 20rem;
+  height: 3rem;
+  background: #2b303b;
+  border: none;
+  font-size: 1.5rem;
+  color: #63717f;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 7px;
+  margin-left:2rem;
+  margin-right: 1rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.searchBtn {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+}
