@@ -1,16 +1,14 @@
-.top {
+.foot {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 4rem;
   background-color: #333333;
   width: 100%;
 }
 
-.topMenu {
+.footMenu {
   padding: 1rem;
   font-size: 1.7rem;
-  float:right;
   color: white;
-  //border: 1px solid white;
 }
