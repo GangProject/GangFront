@@ -14,10 +14,11 @@
   color:gray;
   font-weight:bold;
   font-family: monospace;
+  margin:2rem;
 }
 
 .searchForm {
-  width: 20rem;
+  width: 17rem;
   height: 3rem;
   background: #2b303b;
   border: none;
