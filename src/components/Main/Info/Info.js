@@ -12,21 +12,24 @@ class Info extends React.Component {
   }
 
   componentDidMount() {
+    this.callAjax(5);
+  }
+
+  callAjax(date){
     $.ajax({
-      url:'https://openlibrary.org/recentchanges.json?limit=5',
+      url:'https://openlibrary.org/recentchanges.json?limit='+date,
       context:this,
       dataType:'json',
       type:'GET',
       success: function(result){
         console.log(result);
         var modTime = result[0].timestamp.split('T');
+
         this.setState({
-          comment1:result[0].comment,
-          comment2:result[1].comment,
-          comment3:result[2].comment,
-          comment4:result[3].comment,
-          comment5:result[4].comment,
+          result:result[0].comment,
+          result2:result[1].comment,
           kind:result[0].kind,
+          kind2:result[1].kind,
           time:modTime[0]
         });
       }
@@ -42,12 +45,10 @@ class Info extends React.Component {
   }
 
   render() {
-    var comment1 = this.state.comment1;
-    var comment2 = this.state.comment2;
-    var comment3 = this.state.comment3;
-    var comment4 = this.state.comment4;
-    var comment5 = this.state.comment5;
+    var result = this.state.result;
+    var result2 = this.state.result2;
     var kind = this.state.kind;
+    var kind2 = this.state.kind2;
     var time = this.state.time;
 
     return (
@@ -69,23 +70,15 @@ class Info extends React.Component {
           <div className={styles.team}>
             <div className={styles.teamName}>{kind}</div>
             <span className={styles.info}>
-              <div>{comment1}</div>
-              <div>{comment2}</div>
-              <div>{comment3}</div>
-              <div>{comment4}</div>
-              <div>{comment5}</div>
+              <div>{result}</div>
             </span>
           </div>
         </div>
         <div className={styles.box}>
           <div className={styles.team}>
-            <div className={styles.teamName}>{kind}</div>
+            <div className={styles.teamName}>{kind2}</div>
             <span className={styles.info}>
-              <div>{comment1}</div>
-              <div>{comment2}</div>
-              <div>{comment3}</div>
-              <div>{comment4}</div>
-              <div>{comment5}</div>
+              <div>{result2}</div>
             </span>
           </div>
         </div>

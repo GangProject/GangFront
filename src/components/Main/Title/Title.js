@@ -7,7 +7,7 @@ class Title extends React.Component {
         super(props);
 
         this.state = {
-            header: "Mobile GA.NG",
+            header: "GA.NG",
         };
     }
 
@@ -20,7 +20,7 @@ class Title extends React.Component {
             <div>
                 <div className={styles.container}>
                   <div className={styles.header}>{this.state.header}</div>
-                  <input type="text" placeholder="소환사닉네임" className={styles.searchForm}/>
+                  <input type="text" placeholder="소환사 이름" className={styles.searchForm}/>
                   <img onClick={this.search} src={require('./Img/search.png')} className={styles.searchBtn}/>
                 </div>
             </div>
