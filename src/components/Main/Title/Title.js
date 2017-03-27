@@ -8,7 +8,36 @@ class Title extends React.Component {
 
         this.state = {
             header: "GA.NG",
+            data:""
         };
+    }
+
+    componentDidMount() {
+      this.callAjax();
+    }
+
+    callAjax(){
+      $.ajax({
+        url:'http://13.124.33.113:8080/Gang/api/hello',
+        context:this,
+        dataType:'json',
+        type:'GET',
+        success: function(result){
+          console.log("result:");
+          console.log(result);
+          console.log("result.data:");
+          console.log(result.data);
+
+          this.setState({
+            data:result.data
+          });
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          this.setState({
+            data:"데이터를 가져올 수 없습니다."
+          });
+        }
+      });
     }
 
     search(){
@@ -20,6 +49,7 @@ class Title extends React.Component {
             <div>
                 <div className={styles.container}>
                   <div className={styles.header}>{this.state.header}</div>
+                  <div>GANG Server api call : {this.state.data}</div>
                   <input type="text" placeholder="소환사 이름" className={styles.searchForm}/>
                   <img onClick={this.search} src={require('./Img/search.png')} className={styles.searchBtn}/>
                 </div>
