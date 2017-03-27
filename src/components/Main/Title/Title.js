@@ -32,10 +32,12 @@ class Title extends React.Component {
             data:result.data
           });
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function(request, status, error) {
           this.setState({
             data:"데이터를 가져올 수 없습니다."
           });
+          console.log('error in Gang/api/hello');
+          console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
         }
       });
     }
