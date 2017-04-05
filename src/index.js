@@ -8,6 +8,7 @@ import Login from './components/Login/Login.js';
 import SearchMore from './components/searchMore/searchMore.js';
 import Search from './components/searchMore/searchMore.js';
 import Community from './components/Community/Community.js';
+import Feedback from './components/Feedback/Feedback.js';
 
    ReactDOM.render(
      <Router history={browserHistory}>
@@ -18,6 +19,7 @@ import Community from './components/Community/Community.js';
          <Route path="community" component={Community}/>
          <Route path="searchMore" component={SearchMore}/>
          <Route path="search" component={Search}/>
+         <Route path="feedback" component={Feedback}/>
        </Route>
      </Router>,
      document.getElementById('app')
