@@ -13,7 +13,7 @@ class Feedback extends React.Component {
       this.state = {
           list:[
             {writer:"boseok", datetime:"16.04.05", content:"아아 지루해애애애애애애애 잼없엉!<br/>노잼핵노잼~"},
-            {writer:"boseok2", datetime:"16.04.06", content:"저만글쓰나요? ㅡㅡ<br/>리액트 넘-나 어려운것"},
+            {writer:"boseok2", datetime:"16.04.06", content:"저만글쓰나요? ㅡㅡ\n개행문자 어떻게하죠?ㅡㅡ<br/>리액트 넘-나 어려운것"},
             {writer:"boseok3", datetime:"16.04.07", content:"이거 누가 만들었죠?<br/>너무 안예쁜데.."},
           ]
       };
@@ -23,16 +23,19 @@ class Feedback extends React.Component {
     return(
       <div>
         <div className={styles.container}>
-          <span className={styles.nickname}>닉네임<br/></span>
+          <span className={styles.nickname}>
+            <input type="text" placeholder="닉네임"/><input type="password" placeholder="패스워드"/>
+          </span>
           <textarea/>
-          <img src={require('./Img/search.png')} className={styles.submitBtn} onClick={this.write}/>
+          <img src={require('./Img/write.png')} className={styles.submitBtn} onClick={this.write}/>
           <div className={styles.tab}>
             {this.state.list.map((feed, i) => {
                         return (<FeedbackList writer={feed.writer}
                                             datetime={feed.datetime}
                                             content={feed.content}
                                               key={i}/>);
-                    })}
+                    })
+            }
           </div>
         </div>
       </div>
@@ -43,6 +46,8 @@ class Feedback extends React.Component {
 class FeedbackList extends React.Component {
   render(){
     return(
+      <div>
+      <hr/>
       <table className={styles.tabList}>
         <tr>
           <td>{this.props.writer}</td><td>{this.props.datetime}</td>
@@ -51,6 +56,8 @@ class FeedbackList extends React.Component {
         <td colSpan="2">{this.props.content}</td>
         </tr>
       </table>
+
+      </div>
     );
   }
 }
