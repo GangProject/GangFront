@@ -12,9 +12,9 @@ class Feedback extends React.Component {
 
       this.state = {
           list:[
-            {writer:"boseok", datetime:"16.04.05", content:"아아 지루해애애애애애애애 잼없엉!<br/>노잼핵노잼~"},
-            {writer:"boseok2", datetime:"16.04.06", content:"저만글쓰나요? ㅡㅡ\n개행문자 어떻게하죠?ㅡㅡ<br/>리액트 넘-나 어려운것"},
-            {writer:"boseok3", datetime:"16.04.07", content:"이거 누가 만들었죠?<br/>너무 안예쁜데.."},
+            {writer:"boseok", datetime:"16.04.05", content:"아아 지루해애애애애애애애 잼없엉!\n노잼핵노잼~"},
+            {writer:"boseok2", datetime:"16.04.06", content:"저만글쓰나요? ㅡㅡ\n개행문자 어떻게하죠?ㅡㅡ개행문자는\\n으로..\n리액트 넘-나 어려운것"},
+            {writer:"boseok3", datetime:"16.04.07", content:"이거 누가 만들었죠?\n너무 안예쁜데.."},
           ]
       };
   }
@@ -53,7 +53,12 @@ class FeedbackList extends React.Component {
           <td>{this.props.writer}</td><td>{this.props.datetime}</td>
         </tr>
         <tr>
-        <td colSpan="2">{this.props.content}</td>
+          <td colSpan="2">
+            { this.props.content.split('\n').map( line => {
+                return (<span>{line}<br/></span>)
+              })
+            }
+          </td>
         </tr>
       </table>
 
