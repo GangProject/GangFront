@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './searchMore.css';
 
-class searchMore extends React.Component {
+class searchMore extends Component {
 
   back(){
     history.go(-1);

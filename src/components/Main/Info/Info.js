@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './Info.css';
 
 
-class Info extends React.Component {
+class Info extends Component {
   constructor(props) {
     super(props);
 

@@ -9,14 +9,39 @@
   padding-bottom: 2.5rem;
 }
 
+.writeBtn{
+  width: 3rem;
+  height: 3rem;
+  float:right;
+  margin-bottom: 0.5rem;
+}
+
+.com_tab{
+  border-collapse:collapse;
+  //border: 1px solid black;
+  width: 100%;
+}
+
+.com_tab tr{
+  //background-color: red;
+  border-bottom: 1px solid #DDDDDD;
+  height: 2.5rem;
+}
+
+.com_tab thead {
+  border-top: 2px solid #CCCCCC;
+  border-bottom: 1px solid #DDDDDD;
+}
+
 .num{
   width: 7%;
-  border-right: 1px dotted gray;
+  height: 2.5rem;
+  //border-right: 1px dotted gray;
 }
 
 .title{
   width: 55%;
-  border-right: 1px dotted gray;
+  //border-right: 1px dotted gray;
 }
 
 .commentNum {
@@ -26,16 +51,11 @@
 
 .writer{
   width: 20%;
-  border-right: 1px dotted gray;
+  //border-right: 1px dotted gray;
 }
 
 .datetime{
   width: 13%;
-}
-
-.writeBtn{
-  width: 3rem;
-  height: 3rem;
 }
 
 .titleList {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './Login.css';
 
-class Login extends React.Component {
+class Login extends Component {
 
   back(){
     history.go(-1);

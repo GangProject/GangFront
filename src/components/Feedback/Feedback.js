@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './Feedback.css';
 
-class Feedback extends React.Component {
+class Feedback extends Component {
 
   back(){
     history.go(-1);
@@ -61,9 +61,6 @@ class FeedbackList extends React.Component {
                 })
               }
             </td>
-          </tr>
-          <tr>
-            <td>댓글</td>
           </tr>
           </tbody>
         </table>

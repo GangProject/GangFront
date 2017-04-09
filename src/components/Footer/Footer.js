@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './Footer.css';
 
-class Footer extends React.Component {
+class Footer extends Component {
     ad(){
       alert('advertise');
     }

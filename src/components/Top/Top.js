@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
 
 import styles from './Top.css';
 
-class Top extends React.Component {
+class Top extends Component {
     render() {
         return (
             <div className={styles.top}>
