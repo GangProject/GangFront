@@ -53,7 +53,6 @@ class Title extends React.Component {
             <div>
                 <div className={styles.container}>
                   <div className={styles.header}>{this.state.header}</div>
-                  <div>GANG Server Hello api call : {this.state.data}</div>
                   <input type="text" placeholder="소환사 이름" className={styles.searchForm}/>
                   <Link to="search"><img src={require('./Img/search.png')} className={styles.searchBtn}/></Link>
                 </div>

@@ -9,27 +9,40 @@
   padding-bottom: 2.5rem;
 }
 
-.header {
-  font-size: 5rem;
-  color:gray;
-  font-weight:bold;
-  font-family: monospace;
-  margin:2rem;
+.num{
+  width: 7%;
+  border-right: 1px dotted gray;
 }
 
-.loginForm {
-  width: 12.5rem;
-  height: 2.5rem;
-  background: #2b303b;
-  border: none;
-  font-size: 1.25rem;
-  color: #63717f;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 7px;
-  margin-top: 0.5rem;
-  margin-left: 2rem;
-  margin-right: 1rem;
-  font-family: sans-serif;
-  text-align: center;
+.title{
+  width: 55%;
+  border-right: 1px dotted gray;
+}
+
+.commentNum {
+  color: blue;
+  font-size: 90%;
+}
+
+.writer{
+  width: 20%;
+  border-right: 1px dotted gray;
+}
+
+.datetime{
+  width: 13%;
+}
+
+.writeBtn{
+  width: 3rem;
+  height: 3rem;
+}
+
+.titleList {
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.numList {
+  padding-right: 0.6rem;
 }

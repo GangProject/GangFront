@@ -24,11 +24,12 @@ class Feedback extends React.Component {
       <div>
         <div className={styles.container}>
           <span className={styles.nickname}>
-            <input type="text" placeholder="닉네임"/><input type="password" placeholder="패스워드"/>
+            <input type="text" placeholder="닉네임" className={styles.anonymForm}/>
+            <input type="password" placeholder="패스워드"  className={styles.anonymForm}/>
           </span>
-          <textarea/>
+          <textarea placeholder="내용을 입력하세요" className={styles.anonymTextarea}/>
           <img src={require('./Img/write.png')} className={styles.submitBtn} onClick={this.write}/>
-          <div className={styles.tab}>
+          <div className={styles.list}>
             {this.state.list.map((feed, i) => {
                         return (<FeedbackList writer={feed.writer}
                                             datetime={feed.datetime}
@@ -47,21 +48,25 @@ class FeedbackList extends React.Component {
   render(){
     return(
       <div>
-      <hr/>
-      <table className={styles.tabList}>
-        <tr>
-          <td>{this.props.writer}</td><td>{this.props.datetime}</td>
-        </tr>
-        <tr>
-          <td colSpan="2">
-            { this.props.content.split('\n').map( line => {
-                return (<span>{line}<br/></span>)
-              })
-            }
-          </td>
-        </tr>
-      </table>
-
+        <hr className={styles.f_hr}/>
+        <table className={styles.tab}>
+          <tbody>
+          <tr>
+            <td>{this.props.writer}</td><td>{this.props.datetime}</td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              { this.props.content.split('\n').map( line => {
+                  return (<span>{line}<br/></span>)
+                })
+              }
+            </td>
+          </tr>
+          <tr>
+            <td>댓글</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 3.5rem;
-  background-color: #333333;
+  background-color: #555555;
   width: 100%;
 }
 
@@ -11,15 +11,17 @@
   padding-right: 1rem;
   padding-top: 1rem;
   font-size: 1.5rem;
+  text-shadow: 2px 2px #777777;
   float:right;
   color: white;
   //border: 1px solid white;
 }
 
 .topMenuLeft {
-  padding: 1rem;
-  //padding-top: 1rem;
-  font-size: 1.5rem;
+  padding-left: 1rem;
+  padding-top: 0.45rem;
+  font-size: 2.5rem;
+  text-shadow: 2.5px 2.5px #777777;
   float:left;
   color: white;
   //border: 1px solid white;

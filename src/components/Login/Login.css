@@ -18,7 +18,25 @@
 }
 
 .loginForm {
-  width: 12.5rem;
+  width: 13.5rem;
+  height: 2.5rem;
+  background: #2b303b;
+  border: none;
+  font-size: 1.25rem;
+  color: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 0.7rem;
+  margin-top: 0.1rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  font-family: sans-serif;
+  padding: 0rem;
+  text-align: center;
+}
+
+.loginBtn {
+  width: 13.5rem;
   height: 2.5rem;
   background: #2b303b;
   border: none;
