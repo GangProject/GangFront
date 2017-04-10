@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import styles from './Login.css';
 
 class Login extends Component {
-
-  back(){
-    history.go(-1);
-  }
   render() {
     return(
       <div>

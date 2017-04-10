@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
+import Common from '../Common.js';
 import styles from './Feedback.css';
 
 class Feedback extends Component {
-
-  back(){
-    history.go(-1);
-  }
-
   constructor(props) {
       super(props);
 
