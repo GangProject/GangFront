@@ -7,6 +7,31 @@ class Community extends Component {
     history.go(-1);
   }
 
+
+  componentDidMount() {
+    this.GetList(1);
+    this.modDatetime(this.state);
+  }
+
+  GetList(page) {
+    return $.getJSON('http://52.79.215.66:8080/Gang/api/article?currentPage='+page)
+      .then((data) => {
+        // console.log("GetList-data.list");
+        // console.log(data.list[0]);
+        this.modDatetime(data.list); //날짜변환
+        //this.modCommentnum(); //댓글갯수 []추가
+        this.setState({ list: data.list });
+      });
+  }
+
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          list:[]
+      };
+  }
+
   modCommentnum(result){
     for(var i in result){
       if(result[i].commentNum!=0){
@@ -30,32 +55,8 @@ class Community extends Component {
       var day = list[i].modifiedAt.dayOfMonth;
       tmp += month + "." + day;
       list[i].modifiedAt.nano = tmp;
-      alert(tmp);
     }
   }
-
-  componentDidMount() {
-    this.GetList(1);
-    //this.modDatetime(this.state.list);
-  }
-
-  GetList(page) {
-    return $.getJSON('http://52.79.215.66:8080/Gang/api/article?currentPage='+page)
-      .then((data) => {
-        this.setState({ list: data.list });
-      });
-  }
-
-  constructor(props) {
-      super(props);
-
-      this.state = {
-          list:[]
-      };
-
-
-  }
-
 
   render() {
     return(
