@@ -1,2 +1,8 @@
+#Module
 node_modules
-src/components/Common.js
+
+#Mac OS
+.DS_Store
+
+
+./src/components/Common.js
