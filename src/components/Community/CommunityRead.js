@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Common from '../Common.js';
+import Common from '../Common/js/Common.js';
 import styles from './CommunityRead.css';
 
 class CommunityRead extends Component {
@@ -22,7 +22,9 @@ class CommunityRead extends Component {
 
   constructor(props) {
       super(props);
-
+      console.log("게시물번호");
+      console.log(this.props.params.splat);
+      console.log(this.props);
       this.state = {
           list:[]
       };
@@ -31,15 +33,47 @@ class CommunityRead extends Component {
   render() {
     var title = "제목입니다";
     var content = "내용이에여!";
+    var addr = Common.getDomain()+"community/"+this.props.params.splat;
+    console.log("domain");
+    console.log(addr);
     return(
       <div>
         <div className={styles.container}>
-          <table className={styles.com_tab}>
+          <table className={styles.comr_tab}>
             <thead>
-              <td className={styles.com_title}>{title}</td>
+              <tr>
+                <img src={require('../Common/img/back.png')} className={styles.backBtn} onClick={Common.back}/>
+                <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={Common.back}/>
+              </tr>
+              <tr>
+                <td className={styles.comr_title}>{title}</td>
+              </tr>
             </thead>
             <tbody>
-              <td className={styles.com_content}>{content}</td>
+
+              <tr>
+                <td className={styles.comr_content}>
+                  <div>{addr}</div>
+                  {content}
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.comr_comm}>댓글 num</td>
+              </tr>
+              <tr>
+                <td className={styles.comr_comment}>
+                  <span className={styles.comr_comment_writer}>boseok</span>
+                  <span className={styles.comr_comment_datetime}>2017.04.12</span><br/>
+                  <span className={styles.comr_comment_content}>안녕하세여!</span>
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.comr_write_comment}>
+                  <textarea placeholder="댓글을 작성해주세요.&#13;&#10;타인을 비방하면 안대여!"
+                            className={styles.comr_txtarea}/>
+                  <button className={styles.comr_commWriteBtn}>등록</button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>

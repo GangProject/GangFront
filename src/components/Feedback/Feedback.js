@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Common from '../Common.js';
+import Common from '../Common/js/Common.js';
 import styles from './Feedback.css';
 
 class Feedback extends Component {
@@ -47,7 +47,7 @@ class Feedback extends Component {
           <input type="text" placeholder="닉네임" className={styles.anonymForm}/>
           <input type="password" placeholder="패스워드"  className={styles.anonymForm}/>
           <textarea placeholder="내용을 입력하세요" className={styles.anonymTextarea}/>
-          <img src={require('./Img/write.png')} className={styles.submitBtn} onClick={this.write}/>
+          <img src={require('../Common/img/write.png')} className={styles.submitBtn} onClick={this.write}/>
           <div className={styles.list}>
             {this.state.list.map((feed, i) => {
                         return (<FeedbackList writer={feed.name}

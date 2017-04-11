@@ -5,9 +5,18 @@ class Common extends Component {
     history.go(-1);
   }
 
+  // static redir(addr){
+  //   location.href=addr;
+  // }
+
   static getApi(){
     var api = 'http://52.79.215.66:8080/Gang/';
     return api;
+  }
+
+  static getDomain(){
+    var dom = 'http://0.0.0.0:7777/';
+    return dom;
   }
 
   static modDatetime(list){

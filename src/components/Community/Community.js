@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Common from '../Common.js';
+import Common from '../Common/js/Common.js';
 import { Link } from 'react-router';
 import styles from './Community.css';
 
@@ -48,7 +48,7 @@ class Community extends Component {
     return(
       <div>
         <div className={styles.container}>
-          <img src={require('./Img/write.png')} className={styles.writeBtn} onClick={this.write}/>
+          <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={this.write}/>
           <table className={styles.com_tab}>
             <thead>
                 <td className={styles.num}>번호</td>
