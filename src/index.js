@@ -8,6 +8,7 @@ import Login from './components/Login/Login.js';
 import SearchMore from './components/searchMore/searchMore.js';
 import Search from './components/searchMore/searchMore.js';
 import Community from './components/Community/Community.js';
+import CommunityRead from './components/Community/CommunityRead.js';
 import Feedback from './components/Feedback/Feedback.js';
 
    ReactDOM.render(
@@ -17,6 +18,7 @@ import Feedback from './components/Feedback/Feedback.js';
          <Route path="main" component={Main}/>
          <Route path="login" component={Login}/>
          <Route path="community" component={Community}/>
+         <Route path="community/*" component={CommunityRead}/>
          <Route path="searchMore" component={SearchMore}/>
          <Route path="search" component={Search}/>
          <Route path="feedback" component={Feedback}/>

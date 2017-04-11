@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Common from '../Common.js';
+import { Link } from 'react-router';
 import styles from './Community.css';
 
 class Community extends Component {
@@ -75,11 +76,13 @@ class Community extends Component {
 
 class CommunityList extends React.Component {
   render(){
+    var link = "community/";
     return(
         <tr className={styles.listTr}>
           <td className={styles.numList}>{this.props.num}</td>
           <td className={styles.titleList}>
-            {this.props.title} <span className={styles.commentNum}>{this.props.commentNum}</span>
+            <Link to={link+this.props.num}>{this.props.title}</Link>
+            <span className={styles.commentNum}>{this.props.commentNum}</span>
           </td>
           <td>{this.props.writer}</td>
           <td>{this.props.datetime}</td>

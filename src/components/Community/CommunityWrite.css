@@ -1,0 +1,13 @@
+.anonymForm {
+  width: 13.8rem;
+  height: 2rem;
+  border: 1px solid gray;
+  color: #33314f;
+  font-size: 1rem;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  padding-left: 1rem;
+  margin-left: 1rem;
+}

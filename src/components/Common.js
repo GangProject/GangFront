@@ -13,9 +13,10 @@ class Common extends Component {
   static modDatetime(list){
     for(var i in list){
       var tmp = "";
+      var year = list[i].modifiedAt.year;
       var month = list[i].modifiedAt.monthValue;
       var day = list[i].modifiedAt.dayOfMonth;
-      tmp += month + "." + day;
+      tmp += year+"."+month + "." + day;
       list[i].modifiedAt.nano = tmp;
     }
   }

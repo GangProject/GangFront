@@ -1,3 +1,7 @@
+A:link {text-decoration:none;}
+A:visited {text-decoration:none; color:#000000;}
+A:hover {color:#646464;text-decoration: underline;}
+
 .container {
   max-width: 50rem;
   margin: 1rem auto;

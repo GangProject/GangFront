@@ -3,32 +3,55 @@ import Common from '../Common.js';
 import styles from './Feedback.css';
 
 class Feedback extends Component {
+
   constructor(props) {
       super(props);
 
       this.state = {
-          list:[
-            {writer:"boseok", datetime:"16.04.05", content:"아아 지루해애애애애애애애 잼없엉!\n노잼핵노잼~"},
-            {writer:"boseok2", datetime:"16.04.06", content:"저만글쓰나요? ㅡㅡ\n개행문자 어떻게하죠?ㅡㅡ개행문자는\\n으로..\n리액트 넘-나 어려운것"},
-            {writer:"boseok3", datetime:"16.04.07", content:"이거 누가 만들었죠?\n너무 안예쁜데.."},
-          ]
+          list:[]
       };
+  }
+
+  componentDidMount() {
+    this.GetList(1);
+  }
+
+  modDatetime(list){
+    for(var i in list){
+      var tmp = "";
+      var year = list[i].createdAt.year;
+      var month = list[i].createdAt.monthValue;
+      var day = list[i].createdAt.dayOfMonth;
+      tmp += year+"."+month + "." + day;
+      list[i].createdAt.nano = tmp;
+    }
+  }
+
+  GetList(page) {
+    var addr = Common.getApi();
+    return $.getJSON(addr+'api/feedBack?currentPage='+page)
+      .then((data) => {
+        // console.log("GetList-data.list");
+        // console.log(data.list[0]);
+        this.modDatetime(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
+        //this.modCommentnum(); //댓글갯수 []추가
+        data.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
+        this.setState({ list: data.list });
+      });
   }
 
   render() {
     return(
       <div>
         <div className={styles.container}>
-          <span className={styles.nickname}>
-            <input type="text" placeholder="닉네임" className={styles.anonymForm}/>
-            <input type="password" placeholder="패스워드"  className={styles.anonymForm}/>
-          </span>
+          <input type="text" placeholder="닉네임" className={styles.anonymForm}/>
+          <input type="password" placeholder="패스워드"  className={styles.anonymForm}/>
           <textarea placeholder="내용을 입력하세요" className={styles.anonymTextarea}/>
           <img src={require('./Img/write.png')} className={styles.submitBtn} onClick={this.write}/>
           <div className={styles.list}>
             {this.state.list.map((feed, i) => {
-                        return (<FeedbackList writer={feed.writer}
-                                            datetime={feed.datetime}
+                        return (<FeedbackList writer={feed.name}
+                                            datetime={feed.createdAt.nano}
                                             content={feed.content}
                                               key={i}/>);
                     })
