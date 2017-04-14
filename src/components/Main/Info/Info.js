@@ -22,9 +22,7 @@ class Info extends Component {
       dataType:'json',
       type:'GET',
       success: function(result){
-        console.log(result);
         var modTime = result[0].timestamp.split('T');
-
         this.setState({
           result:result[0].comment,
           result2:result[1].comment,

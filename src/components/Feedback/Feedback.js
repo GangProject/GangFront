@@ -16,25 +16,11 @@ class Feedback extends Component {
     this.GetList(1);
   }
 
-  modDatetime(list){
-    for(var i in list){
-      var tmp = "";
-      var year = list[i].createdAt.year;
-      var month = list[i].createdAt.monthValue;
-      var day = list[i].createdAt.dayOfMonth;
-      tmp += year+"."+month + "." + day;
-      list[i].createdAt.nano = tmp;
-    }
-  }
-
   GetList(page) {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/feedBack?currentPage='+page)
       .then((data) => {
-        // console.log("GetList-data.list");
-        // console.log(data.list[0]);
-        this.modDatetime(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
-        //this.modCommentnum(); //댓글갯수 []추가
+        Common.modDatetime(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
         data.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
         this.setState({ list: data.list });
       });
@@ -63,7 +49,7 @@ class Feedback extends Component {
   }
 }
 
-class FeedbackList extends React.Component {
+class FeedbackList extends Component {
   render(){
     return(
       <div>
@@ -75,8 +61,8 @@ class FeedbackList extends React.Component {
           </tr>
           <tr>
             <td colSpan="2">
-              { this.props.content.split('\n').map( line => {
-                  return (<span>{line}<br/></span>)
+              { this.props.content.split('\n').map( (line,i) => {
+                  return (<span key={i}>{line}<br/></span>)
                 })
               }
             </td>
