@@ -30,13 +30,14 @@ class CommunityRead extends Component {
   }
 
   componentDidMount() {
-    this.GetArticle(1);
+    this.GetArticle(this.props.params.splat);
   }
 
   render() {
-    var title = this.state.title;
-    var content = this.state.content;
-    var createdBy = this.state.createdBy;
+    let title = this.state.title;
+    let originContent = this.state.content;
+    let createdBy = this.state.createdBy;
+
     return(
         <div className={styles.container}>
           <table className={styles.comr_tab}>
@@ -55,8 +56,13 @@ class CommunityRead extends Component {
 
               <tr>
                 <td className={styles.comr_content}>
-                  <div>글번호는~~? {this.props.params.splat}</div>
-                  {content}
+                  <div>
+                    {
+                      originContent.split('\\n').map( (line,i) => {
+                        return (<span key={i}>{line}<br/></span>)
+                      })
+                    }
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -112,7 +118,13 @@ class CommunityCommentList extends Component {
             <span className={styles.comr_comment_writer}>{this.props.writerName}</span>
             <span className={styles.comr_comment_datetime}>{this.props.datetime}</span>
           </div>
-          <span className={styles.comr_comment_content}>{this.props.content}</span>
+          <span className={styles.comr_comment_content}>
+            {
+              this.props.content.split('\\n').map( (line,i) => {
+                return (<span key={i}>{line}<br/></span>)
+              })
+            }
+          </span>
         </div>
 
       </div>

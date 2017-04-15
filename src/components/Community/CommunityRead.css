@@ -16,6 +16,7 @@
   width:3rem;
   height:3rem;
   float:left;
+  cursor:pointer;
 }
 
 .writeBtn {
@@ -23,6 +24,7 @@
   width:3rem;
   height:3rem;
   float:right;
+  cursor:pointer;
 }
 
 .comr_title {
@@ -96,4 +98,5 @@
   height: 5rem;
   font-size: 1rem;
   background-color: #FFFFFF;
+  cursor:pointer;
 }

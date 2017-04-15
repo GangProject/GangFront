@@ -18,7 +18,7 @@ import Feedback from './components/Feedback/Feedback.js';
          <Route path="main" component={Main}/>
          <Route path="login" component={Login}/>
          <Route path="community" component={Community}/>
-         <Route path="community/**" component={CommunityRead}/>
+         <Route path="community/*" component={CommunityRead}/>
          <Route path="searchMore" component={SearchMore}/>
          <Route path="search" component={Search}/>
          <Route path="feedback" component={Feedback}/>

@@ -61,7 +61,7 @@ class FeedbackList extends Component {
           </tr>
           <tr>
             <td colSpan="2">
-              { this.props.content.split('\n').map( (line,i) => {
+              { this.props.content.split('\\n').map( (line, i) => {
                   return (<span key={i}>{line}<br/></span>)
                 })
               }
