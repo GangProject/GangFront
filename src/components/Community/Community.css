@@ -18,6 +18,7 @@ A:hover {color:#646464;text-decoration: underline;}
   height: 3rem;
   float:right;
   margin-bottom: 0.5rem;
+  cursor:pointer;
 }
 
 .com_tab{
