@@ -1,0 +1,18 @@
+.divStyle  {
+    width:84.7%;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    float:left;
+    margin-bottom: 5rem;
+}
+.tableStyle {
+  width:100%;
+  height:100%;
+  border-collapse: collapse;
+  border:none;
+}
+.tdStyle  {
+  border: 1px solid black;
+  height:9.8rem;
+}

@@ -1,0 +1,27 @@
+.divStyle {
+    width:100%;
+    text-align:center;
+    font-size:15px;
+}
+.tableStyle {
+  width:100%;
+  border-collapse: collapse;
+  border:none;
+  background-color: #555555;
+  height: 9.5rem;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px #777777;
+  color: white;
+}
+.firstTdStyle {
+  border: 1px solid black;
+  width:15%;
+}
+.tdStyle {
+  border: 1px solid black;
+  width:16%;
+}
+.lastTdStyle {
+  border: 1px solid black;
+  width:5%;
+}
