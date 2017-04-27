@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 class Side extends React.Component {
 
     render(){
@@ -23,11 +23,13 @@ class Side extends React.Component {
         return (
                 <div style={divStyle}>
                   <table style={tableStyle}>
-                    <tr><td style={tdStyle}>최근경기기록</td></tr>
+                  <tbody>
+                    <tr><td style={tdStyle}><Link to="search/record">최근경기기록</Link></td></tr>
                     <tr><td style={tdStyle}>룬,특성</td></tr>
                     <tr><td style={tdStyle}>MMR</td></tr>
                     <tr><td style={tdStyle}>시즌별 티어</td></tr>
                     <tr><td style={tdStyle}>커뮤니티</td></tr>
+                  </tbody>
                   </table>
 
                 </div>

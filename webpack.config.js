@@ -9,7 +9,8 @@ module.exports = {
     devServer: {
         inline: true,
         port: 7777,
-        contentBase: __dirname + '/public/'
+        contentBase: __dirname + '/public/',
+        historyApiFallback: true //새로고침했을때 Cannot GET /home 이런식의 오류 해결하기위해
     },
 
     module: {

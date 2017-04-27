@@ -29,18 +29,19 @@ class BestChamp extends React.Component {
         }
         return (
                 <div style={divStyle}>
-                <table style={tableStyle}>
-                  <tr>
-                    <td style={firstTdStyle}>ID티어</td>
-                    <td style={tdStyle}>리신</td>
-                    <td style={tdStyle}>제드</td>
-                    <td style={tdStyle}>애쉬</td>
-                    <td style={tdStyle}>가렌</td>
-                    <td style={tdStyle}>베인</td>
-                    <td style={lastTdStyle}>더보기</td>
-                  </tr>
-
-                </table>
+                  <table style={tableStyle}>
+                    <tbody>
+                      <tr>
+                        <td style={firstTdStyle}>ID티어</td>
+                        <td style={tdStyle}>리신</td>
+                        <td style={tdStyle}>제드</td>
+                        <td style={tdStyle}>애쉬</td>
+                        <td style={tdStyle}>가렌</td>
+                        <td style={tdStyle}>베인</td>
+                        <td style={lastTdStyle}>더보기</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
         );
     }

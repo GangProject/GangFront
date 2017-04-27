@@ -4,7 +4,7 @@ class Record extends React.Component {
 
     render(){
         let divStyle = {
-            width:'84.7%',
+            width:'84.8%',
             height:'100%',
             border:'1px solid black',
             textAlign:'center',
@@ -24,6 +24,7 @@ class Record extends React.Component {
         return (
                 <div style={divStyle}>
                   <table style={tableStyle}>
+                  <tbody>
                     <tr><td style={tdStyle}>1</td></tr>
                     <tr><td style={tdStyle}>2</td></tr>
                     <tr><td style={tdStyle}>3</td></tr>
@@ -34,6 +35,7 @@ class Record extends React.Component {
                     <tr><td style={tdStyle}>8</td></tr>
                     <tr><td style={tdStyle}>9</td></tr>
                     <tr><td style={tdStyle}>10</td></tr>
+                    </tbody>
                   </table>
                 </div>
         );

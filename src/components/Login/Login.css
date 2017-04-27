@@ -1,0 +1,35 @@
+.container {
+  max-width: 50rem;
+  margin: 1rem auto;
+  //background-color: red;
+  //border: 1px solid black;
+  margin-top: 5rem;
+  padding: 2rem;
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+.header {
+  font-size: 5rem;
+  color:gray;
+  font-weight:bold;
+  font-family: monospace;
+  margin:2rem;
+}
+
+.loginForm {
+  width: 12.5rem;
+  height: 2.5rem;
+  background: #2b303b;
+  border: none;
+  font-size: 1.25rem;
+  color: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 0.7rem;
+  margin-top: 0.1rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  font-family: sans-serif;
+  text-align: center;
+}

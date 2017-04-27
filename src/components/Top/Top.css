@@ -2,14 +2,25 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 4rem;
+  height: 3.5rem;
   background-color: #333333;
   width: 100%;
 }
 
 .topMenu {
-  padding: 10px;
-  font-size: 30px;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  font-size: 1.5rem;
   float:right;
   color: white;
+  //border: 1px solid white;
+}
+
+.topMenuLeft {
+  padding: 1rem;
+  //padding-top: 1rem;
+  font-size: 1.5rem;
+  float:left;
+  color: white;
+  //border: 1px solid white;
 }
