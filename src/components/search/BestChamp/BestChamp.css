@@ -7,21 +7,58 @@
   width:100%;
   border-collapse: collapse;
   border:none;
-  background-color: #555555;
   height: 9.5rem;
   font-size: 1.3rem;
-  text-shadow: 2px 2px #777777;
+  background-color: #555555;
   color: white;
 }
-.firstTdStyle {
+
+.divStyle td {
+  border: 1px solid black;
+  width:15.5%;
+}
+
+.divStyle td:nth-child(1)
+{
   border: 1px solid black;
   width:15%;
 }
-.tdStyle {
+.divStyle td:nth-child(2)
+{
   border: 1px solid black;
-  width:16%;
+  width:3%;
 }
-.lastTdStyle {
+.divStyle td:nth-child(3)
+{
+  background:url('./img/zin.jpg');
+  background-size: 100% 100%;
+
+}
+.divStyle td:nth-child(4)
+{
+  background:url('./img/leesin.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(5)
+{
+  background:url('./img/zed.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(6)
+{
+  background:url('./img/grave.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(7)
+{
+  background:url('./img/brang.jpg');
+  background-size: 100% 100%;
+}
+.divStyle td:nth-child(8)
+{
   border: 1px solid black;
   width:5%;
 }
