@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './BestChamp.css';
+import { Link } from 'react-router';
+
 class BestChamp extends React.Component {
 
     render(){
@@ -9,13 +11,14 @@ class BestChamp extends React.Component {
                   <table className={styles.tableStyle}>
                     <tbody>
                       <tr>
-                        <td className={styles.firstTdStyle}>군대가야되젠장<br/>Gold 5<br/>24lp</td>
-                        <td className={styles.tdStyle}>리신</td>
-                        <td className={styles.tdStyle}>제드</td>
-                        <td className={styles.tdStyle}>애쉬</td>
-                        <td className={styles.tdStyle}>가렌</td>
-                        <td className={styles.tdStyle}>베인</td>
-                        <td className={styles.lastTdStyle}>더보기</td>
+                        <td>군대가야되젠장<br/>Gold 5<br/>24lp</td>
+                        <td> Best 5 </td>
+                        <td>SS</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td><Link to="/search/champions">더보기</Link></td>
                       </tr>
                     </tbody>
                   </table>

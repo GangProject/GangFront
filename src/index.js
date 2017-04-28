@@ -16,6 +16,8 @@ import Masterie from './components/search/Masterie/Masterie.js';
 import MMR from './components/search/Mmr/Mmr.js';
 import Tier from './components/search/Tier/Tier.js';
 import Ingame from './components/search/Ingame/Ingame.js';
+import Champions from './components/search/Champion/Champions.js';
+
    ReactDOM.render(
      <Router history={browserHistory}>
        <Route path="/" component={App}>
@@ -33,7 +35,7 @@ import Ingame from './components/search/Ingame/Ingame.js';
             <Route path="mmr" component={MMR}/>
             <Route path="tier" component={Tier}/>
             <Route path="ingame" component={Ingame}/>
-
+            <Route path="champions" component={Champions}/>
          </Route>
          <Route path="feedback" component={Feedback}/>
        </Route>
