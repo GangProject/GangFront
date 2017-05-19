@@ -30,6 +30,11 @@ class Common extends Component {
     }
   }
 
+  static modContent(content){
+    var result = content.split('\n');
+    return result;
+  }
+
 }
 
 
