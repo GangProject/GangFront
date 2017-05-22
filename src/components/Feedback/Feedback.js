@@ -20,7 +20,7 @@ class Feedback extends Component {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/feedBack?currentPage='+page)
       .then((data) => {
-        Common.modDatetime(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
+        Common.modDatetime2(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
         data.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
         this.setState({ list: data.list });
       });
