@@ -7,8 +7,42 @@ class CommunityWrite extends Component {
       super(props);
   }
 
-  componentDidMount() {
+  save() {
+    var addr = Common.getApi();
+    var formData = new FormData();
+    formData.append("title", $('.comw_titleForm').val());
+    formData.append("content", $('.comw_textarea').val());
+    alert(formData.title+" "+formData.content);
+    //formData.append("file", $("#file")[0].files[0]);
+    // $($(".comw_inputFile")[0].files).each(function(index, file) {
+    //   formData.append("file", file);
+    // });
 
+    $.ajax({
+      type : "post",
+      url : addr+'api/article/save',
+      contentType: false,
+      processData: false,
+      mimeType:"multipart/form-data",
+      data : formData,
+      beforeSend: function() {
+        $('html').css("cursor","wait");
+        $('html').fadeOut();
+      },
+      complete: function() {
+        $('html').css("cursor","auto");
+        $('html').fadeIn();
+      },
+      success : function(data) {
+        alert(data.status);
+      },
+      error : function(request, status, error) {
+        $('.container').empty();
+        var ht = '';
+        ht += "code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error;
+        $('.container').append(ht);
+      }
+    });
   }
 
   render() {
@@ -21,7 +55,7 @@ class CommunityWrite extends Component {
               <tr>
                 <td className={styles.comw_td1}>
                   <img src={require('../Common/img/back.png')} className={styles.comw_backBtn} onClick={Common.back}/>
-                  <img src={require('../Common/img/write.png')} className={styles.comw_writeBtn} onClick={Common.back}/>
+                  <img src={require('../Common/img/write.png')} className={styles.comw_writeBtn} onClick={this.save}/>
                 </td>
               </tr>
               <tr>

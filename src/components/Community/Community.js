@@ -47,7 +47,7 @@ class Community extends Component {
       <div>
         <div className={styles.container}>
           <Link to="community/write">
-              <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={this.write}/>
+              <img src={require('../Common/img/write.png')} className={styles.writeBtn}/>
           </Link>
 
           <table className={styles.com_tab}>
