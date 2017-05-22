@@ -7,7 +7,7 @@ class Champions extends React.Component {
         return (
           <div className={styles.divStyle}>
             <table className={styles.tableStyle}>
-            <thead>
+            <thead className={styles.theadStyle}>
               <tr>
                 <td className={styles.tdStyle}></td>
                 <td className={styles.tdStyle}>챔피언</td>

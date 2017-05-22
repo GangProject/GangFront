@@ -18,14 +18,14 @@
   border: 1px solid black;
   height:4.0rem;
 }
-thead {
+.theadStyle {
   background-color: #555555;
   color: white;
   text-shadow: 2px 2px #777777;
 }
-thead td:nth-child(1) {
+.theadStyle td:nth-child(1) {
   width:3%;
 }
-thead td:nth-child(n+2) {
+.theadStyle td:nth-child(n+2) {
   width:7%;
 }
