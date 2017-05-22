@@ -27,8 +27,6 @@ class Community extends Component {
     this.GetList(1);
   }
 
-
-
   modCommentnum(result){
     for(var i in result){
       if(result[i].commentNum!=0){
@@ -48,7 +46,10 @@ class Community extends Component {
     return(
       <div>
         <div className={styles.container}>
-          <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={this.write}/>
+          <Link to="community/write">
+              <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={this.write}/>
+          </Link>
+
           <table className={styles.com_tab}>
             <thead>
               <tr>
