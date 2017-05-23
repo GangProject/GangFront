@@ -10,6 +10,7 @@ class CommunityRead extends Component {
           title:"",
           content:"",
           createdBy:"",
+          createdAt:"",
           commentList:[]
       };
   }
@@ -18,12 +19,15 @@ class CommunityRead extends Component {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/article/read?articleId='+articleId)
       .then((data) => {
-        Common.modDatetime(data.commentList);
+        Common.modDatetime2(data.commentList);
+        console.log(data);
+
         this.setState({
           id:data.id,
           title:data.title,
           content:data.content,
           createdBy:data.createdBy,
+          createdAt:data.createdAt,
           commentList: data.commentList
         });
       });
@@ -37,6 +41,7 @@ class CommunityRead extends Component {
     let title = this.state.title;
     let originContent = this.state.content;
     let createdBy = this.state.createdBy;
+    let createdAt = this.state.createdAt;
 
     return(
         <div className={styles.container}>
@@ -45,11 +50,17 @@ class CommunityRead extends Component {
               <tr>
                 <td>
                   <img src={require('../Common/img/back.png')} className={styles.backBtn} onClick={Common.back}/>
-                  <img src={require('../Common/img/write.png')} className={styles.writeBtn} onClick={Common.back}/>
                 </td>
               </tr>
               <tr>
-                <td className={styles.comr_title}>{title}<span className={styles.comr_createdBy}>{createdBy}</span></td>
+                <td className={styles.comr_title}>{title}</td>
+              </tr>
+              <tr>
+                <td className={styles.comr_createdBy_At}>
+                  <span className={styles.comr_createdBy}>{createdBy}</span>
+                  <span className={styles.comr_sep}>|</span>
+                  <span>{createdAt}</span>
+                </td>
               </tr>
             </thead>
             <tbody>
