@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Common from '../Common/js/Common.js';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import styles from './Community.css';
 
 class Community extends Component {

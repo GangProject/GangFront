@@ -35,8 +35,6 @@ class CommunityWrite extends Component {
       },
       success : function(data) {
         var result = JSON.parse(data);
-        console.log(result);
-        alert(result.message);
         browserHistory.push("/community/"+result.id);
       },
       error : function(request, status, error) {

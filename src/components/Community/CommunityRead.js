@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { browserHistory } from 'react-router';
 import Common from '../Common/js/Common.js';
 import styles from './CommunityRead.css';
 
@@ -12,7 +13,9 @@ class CommunityRead extends Component {
           createdBy:"",
           createdAt:"",
           commentList:[]
-      };
+      }
+      //this.onChange = this.onChange.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   GetArticle(articleId) {
@@ -20,8 +23,6 @@ class CommunityRead extends Component {
     return $.getJSON(addr+'api/article/read?articleId='+articleId)
       .then((data) => {
         Common.modDatetime2(data.commentList);
-        console.log(data);
-
         this.setState({
           id:data.id,
           title:data.title,
@@ -31,6 +32,68 @@ class CommunityRead extends Component {
           commentList: data.commentList
         });
       });
+  }
+
+  goBack(){
+    browserHistory.push("/community");
+  }
+
+  save() {
+    var addr = Common.getApi();
+    var formData = new FormData();
+    var url = unescape(location.href); //url을 가져와서
+    var urlList = url.split("/"); //url을 잘라서 배열에 저장하고
+    var len = urlList.length; //배열의 마지막꺼=글번호
+
+    formData.append("articleId", urlList[len-1]);
+    formData.append("content", $("#content").val());
+
+    $.ajax({
+      type : "post",
+      url : addr+'api/comment/save',
+      contentType: false,
+      processData: false,
+      //mimeType:"multipart/form-data",
+      data : formData,
+      beforeSend: function() {
+        $('html').css("cursor","wait");
+        //$('html').fadeOut();
+      },
+      complete: function() {
+        $('html').css("cursor","auto");
+        //$('html').fadeIn();
+      },
+      success : function(data) {
+        /*
+        {\n\
+          this.props.content.split('\\n').map( (line,i) => {\n\
+            return (<span key={i}>{line}<br/></span>)\n\
+          })\n\
+        }\n\
+        */
+        console.log($("#commentCounter").val());
+        var html = "";
+        if($("#commentCounter").val()!=0){
+          html+="<hr className={styles.comr_comm_hr}/>";
+        }
+        html+="<div className={styles.comr_comdiv_div}>\n\
+            <div className={styles.comr_comdiv_div_div}>\n\
+              <span className={styles.comr_comment_writer}>작성자이름</span>\n\
+              <span className={styles.comr_comment_datetime}>방금</span>\n\
+            </div>\n\
+            <span className={styles.comr_comment_content}>\n\
+              "+$("#content").val()+"\n\
+            </span>\n\
+          </div>";
+        $('#last').append(html);
+      },
+      error : function(request, status, error) {
+        $('.container').empty();
+        var ht = '';
+        ht += "code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error;
+        $('.container').append(ht);
+      }
+    });
   }
 
   componentDidMount() {
@@ -49,7 +112,7 @@ class CommunityRead extends Component {
             <thead>
               <tr>
                 <td>
-                  <img src={require('../Common/img/back.png')} className={styles.backBtn} onClick={Common.back}/>
+                  <img src={require('../Common/img/back.png')} className={styles.backBtn} onClick={this.goBack}/>
                 </td>
               </tr>
               <tr>
@@ -77,23 +140,31 @@ class CommunityRead extends Component {
                 </td>
               </tr>
               <tr>
-                <td className={styles.comr_comm}>댓글 {this.state.commentList.length}개</td>
+                <td className={styles.comr_comm}>
+                  댓글 {this.state.commentList.length}개
+                  <input type="hidden" id="commentCounter" value={this.state.commentList.length}/>
+                </td>
               </tr>
             </tbody>
           </table>
           <div className={styles.comr_comdiv}>
+
             {this.state.commentList.map((list, i) => {
               if(this.state.commentList.length-1==i){ //리스트의 마지막꺼는 hr를 포함안함
-                return (<CommunityCommentList key={i}
+                return (
+                    <div>
+                        <CommunityCommentList key={i}
                                       writerName={list.createdBy}
                                       datetime={list.createdAt.nano}
                                       content={list.content}
                         />
+
+                    </div>
                 );
               } else {
                 return (
-                  <div key={i}>
-                    <CommunityCommentList
+                  <div>
+                    <CommunityCommentList key={i}
                                       writerName={list.createdBy}
                                       datetime={list.createdAt.nano}
                                       content={list.content}
@@ -105,11 +176,12 @@ class CommunityRead extends Component {
 
             })
             }
+            <div id="last"></div>
             <div className={styles.comr_commWriteWrapper}>
               <div className={styles.comr_write_comment}>
-                <textarea placeholder="댓글을 작성해주세요.&#13;&#10;타인을 비방하면 안대여!"
+                <textarea placeholder="댓글을 작성해주세요.&#13;&#10;타인을 비방하면 안대여!" id="content"
                           className={styles.comr_txtarea}/>
-                <button className={styles.comr_commWriteBtn}>등록</button>
+                <button onClick={this.save} className={styles.comr_commWriteBtn}>등록</button>
               </div>
             </div>
 

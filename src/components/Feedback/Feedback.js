@@ -13,10 +13,10 @@ class Feedback extends Component {
   }
 
   componentDidMount() {
-    this.GetList(1);
+    this.getList(1);
   }
 
-  GetList(page) {
+  getList(page) {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/feedBack?currentPage='+page)
       .then((data) => {
@@ -26,14 +26,49 @@ class Feedback extends Component {
       });
   }
 
+  save() {
+    var addr = Common.getApi();
+    var formData = new FormData();
+    formData.append("name", $("#nick").val());
+    formData.append("password", $("#passwd").val());
+    formData.append("content", $("#content").val());
+
+    $.ajax({
+      type : "post",
+      url : addr+'api/feedBack/save',
+      contentType: false,
+      processData: false,
+      //mimeType:"multipart/form-data",
+      data : formData,
+      beforeSend: function() {
+        $('html').css("cursor","wait");
+        $('html').fadeOut();
+      },
+      complete: function() {
+        $('html').css("cursor","auto");
+        $('html').fadeIn();
+      },
+      success : function(data) {
+        location.reload(true);
+      },
+      error : function(request, status, error) {
+        $('.container').empty();
+        var ht = '';
+        ht += "code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error;
+        $('.container').append(ht);
+      }
+    });
+  }
+
+
   render() {
     return(
       <div>
         <div className={styles.container}>
-          <input type="text" placeholder="닉네임" className={styles.anonymForm}/>
-          <input type="password" placeholder="패스워드"  className={styles.anonymForm}/>
-          <textarea placeholder="내용을 입력하세요" className={styles.anonymTextarea}/>
-          <img src={require('../Common/img/write.png')} className={styles.submitBtn} onClick={this.write}/>
+          <input type="text" placeholder="닉네임" id="nick" className={styles.anonymForm}/>
+          <input type="password" placeholder="패스워드" id="passwd" className={styles.anonymForm}/>
+          <textarea placeholder="내용을 입력하세요" id="content" className={styles.anonymTextarea}/>
+          <img src={require('../Common/img/write.png')} className={styles.submitBtn} onClick={this.save}/>
           <div className={styles.list}>
             {this.state.list.map((feed, i) => {
                         return (<FeedbackList writer={feed.name}
