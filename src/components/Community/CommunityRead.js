@@ -45,9 +45,10 @@ class CommunityRead extends Component {
     var url = unescape(location.href); //url을 가져와서
     var urlList = url.split("/"); //url을 잘라서 배열에 저장하고
     var len = urlList.length; //배열의 마지막꺼=글번호
-
+    var contentVal = $("#content").val();
+    var writer = "boseok";
     formData.append("articleId", urlList[len-1]);
-    formData.append("content", $("#content").val());
+    formData.append("content", contentVal);
 
     $.ajax({
       type : "post",
@@ -65,28 +66,21 @@ class CommunityRead extends Component {
         //$('html').fadeIn();
       },
       success : function(data) {
-        /*
-        {\n\
-          this.props.content.split('\\n').map( (line,i) => {\n\
-            return (<span key={i}>{line}<br/></span>)\n\
-          })\n\
-        }\n\
-        */
-        console.log($("#commentCounter").val());
         var html = "";
         if($("#commentCounter").val()!=0){
-          html+="<hr className={styles.comr_comm_hr}/>";
+          $("#last_hr").append("<hr style='border:none; border-bottom: 1px dotted black;'/>");
         }
-        html+="<div className={styles.comr_comdiv_div}>\n\
-            <div className={styles.comr_comdiv_div_div}>\n\
-              <span className={styles.comr_comment_writer}>작성자이름</span>\n\
-              <span className={styles.comr_comment_datetime}>방금</span>\n\
-            </div>\n\
-            <span className={styles.comr_comment_content}>\n\
-              "+$("#content").val()+"\n\
-            </span>\n\
-          </div>";
+        html+="<div style='padding:0.5rem;'>\n\
+          <div style='margin-bottom:0.4rem;'>\n\
+            <span style='font-weight: bold;'>"+writer+"</span>\n\
+            <span style='margin-left: 0.8rem;font-size: 0.8rem;'>방금</span>\n\
+          </div>\n\
+          <span style='font-size:0.9rem;'>\n\
+            "+contentVal+"\n\
+          </span>\n\
+        </div>";
         $('#last').append(html);
+        $('#content').val('');
       },
       error : function(request, status, error) {
         $('.container').empty();
@@ -177,7 +171,9 @@ class CommunityRead extends Component {
 
             })
             }
-            <div id="last"></div>
+            <div id="last">
+              <div id="last_hr"></div>
+            </div>
             <div className={styles.comr_commWriteWrapper}>
               <div className={styles.comr_write_comment}>
                 <textarea placeholder="댓글을 작성해주세요.&#13;&#10;타인을 비방하면 안대여!" id="content"
@@ -211,6 +207,22 @@ class CommunityCommentList extends Component {
           </span>
         </div>
 
+      </div>
+    );
+  }
+}
+
+class NewComment extends Component {
+  render(){
+    return(
+      <div className={styles.comr_comdiv_div}>
+        <div className={styles.comr_comdiv_div_div}>
+          <span className={styles.comr_comment_writer}>boseok</span>
+          <span className={styles.comr_comment_datetime}>방금</span>
+        </div>
+        <span className={styles.comr_comment_content}>
+          내용
+        </span>
       </div>
     );
   }
