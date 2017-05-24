@@ -23,12 +23,13 @@ class CommunityRead extends Component {
     return $.getJSON(addr+'api/article/read?articleId='+articleId)
       .then((data) => {
         Common.modDatetime2(data.commentList);
+        Common.modDatetime3(data.lastModifiedTime);
         this.setState({
           id:data.id,
           title:data.title,
           content:data.content,
           createdBy:data.createdBy,
-          createdAt:data.createdAt,
+          createdAt:data.lastModifiedTime.nano,
           commentList: data.commentList
         });
       });
@@ -120,9 +121,9 @@ class CommunityRead extends Component {
               </tr>
               <tr>
                 <td className={styles.comr_createdBy_At}>
-                  <span className={styles.comr_createdBy}>{createdBy}</span>
-                  <span className={styles.comr_sep}>|</span>
-                  <span>{createdAt}</span>
+                  <span className={styles.comr_creater}>{createdBy}</span>
+                  <span className={styles.comr_sep}>&nbsp;|&nbsp;</span>
+                  <span className={styles.comr_date}>{createdAt}</span>
                 </td>
               </tr>
             </thead>

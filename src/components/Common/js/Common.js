@@ -74,14 +74,28 @@ class Common extends Component {
   }
 
   static modDatetime3(list){
-    for(var i in list){
-      var tmp = "";
-      var year = list[i].createdAt.year;
-      var month = list[i].createdAt.monthValue;
-      var day = list[i].createdAt.dayOfMonth;
+    var tmp = "";
+    var year = list.year;
+    var month = list.monthValue;
+    var day = list.dayOfMonth;
+    var today = new Date();
+    if(today.getFullYear()==year&&(today.getMonth()+1)==month&&today.getDate()==day){
+      var hour = list.hour;
+      var min = list.minute;
+      if(hour.toString().length==1){
+        tmp+="0"+hour+":";
+      } else {
+        tmp+=hour+":";
+      }
+      if(min.toString().length==1){
+        tmp+="0"+min;
+      } else {
+        tmp+=min;
+      }
+    } else {
       tmp += year+"."+month + "." + day;
-      list[i].createdAt.nano = tmp;
     }
+    list.nano = tmp;
   }
 
   static modContent(content){

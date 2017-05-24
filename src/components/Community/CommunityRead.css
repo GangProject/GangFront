@@ -40,6 +40,14 @@
   border-bottom: 1px solid gray;
 }
 
+.comr_creater {
+  font-size: 1rem;
+}
+
+.comr_date {
+  font-size: 0.9rem;
+}
+
 .comr_createdBy {
   float:right;
 }
