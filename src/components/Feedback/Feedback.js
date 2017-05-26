@@ -29,9 +29,12 @@ class Feedback extends Component {
   save() {
     var addr = Common.getApi();
     var formData = new FormData();
-    formData.append("name", $("#nick").val());
-    formData.append("password", $("#passwd").val());
-    formData.append("content", $("#content").val());
+    var nick = $("#nick").val();
+    var passwd = $("#passwd").val();
+    var content = $("#content").val();
+    formData.append("name", nick);
+    formData.append("password", passwd);
+    formData.append("content", content);
 
     $.ajax({
       type : "post",
@@ -42,14 +45,40 @@ class Feedback extends Component {
       data : formData,
       beforeSend: function() {
         $('html').css("cursor","wait");
-        $('html').fadeOut();
       },
       complete: function() {
         $('html').css("cursor","auto");
-        $('html').fadeIn();
       },
       success : function(data) {
-        location.reload(true);
+        var html="<hr style='margin-top: 1.5rem;'/>\n\
+        <table style='width: 100%;'>\n\
+          <tbody>\n\
+            <tr style='height: 3rem;'>\n\
+              <td style='width: 2rem;\n\
+                text-align: left;\n\
+                padding-left: 1rem;\n\
+                font-weight: bold;\n\
+                font-size: 1.2rem;'>\n\
+                  "+nick+"\n\
+              </td>\n\
+              <td style='width: 4rem;\n\
+                text-align: right;\n\
+                padding-right: 1rem;'>\n\
+                  방금\n\
+              </td>\n\
+            </tr>\n\
+            <tr style='height: 3rem;'>\n\
+              <td colSpan='2' style='text-align: left;padding-left: 1rem;'>\n\
+                "+content+"\n\
+              </td>\n\
+            </tr>\n\
+          </tbody>\n\
+        </table>\n\
+        ";
+        $('#f_last').prepend(html);
+        $('#nick').val('');
+        $('#passwd').val('');
+        $('#content').val('');
       },
       error : function(request, status, error) {
         $('.container').empty();
@@ -70,6 +99,7 @@ class Feedback extends Component {
           <textarea placeholder="내용을 입력하세요" id="content" className={styles.anonymTextarea}/>
           <img src={require('../Common/img/write.png')} className={styles.submitBtn} onClick={this.save}/>
           <div className={styles.list}>
+            <div id="f_last"></div>
             {this.state.list.map((feed, i) => {
                         return (<FeedbackList writer={feed.name}
                                             datetime={feed.createdAt.nano}

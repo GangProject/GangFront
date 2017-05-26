@@ -83,6 +83,7 @@ class CommunityRead extends Component {
         $('#content').val('');
       },
       error : function(request, status, error) {
+        alert('댓글 등록 실패');
         $('.container').empty();
         var ht = '';
         ht += "code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error;
