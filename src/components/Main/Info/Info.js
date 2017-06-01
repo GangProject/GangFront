@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import Common from '../../Common/js/Common.js';
 import styles from './Info.css';
+import Champions from "../../search/Champion/Champions";
 
 
 class Info extends Component {
@@ -7,31 +9,22 @@ class Info extends Component {
     super(props);
 
     this.state = {
-
+      gamelist:[]
     };
   }
 
   componentDidMount() {
-    this.callAjax(5);
+    this.getGameInfo();
   }
 
-  callAjax(date){
-    $.ajax({
-      url:'https://openlibrary.org/recentchanges.json?limit='+date,
-      context:this,
-      dataType:'json',
-      type:'GET',
-      success: function(result){
-        var modTime = result[0].timestamp.split('T');
-        this.setState({
-          result:result[0].comment,
-          result2:result[1].comment,
-          kind:result[0].kind,
-          kind2:result[1].kind,
-          time:modTime[0]
-        });
-      }
-    });
+  getGameInfo(){
+      var addr = Common.getApi();
+      return $.getJSON(addr+'api/Home/gameInfo')
+          .then((data) => {
+              this.setState({
+                  gamelist : data
+              });
+          });
   }
 
   leftArrow(){
@@ -43,11 +36,10 @@ class Info extends Component {
   }
 
   render() {
-    var result = this.state.result;
-    var result2 = this.state.result2;
-    var kind = this.state.kind;
-    var kind2 = this.state.kind2;
-    var time = this.state.time;
+    var leftTeam = this.state.leftTeam;
+    var rightTeam = this.state.rightTeam;
+    var status = this.state.status;
+    var time = this.state.gameTime;
 
     return (
       <div className={styles.container}>
@@ -63,25 +55,34 @@ class Info extends Component {
               src={require('./Img/arrow.png')}
               className={styles.arrowRight}/>
         </div>
+          {this.state.gamelist.map((list, i) => {
+              return(
+                  <ChampionshipInfo key={i}
+                                    left={list.leftTeam}
+                                    right={list.rightTeam}
+                                    status={list.status}
+                  />
+              );
+            })
+          }
 
-        <div className={styles.box}>
-          <div className={styles.team}>
-            <div className={styles.teamName}>{kind}</div>
-            <span className={styles.info}>
-              <div>{result}</div>
-            </span>
-          </div>
-        </div>
-        <div className={styles.box}>
-          <div className={styles.team}>
-            <div className={styles.teamName}>{kind2}</div>
-            <span className={styles.info}>
-              <div>{result2}</div>
-            </span>
-          </div>
-        </div>
 
       </div>
+    );
+  }
+}
+
+class ChampionshipInfo extends Component {
+  render(){
+    return(
+        <div className={styles.box}>
+          <div className={styles.team}>
+            <div className={styles.teamName}>{this.props.left} vs {this.props.right}</div>
+            <span className={styles.info}>
+              <div>{this.props.status}</div>
+            </span>
+          </div>
+        </div>
     );
   }
 }
