@@ -20,13 +20,10 @@ class Info extends Component {
         var addr = Common.getApi();
         return $.getJSON(addr + 'api/Home/gameInfo')
             .then((data) => {
-
                 this.setState({
                     gamelist: data,
                     now: ""
                 });
-
-
             });
     }
 
@@ -47,15 +44,6 @@ class Info extends Component {
             <div className={styles.container}>
                 <div className={styles.title}>
                     대회정보<br/>
-                    <img
-                        onClick={this.leftArrow}
-                        src={require('./Img/arrow.png')}
-                        className={styles.arrowLeft}/>
-                    <span className={styles.date}>{this.state.now}</span>
-                    <img
-                        onClick={this.rightArrow}
-                        src={require('./Img/arrow.png')}
-                        className={styles.arrowRight}/>
                 </div>
                 <span className={styles.nomsg}>
                     {message}
@@ -72,8 +60,6 @@ class Info extends Component {
                         );
                     })
                 }
-
-
             </div>
         );
     }
@@ -92,6 +78,24 @@ class ChampionshipInfo extends Component {
                         <div>{this.props.status}</div>
                     </span>
                 </div>
+            </div>
+        );
+    }
+}
+
+class Arrows extends Component {
+    render(){
+        return(
+            <div>
+                <img
+                    onClick={this.leftArrow}
+                    src={require('./Img/arrow.png')}
+                    className={styles.arrowLeft}/>
+                <span className={styles.date}>{this.state.now}</span>
+                <img
+                    onClick={this.rightArrow}
+                    src={require('./Img/arrow.png')}
+                    className={styles.arrowRight}/>
             </div>
         );
     }
