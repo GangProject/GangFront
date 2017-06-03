@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Common from '../Common/js/Common.js';
 import { Link, browserHistory } from 'react-router';
 import styles from './Community.css';
+import Common from '../Common/js/Common.js';
 
 class Community extends Component {
   constructor(props) {
@@ -19,7 +19,11 @@ class Community extends Component {
         Common.modDatetime(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
         Common.modCommentCount(data.list); //댓글갯수 []추가
         data.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
-        this.setState({ list: data.list });
+        this.setState({
+            list: data.list,
+            currentPage:data.currentPage,
+            totalCount:data.totalCount
+        });
       });
   }
 
@@ -28,6 +32,11 @@ class Community extends Component {
   }
 
   render() {
+    var pageList = [];
+    var pageCount = Common.getPageCount(this.state.totalCount);
+    for(var i=1; i<=pageCount; i++){
+        pageList.push(i);
+    }
     return(
       <div>
         <div className={styles.container}>
@@ -54,6 +63,27 @@ class Community extends Component {
                                       key={i}/>);
                 })
               }
+              <tr className={styles.pageCountTr}>
+                  <td colSpan="4">
+                      {
+                          pageList.map((list, i) => {
+                              if(this.state.currentPage==list){
+                                  return (
+                                    <span key={i} className={styles.currentPage}>
+                                         {list}
+                                    </span>
+                                  );
+                              } else {
+                                  return (
+                                    <span onClick={()=>this.GetList(list)} key={i} className={styles.pageList}>
+                                         {list}
+                                    </span>
+                                  );
+                              }
+                          })
+                      }
+                  </td>
+              </tr>
             </tbody>
           </table>
         </div>
