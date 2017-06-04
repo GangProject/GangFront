@@ -24,7 +24,11 @@ class Info extends Component {
                     gamelist: data,
                     now: ""
                 });
+            })
+            .error(function() {
+                alert("서버로부터 데이터를 받아올 수 없습니다");
             });
+
     }
 
     leftArrow() {
