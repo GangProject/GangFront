@@ -20,10 +20,13 @@ class Feedback extends Component {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/feedBack?currentPage='+page)
       .then((data) => {
-        Common.modDatetime2(data.list); //Common.js에서 static메소드를 가져와서 날짜변환
-        data.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
-        this.setState({ list: data.list });
-      });
+        Common.modDatetime2(data.result.list); //Common.js에서 static메소드를 가져와서 날짜변환
+        data.result.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
+        this.setState({ list: data.result.list });
+      })
+      .error(function() {
+        alert("서버로부터 데이터를 받아올 수 없습니다");
+      });;
   }
 
   save() {
