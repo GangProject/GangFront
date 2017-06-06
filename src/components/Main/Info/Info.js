@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Common from '../../Common/js/Common.js';
 import styles from './Info.css';
+import {Link} from "react-router";
 
 class Info extends Component {
     constructor(props) {
@@ -28,8 +29,9 @@ class Info extends Component {
             .error(function() {
                 alert("서버로부터 데이터를 받아올 수 없습니다");
             });
-
     }
+
+
 
     leftArrow() {
         alert('left');
@@ -59,7 +61,7 @@ class Info extends Component {
                                               left={list.leftTeam}
                                               right={list.rightTeam}
                                               status={list.status}
-                                              gameTime={list.gameTime}
+                                              gameTime={list.time}
                             />
                         );
                     })
@@ -70,6 +72,10 @@ class Info extends Component {
 }
 
 class ChampionshipInfo extends Component {
+    openTwitch(){
+        window.open("https://www.twitch.tv/ogn_lol","_blank")
+    }
+
     render() {
 
         return (
@@ -79,7 +85,11 @@ class ChampionshipInfo extends Component {
                         {this.props.left} vs {this.props.right}
                     </div>
                     <span className={styles.info}>
+                        <div>{this.props.gameTime} ~ </div>
                         <div>{this.props.status}</div>
+                        <div onClick={this.openTwitch} className={styles.info_cursor}>
+                            트위치에서 시청하기
+                        </div>
                     </span>
                 </div>
             </div>
