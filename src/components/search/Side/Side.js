@@ -19,6 +19,11 @@ class Side extends React.Component {
 
                   </tbody>
                   </table>
+                  <table className={styles.Best}>
+                    <tbody>
+                    <tr>원딜</tr>
+                    </tbody>
+                  </table>
 
                 </div>
 
