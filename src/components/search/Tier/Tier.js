@@ -1,15 +1,15 @@
 import React from 'react';
-
+import styles from './Tier.css'
 class Tier extends React.Component {
 
     render(){
 
-        return (
+      return (
 
-          <div>
-          <p>Tier</p>
-          </div>
-        );
+        <div className={styles.divStyle}>
+          <p>티어</p>
+        </div>
+      );
     }
 }
 

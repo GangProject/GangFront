@@ -8,7 +8,7 @@ class Side extends React.Component {
 
         return (
                 <div className={styles.Sidediv}>
-                  <table className={styles.Sidetable}>
+                  <table className={styles.tableStyle}>
                   <tbody>
                     <tr><td className={styles.Sidetd}><Link to="/search/record">최근경기기록</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/rune">룬</Link></td></tr>
@@ -16,15 +16,11 @@ class Side extends React.Component {
                     <tr><td className={styles.Sidetd}><Link to="/search/mmr">MMR</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/tier">시즌별 티어</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/ingame">인게임정보</Link></td></tr>
-
                   </tbody>
                   </table>
-                  <table className={styles.Best}>
-                    <tbody>
-                    <tr>원딜</tr>
-                    </tbody>
-                  </table>
-
+                  <div className={styles.Best}>
+                  &nbsp;<h1>원딜</h1>
+                  </div>
                 </div>
 
         );
