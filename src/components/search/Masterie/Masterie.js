@@ -1,15 +1,16 @@
 import React from 'react';
-
+import styles from './Masterie.css';
 class Masterie extends React.Component {
 
-    render(){
+  render(){
 
-        return (
-          <div>
-          <p>Masterie</p>
-          </div>
-        );
-    }
+      return (
+
+        <div className={styles.divStyle}>
+          <p>특성</p>
+        </div>
+      );
+  }
 }
 
 export default Masterie;
