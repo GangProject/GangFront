@@ -1,89 +1,118 @@
 import React, {Component} from 'react';
+import Common from '../../Common/js/Common.js';
 import styles from './Info.css';
-
+import {Link} from "react-router";
 
 class Info extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
+        this.state = {
+            gamelist: [],
+            now: ""
+        };
+    }
 
-    };
-  }
+    componentDidMount() {
+        this.getGameInfo();
+    }
 
-  componentDidMount() {
-    this.callAjax(5);
-  }
+    getGameInfo() {
+        var addr = Common.getApi();
+        return $.getJSON(addr + 'api/Home/gameInfo')
+            .then((data) => {
+                this.setState({
+                    gamelist: data,
+                    now: ""
+                });
+            })
+            .error(function() {
+                alert("서버로부터 데이터를 받아올 수 없습니다");
+            });
+    }
 
-  callAjax(date){
-    $.ajax({
-      url:'https://openlibrary.org/recentchanges.json?limit='+date,
-      context:this,
-      dataType:'json',
-      type:'GET',
-      success: function(result){
-        var modTime = result[0].timestamp.split('T');
-        this.setState({
-          result:result[0].comment,
-          result2:result[1].comment,
-          kind:result[0].kind,
-          kind2:result[1].kind,
-          time:modTime[0]
-        });
-      }
-    });
-  }
 
-  leftArrow(){
-      alert('left');
-  }
 
-  rightArrow(){
-      alert('right');
-  }
+    leftArrow() {
+        alert('left');
+    }
 
-  render() {
-    var result = this.state.result;
-    var result2 = this.state.result2;
-    var kind = this.state.kind;
-    var kind2 = this.state.kind2;
-    var time = this.state.time;
+    rightArrow() {
+        alert('right');
+    }
 
-    return (
-      <div className={styles.container}>
-        <div className={styles.title}>
-          대회정보<br/>
-          <img
-            onClick={this.leftArrow}
-            src={require('./Img/arrow.png')}
-            className={styles.arrowLeft}/>
-          <span className={styles.date}>{time}</span>
-            <img
-              onClick={this.rightArrow}
-              src={require('./Img/arrow.png')}
-              className={styles.arrowRight}/>
-        </div>
+    render() {
+        var message = "";
+        if(this.state.gamelist.length==0){
+            message+="오늘 경기는 없습니다";
+        }
+        return (
+            <div className={styles.container}>
+                <div className={styles.title}>
+                    대회정보<br/>
+                </div>
+                <span className={styles.nomsg}>
+                    {message}
+                </span>
+                {
+                    this.state.gamelist.map((list, i) => {
+                        return (
+                            <ChampionshipInfo key={i}
+                                              left={list.leftTeam}
+                                              right={list.rightTeam}
+                                              status={list.status}
+                                              gameTime={list.time}
+                            />
+                        );
+                    })
+                }
+            </div>
+        );
+    }
+}
 
-        <div className={styles.box}>
-          <div className={styles.team}>
-            <div className={styles.teamName}>{kind}</div>
-            <span className={styles.info}>
-              <div>{result}</div>
-            </span>
-          </div>
-        </div>
-        <div className={styles.box}>
-          <div className={styles.team}>
-            <div className={styles.teamName}>{kind2}</div>
-            <span className={styles.info}>
-              <div>{result2}</div>
-            </span>
-          </div>
-        </div>
+class ChampionshipInfo extends Component {
+    openTwitch(){
+        window.open("https://www.twitch.tv/ogn_lol","_blank")
+    }
 
-      </div>
-    );
-  }
+    render() {
+
+        return (
+            <div className={styles.box}>
+                <div className={styles.team}>
+                    <div className={styles.teamName}>
+                        {this.props.left} vs {this.props.right}
+                    </div>
+                    <span className={styles.info}>
+                        <div>{this.props.gameTime} ~ </div>
+                        <div>{this.props.status}</div>
+                        <div onClick={this.openTwitch} className={styles.info_cursor}>
+                            트위치에서 시청하기
+                        </div>
+                    </span>
+                </div>
+            </div>
+        );
+    }
+}
+
+class Arrows extends Component {
+    render(){
+        return(
+            <div>
+                <img
+                    onClick={this.leftArrow}
+                    src={require('./Img/arrow.png')}
+                    className={styles.arrowLeft}/>
+                <span className={styles.date}>{this.state.now}</span>
+                <img
+                    onClick={this.rightArrow}
+                    src={require('./Img/arrow.png')}
+                    className={styles.arrowRight}/>
+            </div>
+        );
+    }
 }
 
 export default Info;

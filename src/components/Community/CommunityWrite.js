@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Common from '../Common/js/Common.js';
 import styles from './CommunityWrite.css';
+import { browserHistory } from 'react-router';
 import FileInput from 'react-file-input';
 class CommunityWrite extends Component {
   constructor(props) {
@@ -10,9 +11,8 @@ class CommunityWrite extends Component {
   save() {
     var addr = Common.getApi();
     var formData = new FormData();
-    formData.append("title", $('.comw_titleForm').val());
-    formData.append("content", $('.comw_textarea').val());
-    alert(formData.title+" "+formData.content);
+    formData.append("title", $("#title").val());
+    formData.append("content", $("#content").val());
     //formData.append("file", $("#file")[0].files[0]);
     // $($(".comw_inputFile")[0].files).each(function(index, file) {
     //   formData.append("file", file);
@@ -34,7 +34,8 @@ class CommunityWrite extends Component {
         $('html').fadeIn();
       },
       success : function(data) {
-        alert(data.status);
+        var result = JSON.parse(data);
+        browserHistory.push("/community/"+result.id);
       },
       error : function(request, status, error) {
         $('.container').empty();
@@ -43,6 +44,10 @@ class CommunityWrite extends Component {
         $('.container').append(ht);
       }
     });
+  }
+
+  goBack(){
+    browserHistory.push("/community");
   }
 
   render() {
@@ -54,20 +59,20 @@ class CommunityWrite extends Component {
             <thead>
               <tr>
                 <td className={styles.comw_td1}>
-                  <img src={require('../Common/img/back.png')} className={styles.comw_backBtn} onClick={Common.back}/>
+                  <img src={require('../Common/img/back.png')} className={styles.comw_backBtn} onClick={this.goBack}/>
                   <img src={require('../Common/img/write.png')} className={styles.comw_writeBtn} onClick={this.save}/>
                 </td>
               </tr>
               <tr>
                 <td>
-                    <input type="text" placeholder="제목" className={styles.comw_titleForm}/>
+                    <input type="text" placeholder="제목" id="title" className={styles.comw_titleForm}/>
                 </td>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>
-                    <textarea placeholder="내용을 입력하세요" className={styles.comw_textarea}/>
+                    <textarea placeholder="내용을 입력하세요" id="content" className={styles.comw_textarea}/>
                 </td>
               </tr>
               <tr>

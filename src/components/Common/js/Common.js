@@ -22,17 +22,98 @@ class Common extends Component {
   static modDatetime(list){
     for(var i in list){
       var tmp = "";
+      var year = list[i].article.createdAt.year;
+      var month = list[i].article.createdAt.monthValue;
+      var day = list[i].article.createdAt.dayOfMonth;
+      var today = new Date();
+      if(today.getFullYear()==year&&(today.getMonth()+1)==month&&today.getDate()==day){
+        var hour = list[i].article.createdAt.hour;
+        var min = list[i].article.createdAt.minute;
+        if(hour.toString().length==1){
+          tmp+="0"+hour+":";
+        } else {
+          tmp+=hour+":";
+        }
+        if(min.toString().length==1){
+          tmp+="0"+min;
+        } else {
+          tmp+=min;
+        }
+      } else {
+        tmp += year+"."+month + "." + day;
+      }
+      list[i].article.createdAt.nano = tmp;
+    }
+  }
+
+  static modDatetime2(list){
+    for(var i in list){
+      var tmp = "";
       var year = list[i].createdAt.year;
       var month = list[i].createdAt.monthValue;
       var day = list[i].createdAt.dayOfMonth;
-      tmp += year+"."+month + "." + day;
+      var today = new Date();
+      if(today.getFullYear()==year&&(today.getMonth()+1)==month&&today.getDate()==day){
+        var hour = list[i].createdAt.hour;
+        var min = list[i].createdAt.minute;
+        if(hour.toString().length==1){
+          tmp+="0"+hour+":";
+        } else {
+          tmp+=hour+":";
+        }
+        if(min.toString().length==1){
+          tmp+="0"+min;
+        } else {
+          tmp+=min;
+        }
+      } else {
+        tmp += year+"."+month + "." + day;
+      }
       list[i].createdAt.nano = tmp;
     }
+  }
+
+  static modDatetime3(list){
+    var tmp = "";
+    var year = list.year;
+    var month = list.monthValue;
+    var day = list.dayOfMonth;
+    var today = new Date();
+    if(today.getFullYear()==year&&(today.getMonth()+1)==month&&today.getDate()==day){
+      var hour = list.hour;
+      var min = list.minute;
+      if(hour.toString().length==1){
+        tmp+="0"+hour+":";
+      } else {
+        tmp+=hour+":";
+      }
+      if(min.toString().length==1){
+        tmp+="0"+min;
+      } else {
+        tmp+=min;
+      }
+    } else {
+      tmp += year+"."+month + "." + day;
+    }
+    list.nano = tmp;
   }
 
   static modContent(content){
     var result = content.split('\n');
     return result;
+  }
+
+  static modCommentCount(list){
+    for(var i in list){
+      if(list[i].commentCount!=0){
+        var tmp = "[";
+        tmp += list[i].commentCount;
+        tmp += "]";
+        list[i].commentCount = tmp;
+      } else {
+        list[i].commentCount = null;
+      }
+    }
   }
 
 }
