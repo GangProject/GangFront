@@ -9,3 +9,25 @@
     margin-left: 15.7rem;
     margin-top:9.5rem;
 }
+
+.rune_div {
+
+}
+
+.rune_runeListTd {
+    border: 1px solid darkslateblue;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: #63717f;
+}
+
+.rune_runeListTd:hover {
+    border: 2px solid darkslateblue;
+    cursor:pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
