@@ -11,7 +11,8 @@
 }
 
 .rune_div {
-
+    margin:0.3rem;
+    max-width:88.8%;
 }
 
 .rune_runeListTd {
@@ -30,4 +31,23 @@
     cursor:pointer;
     text-decoration: underline;
     font-weight: bold;
+}
+
+.rune_content {
+
+    padding:2rem;
+    border: 1px solid darkslateblue;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    color: #63717f;
+}
+
+.rune_cont_runeName {
+    float:left;
+}
+
+.rune_cont_runeDetail {
+    float:right;
 }
