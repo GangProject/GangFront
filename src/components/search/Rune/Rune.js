@@ -10,10 +10,12 @@ class Rune extends Component {
                 {
                     runeName : "리신",
                     runeDetail:"공격력 +8.5  방어력 +9  마법저항력 +13  공격 속도 % +13.5%",
+                    runeContent:"표식 : 공격력 9개, 인장 : 방어력 9개, 문양 : 마법저항력 9개, 정수 : 공격속도 3개"
                 },
                 {
                     runeName : "엘리스",
                     runeDetail:"마법관통력 +6.8  방어력 +9  재사용 대기시간 % -7.5%  공격 속도 % +13.5%",
+                    runeContent:"표식 : 마법관통력 9개, 인장 : 방어력 9개, 문양 : 재사용 대기시간 9개, 정수 : 공격속도 3개"
                 }
             ],
             currentRune:1
@@ -56,7 +58,7 @@ class Rune extends Component {
                         </tr>
                     </tbody>
                 </table>
-                <table>
+                <table className={styles.rune_table2}>
                     <tbody>
                         <tr>
                             <td className={styles.rune_content}>
@@ -72,7 +74,8 @@ class Rune extends Component {
                                     <br/>
                                     <hr/>
                                     <div className={styles.rune_png}>
-                                        asdfasdfdmdkdk으아아아아아아아아아 여기에 왜 이미지가 안들ㅇ어갈까아아아아아아아아아아아아아아아아아아아아
+                                        {this.state.runeList[this.state.currentRune-1].runeContent}<br/>
+
                                         <img src={require('./rune.png')} />
                                     </div>
                                 </div>
