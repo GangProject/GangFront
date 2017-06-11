@@ -1,0 +1,49 @@
+.mmr_divStyle  {
+    width:85%;
+    height:36.5rem;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    float:left;
+    margin-bottom: 3.5rem;
+    margin-left: 15.7rem;
+    margin-top:9.5rem;
+
+}
+
+.mmr_div {
+    margin-left: -5rem;
+    padding-top: 4rem;
+}
+
+.mmr_score {
+    font-weight: bold;
+    font-size: 3rem;
+    color:#33314f;
+}
+
+.mmr_tier {
+    font-size: 2rem;
+    color: #206ea1;
+}
+
+.mmr_message {
+    text-align: center;
+    font-size: 1.35rem;
+    margin-bottom: 2rem;
+}
+
+.mmr_container2 {
+    text-align: center;
+    padding: 2rem;
+    //background-color: blue;
+}
+
+.mmr_tier_img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.mmr_avgScore{
+    font-size: 1.5rem;
+}

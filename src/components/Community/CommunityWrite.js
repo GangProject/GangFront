@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Common from '../Common/js/Common.js';
 import styles from './CommunityWrite.css';
 import { browserHistory } from 'react-router';
-import FileInput from 'react-file-input';
+import Tinymce from './tinymce/tinymce.min.js';
+
 class CommunityWrite extends Component {
   constructor(props) {
       super(props);
@@ -72,7 +73,8 @@ class CommunityWrite extends Component {
             <tbody>
               <tr>
                 <td>
-                    <textarea placeholder="내용을 입력하세요" id="content" className={styles.comw_textarea}/>
+                  <Tinymce/>
+                  {tinymce.init({ selector:'textarea' })}
                 </td>
               </tr>
               <tr>
