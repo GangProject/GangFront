@@ -1,0 +1,65 @@
+.divStyle {
+  position: fixed;
+    width:100%;
+    text-align:center;
+    font-size:15px;
+}
+.tableStyle {
+  width:100%;
+  border-collapse: collapse;
+  border:none;
+  height: 9.5rem;
+  font-size: 1.3rem;
+  background-color: #555555;
+  color: white;
+}
+
+.divStyle td {
+  border: 1px solid black;
+  width:15.5%;
+}
+
+.divStyle td:nth-child(1)
+{
+  border: 1px solid black;
+  width:15%;
+}
+.divStyle td:nth-child(2)
+{
+  border: 1px solid black;
+  width:3%;
+}
+.divStyle td:nth-child(3)
+{
+  background:url('./img/zin.jpg');
+  background-size: 100% 100%;
+
+}
+.divStyle td:nth-child(4)
+{
+  background:url('./img/leesin.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(5)
+{
+  background:url('./img/zed.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(6)
+{
+  background:url('./img/grave.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(7)
+{
+  background:url('./img/brang.jpg');
+  background-size: 100% 100%;
+}
+.divStyle td:nth-child(8)
+{
+  border: 1px solid black;
+  width:5%;
+}

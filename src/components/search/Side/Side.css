@@ -1,0 +1,32 @@
+.Sidediv {
+  position: fixed;
+    width:15.7rem;
+    text-align:center;
+    font-Size:20px;
+    float:left;
+    margin-top: 9.5rem;
+
+}
+.tableStyle {
+  width:100%;
+  height:20rem;
+  border-collapse: collapse;
+  border:'none';
+  background-color: #555555;
+  font-size: 1.3rem;
+  text-shadow: 2px 2px #777777;
+  float:right;
+  color: white;
+}
+.Sidetd {
+  border: 1px solid black;
+  height:17%;
+
+}
+.Best {
+  border-right:1px solid black;
+  border-collapse: collapse;
+  width:100%;
+  height:16.5rem;
+  margin-top: 20rem;
+}

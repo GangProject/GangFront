@@ -1,0 +1,33 @@
+.divStyle  {
+    width:100%;
+    border:1px solid black;
+    text-align:center;
+    font-size:30px;
+    float:left;
+    margin-bottom: 5rem;
+    margin-left: 15.7rem;
+    margin-top:9.5rem;
+}
+.tableStyle {
+  width:100%;
+  border-collapse: collapse;
+  border:'none';
+  font-size: 0.9rem;
+  float:right;
+
+}
+.tdStyle  {
+  border: 1px solid black;
+  height:4.0rem;
+}
+.theadStyle {
+  background-color: #555555;
+  color: white;
+  text-shadow: 2px 2px #777777;
+}
+.theadStyle td:nth-child(1) {
+  width:3%;
+}
+.theadStyle td:nth-child(n+2) {
+  width:7%;
+}

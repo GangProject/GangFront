@@ -1,6 +1,70 @@
-.anonymForm {
-  width: 13.8rem;
+.container {
+  max-width: 40rem;
+  margin: 1rem auto;
+  /*background-color: gray;*/
+  /*border: 1px solid black;*/
+  margin-top: 5rem;
+  padding: 0.1rem 3rem 2.5rem 3rem;
+}
+
+.comw_tab{
+  width:100%;
+}
+
+.comw_td1{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.comw_backBtn {
+  margin:1rem;
+  width:3rem;
+  height:3rem;
+  float:left;
+  cursor:pointer;
+}
+
+.comw_writeBtn {
+  margin:1rem;
+  width:3rem;
+  height:3rem;
+  float:right;
+  cursor:pointer;
+}
+
+.comw_titleForm {
+  width: 92%;
   height: 2rem;
+  border: 1px solid gray;
+  color: #33314f;
+  font-size: 1rem;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+
+.comw_textarea {
+  padding: 0.7rem;
+  width: 91%;
+  height: 20rem;
+  //background: #aaaaaf;
+  border: 1px solid gray;
+  font-size: 1rem;
+  color: #33314f;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 7px;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-family: sans-serif;
+}
+
+.comw_inputFile{
+  width: 40%;
+  height: 1.4rem;
   border: 1px solid gray;
   color: #33314f;
   font-size: 1rem;

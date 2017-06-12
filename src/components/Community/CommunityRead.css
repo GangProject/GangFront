@@ -31,10 +31,30 @@
   padding: 1rem 1rem 1rem 2rem;
   font-size: 1.2rem;
   border-top: 2px solid gray;
+  border-bottom: 1px dotted gray;
+}
+
+.comr_createdBy_At {
+  padding: 1rem 1rem 1rem 2rem;
+  font-size: 1.2rem;
   border-bottom: 1px solid gray;
 }
+
+.comr_creater {
+  font-size: 1rem;
+}
+
+.comr_date {
+  font-size: 0.9rem;
+}
+
 .comr_createdBy {
   float:right;
+}
+
+.comr_sep {
+  font-size: 1rem;
+  color: #AAAAAA;
 }
 
 .comr_content {
@@ -50,7 +70,7 @@
 }
 
 .comr_comdiv {
-  padding: 1rem 1.5rem 3rem 1.5rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
   background-color: #EEEEEE;
 }
 
