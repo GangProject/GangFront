@@ -1,27 +1,286 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styles from './Record.css'
-class Record extends React.Component {
+
+class Record extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            recordList:[
+                {
+                    id:1,
+                    champName:"럼블",
+                    k:11,
+                    d:1,
+                    a:9,
+                    oncekill:"더블킬",
+                    lv:18,
+                    cs:200,
+                    avgcs:5.7,
+                    pink:3,
+                    killinv:66,
+                    itemlist:[
+                        {
+                            itemid:5,
+                            name:"닌자의 신발"
+                        },
+                        {
+                            itemid:6,
+                            name:"빙하의 장막"
+                        },
+                        {
+                            itemid:7,
+                            name:"BF 대검"
+                        },
+                        {
+                            itemid:8,
+                            name:"가면"
+                        },
+                    ],
+                    playerlist:[
+                        {
+                            playerid:1,
+                            name:"시기받기좋을시기",
+                            champ:"신지드"
+                        },
+                        {
+                            itemid:2,
+                            name:"군대가야되젠장",
+                            champ:"리신"
+                        },
+                        {
+                            itemid:3,
+                            name:"류종하",
+                            champ:"쓰레쉬"
+                        },
+                        {
+                            itemid:4,
+                            name:"woncon",
+                            champ:"루시안"
+                        },
+                        {
+                            itemid:5,
+                            name:"bvest",
+                            champ:"피즈"
+                        }
+                    ],
+                    opplist:[
+                        {
+                            playerid:1,
+                            name:"성철이",
+                            champ:"럼블"
+                        },
+                        {
+                            itemid:2,
+                            name:"양민학살용",
+                            champ:"리신"
+                        },
+                        {
+                            itemid:3,
+                            name:"보석",
+                            champ:"벨코즈"
+                        },
+                        {
+                            itemid:4,
+                            name:"뚜우뿌뚜",
+                            champ:"베인"
+                        },
+                        {
+                            itemid:5,
+                            name:"maruYeah",
+                            champ:"그브"
+                        }
+                    ],
+                },
+                {
+                    id:2,
+                    champName:"리신",
+                    k:19,
+                    d:3,
+                    a:18,
+                    oncekill:"트리플킬",
+                    lv:17,
+                    cs:150,
+                    avgcs:3.7,
+                    pink:5,
+                    killinv:80,
+                    itemlist:[
+                        {
+                            itemid:1,
+                            name:"요우무"
+                        },
+                        {
+                            itemid:2,
+                            name:"칠흑의 양날도끼"
+                        },
+                        {
+                            itemid:3,
+                            name:"헤르메스의 발걸음"
+                        }
+                    ],
+                    playerlist:[
+                        {
+                            playerid:1,
+                            name:"시기받기좋을시기",
+                            champ:"신지드"
+                        },
+                        {
+                            itemid:2,
+                            name:"군대가야되젠장",
+                            champ:"리신"
+                        },
+                        {
+                            itemid:3,
+                            name:"류종하",
+                            champ:"쓰레쉬"
+                        },
+                        {
+                            itemid:4,
+                            name:"woncon",
+                            champ:"루시안"
+                        },
+                        {
+                            itemid:5,
+                            name:"bvest",
+                            champ:"피즈"
+                        }
+                    ],
+                    opplist:[
+                        {
+                            playerid:1,
+                            name:"성철이",
+                            champ:"럼블"
+                        },
+                        {
+                            itemid:2,
+                            name:"양민학살용",
+                            champ:"리신"
+                        },
+                        {
+                            itemid:3,
+                            name:"보석",
+                            champ:"벨코즈"
+                        },
+                        {
+                            itemid:4,
+                            name:"뚜우뿌뚜",
+                            champ:"베인"
+                        },
+                        {
+                            itemid:5,
+                            name:"maruYeah",
+                            champ:"그브"
+                        }
+                    ],
+                },
+            ]
+        };
+    }
 
     render(){
-
         return (
                 <div className={styles.divStyle}>
                   <table className={styles.tableStyle}>
-                  <tbody>
-                    <tr><td className={styles.tdStyle}>1</td></tr>
-                    <tr><td className={styles.tdStyle}>2</td></tr>
-                    <tr><td className={styles.tdStyle}>3</td></tr>
-                    <tr><td className={styles.tdStyle}>4</td></tr>
-                    <tr><td className={styles.tdStyle}>5</td></tr>
-                    <tr><td className={styles.tdStyle}>6</td></tr>
-                    <tr><td className={styles.tdStyle}>7</td></tr>
-                    <tr><td className={styles.tdStyle}>8</td></tr>
-                    <tr><td className={styles.tdStyle}>9</td></tr>
-                    <tr><td className={styles.tdStyle}>10</td></tr>
-
+                    <tbody>
+                        {this.state.recordList.map((list, i) => {
+                            return (<RecordList num={list.id}
+                                               champName={list.champName}
+                                               kda={list.k+"/"+list.d+"/"+list.a}
+                                               avg={(list.k+list.a)/list.d}
+                                               oncekill={list.oncekill}
+                                               lv={list.lv}
+                                               cs={list.cs}
+                                               avgcs={list.avgcs}
+                                               pink={list.pink}
+                                               killinv={list.killinv}
+                                               itemlist={list.itemlist}
+                                               playerlist={list.playerlist}
+                                               opplist={list.opplist}
+                                               key={i}/>
+                                    );
+                            })
+                        }
                     </tbody>
                   </table>
                 </div>
+        );
+    }
+}
+
+class RecordList extends Component {
+    render(){
+        if(this.props.itemlist.length!=6){
+            for(var i=0; i<6; i++){
+                if(this.props.itemlist[i]==null){
+                    this.props.itemlist.push({name:"아이템없음"});
+                }
+            }
+        }
+        return (
+            <tr className={styles.record_listTr}>
+                <td>
+                    <span>{this.props.champName}</span>
+                </td>
+                <td>
+                    <div>
+                        {this.props.kda}<br/>
+                        {this.props.avg.toFixed(2)}:1 평점<br/>
+                        {this.props.oncekill}
+                    </div>
+                </td>
+                <td>
+                    <span>레벨 {this.props.lv}<br/></span>
+                    <span>{this.props.cs}({this.props.avgcs.toFixed(1)})CS<br/></span>
+                    <span>핑와 {this.props.pink} 개 구매<br/></span>
+                    <span>킬관여 {this.props.killinv}%</span>
+                </td>
+                <td>
+                    {this.props.itemlist.map((ilist,i) => {
+                        if(i==3){
+                            return (
+                                <span key={i}>
+                                    <br/>
+                                    <span className={styles.record_itemlist}>
+                                        {ilist.name}
+                                    </span>
+                                </span>
+                            );
+                        } else {
+                            return (<span className={styles.record_itemlist}
+                                          key={i}>
+                                        {ilist.name}
+                                </span>
+                            );
+                        }
+
+                    })
+                    }
+                </td>
+                <td>
+                    <div>
+                        {this.props.playerlist.map((plist,i) => {
+                                return (<div className={styles.record_itemlist}
+                                              key={i}>
+                                        {plist.champ} | {plist.name}
+                                    </div>
+                                );
+                        })
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        {this.props.opplist.map((plist,i) => {
+                            return (<div className={styles.record_itemlist}
+                                         key={i}>
+                                    {plist.champ} | {plist.name}
+                                </div>
+                            );
+                        })
+                        }
+                    </div>
+                </td>
+            </tr>
         );
     }
 }
