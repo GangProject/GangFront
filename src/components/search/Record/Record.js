@@ -9,6 +9,10 @@ class Record extends Component {
             recordList:[
                 {
                     id:1,
+                    gameType:"자유랭",
+                    beforeTime:"1일",
+                    result:"승리",
+                    playTime:"50분 20초",
                     champName:"Rumble",
                     spell1:"Teleport",
                     spell2:"Flash",
@@ -96,6 +100,10 @@ class Record extends Component {
                 },
                 {
                     id:2,
+                    gameType:"솔랭",
+                    beforeTime:"11일",
+                    result:"패배",
+                    playTime:"26분 2초",
                     champName:"LeeSin",
                     spell1:"Smite",
                     spell2:"Flash",
@@ -188,10 +196,14 @@ class Record extends Component {
                     <tbody>
                         {this.state.recordList.map((list, i) => {
                             return (<RecordList num={list.id}
+                                               gameType={list.gameType}
+                                               beforeTime={list.beforeTime}
+                                               result={list.result}
+                                               playTime={list.playTime}
                                                champName={list.champName}
                                                spell1={list.spell1}
                                                spell2={list.spell2}
-                                               kda={list.k+"/"+list.d+"/"+list.a}
+                                               kda={list.k+" / "+list.d+" / "+list.a}
                                                avg={(list.k+list.a)/list.d}
                                                oncekill={list.oncekill}
                                                lv={list.lv}
@@ -245,26 +257,34 @@ class RecordList extends Component {
         return (
             <tr className={styles.record_listTr}>
                 <td>
-                    <span>
-                        <img src={require("../"+champName)}/>
-                    </span>
-                </td>
-                <td>
-                    <span><img src={require("../"+spell1)}/></span><br/>
-                    <span><img src={require("../"+spell2)}/></span>
-                </td>
-                <td>
-                    <div>
-                        {this.props.kda}<br/>
-                        {this.props.avg.toFixed(2)}:1 평점<br/>
-                        {this.props.oncekill}
+                    <div className={styles.record_info}>
+                        <span>{this.props.gameType}</span><br/>
+                        <span>{this.props.beforeTime} 전</span><br/>
+                        <span className={styles.record_result}>{this.props.result}</span><br/>
+                        <span>{this.props.playTime}</span>
                     </div>
                 </td>
                 <td>
+                    <span>
+                        <img src={require("../"+champName)} className={styles.record_champIcon}/>
+                    </span>
+                </td>
+                <td>
+                    <span><img src={require("../"+spell1)} className={styles.record_spellIcon}/></span><br/>
+                    <span><img src={require("../"+spell2)} className={styles.record_spellIcon}/></span>
+                </td>
+                <td>
+                    <div>
+                        <span className={styles.record_kda}>{this.props.kda}</span><br/>
+                        <span className={styles.record_avgKda}>{this.props.avg.toFixed(2)}:1 평점</span><br/>
+                        <span className={styles.record_oncekill}>{this.props.oncekill}</span>
+                    </div>
+                </td>
+                <td className={styles.record_info2}>
                     <span>레벨 {this.props.lv}<br/></span>
                     <span>{this.props.cs}({this.props.avgcs.toFixed(1)})CS<br/></span>
-                    <span>핑와 {this.props.pink} 개 구매<br/></span>
-                    <span>킬관여 {this.props.killinv}%</span>
+                    <span>핑와 {this.props.pink}개 구매<br/></span>
+                    <span className={styles.record_killinv}>킬관여 {this.props.killinv}%</span>
                 </td>
                 <td>
                     {this.props.itemlist.map((ilist,i) => {
