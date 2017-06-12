@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Common from '../Common/js/Common.js';
 import styles from './CommunityWrite.css';
 import { browserHistory } from 'react-router';
-import Tinymce from './tinymce/tinymce.min.js';
 
 class CommunityWrite extends Component {
   constructor(props) {
@@ -39,10 +38,11 @@ class CommunityWrite extends Component {
         browserHistory.push("/community/"+result.id);
       },
       error : function(request, status, error) {
-        $('.container').empty();
+        alert('글쓰기 실패');
+        $('#container').empty();
         var ht = '';
         ht += "code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error;
-        $('.container').append(ht);
+        $('#container').append(ht);
       }
     });
   }
@@ -53,7 +53,7 @@ class CommunityWrite extends Component {
 
   render() {
     return(
-      <div>
+      <div id="container">
         <div className={styles.container}>
           <form encType="multipart/form-data">
           <table className={styles.comw_tab}>
@@ -73,18 +73,7 @@ class CommunityWrite extends Component {
             <tbody>
               <tr>
                 <td>
-                  <Tinymce/>
-                  {tinymce.init({ selector:'textarea' })}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <FileInput name="files"
-                    accept=".png,.gif,.pptx,.js"
-                    placeholder="클릭해서 파일을 첨부하세요"
-                    className={styles.comw_inputFile}
-                    onChange={this.handleChange}
-                    multiple />
+                  <textarea placeholder="내용을 입력하세요" id="content" className={styles.comw_textarea}/>
                 </td>
               </tr>
             </tbody>

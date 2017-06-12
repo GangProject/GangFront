@@ -76,7 +76,7 @@ class Rune extends Component {
                                     <div className={styles.rune_png}>
                                         {this.state.runeList[this.state.currentRune-1].runeContent}<br/>
 
-                                        <img src={require('./rune.png')} />
+                                        <img src={require('../img/runeEx.jpg')} />
                                     </div>
                                 </div>
                             </td>
