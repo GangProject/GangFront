@@ -85,8 +85,7 @@ class ChampionshipInfo extends Component {
                         {this.props.left} vs {this.props.right}
                     </div>
                     <span className={styles.info}>
-                        <div>{this.props.gameTime} ~ </div>
-                        <div>{this.props.status}</div>
+                        <div className={styles.info_status}>{this.props.gameTime}&nbsp;{this.props.status}</div>
                         <div onClick={this.openTwitch} className={styles.info_cursor}>
                             트위치에서 시청하기
                         </div>

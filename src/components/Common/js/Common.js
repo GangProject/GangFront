@@ -19,6 +19,15 @@ class Common extends Component {
     return dom;
   }
 
+  static getPageCount(totalCount){
+    var pageSize = 10;
+    var tmp = totalCount/pageSize;
+    var tmp2 = totalCount%pageSize;
+    if(tmp2!=0)
+      tmp++;
+    return tmp;
+  }
+
   static modDatetime(list){
     for(var i in list){
       var tmp = "";

@@ -1,8 +1,9 @@
 module.exports = {
-    entry: './src/index.js',
 
+    entry: './src/index.js',
+    // 파일을 합치고 ./public/bundle.js 에 저장한다.
     output: {
-        path: __dirname + '/public/',
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
 

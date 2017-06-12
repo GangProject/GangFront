@@ -2,10 +2,73 @@
     width:85%;
     height:36.5rem;
     border:1px solid black;
-    text-align:center;
     font-size:30px;
     float:left;
     margin-bottom: 3.5rem;
     margin-left: 15.7rem;
     margin-top:9.5rem;
+}
+
+.masterie_div {
+    margin:0.3rem;
+    max-width:88.8%;
+}
+
+.masterie_currentMasterie {
+    cursor:auto;
+    font-weight: bold;
+    border: 3px solid darkslateblue;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: #63717f;
+}
+
+.masterie_masterieLists {
+    border: 1px solid darkslateblue;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color: #63717f;
+}
+
+.masterie_masterieLists:hover {
+    border: 2px solid darkslateblue;
+    cursor:pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.masterie_content {
+    margin-top: 2rem;
+    padding:2rem;
+    border: 1px solid darkslateblue;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    color: #63717f;
+}
+
+.masterie_cont_masterieName {
+    float:left;
+}
+
+.masterie_cont_masterieDetail {
+    float:right;
+}
+
+.masterie_cont_hr {
+
+}
+
+.masterie_png {
+    width:100%;
+    height: auto;
 }

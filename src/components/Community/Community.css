@@ -27,7 +27,7 @@ A:hover {color:#646464;text-decoration: underline;}
   width: 100%;
 }
 
-.com_tab tr{
+.com_tab tr:not(:last-child){
   //background-color: red;
   border-bottom: 1px solid #DDDDDD;
   height: 2.5rem;
@@ -36,6 +36,7 @@ A:hover {color:#646464;text-decoration: underline;}
 .com_tab thead {
   border-top: 2px solid #CCCCCC;
   border-bottom: 1px solid #DDDDDD;
+  font-weight: bold;
 }
 
 .num{
@@ -70,4 +71,27 @@ A:hover {color:#646464;text-decoration: underline;}
 
 .numList {
   padding-right: 0.6rem;
+}
+
+.pageList {
+  text-align: center;
+  margin:1.2rem;
+  //background-color: blueviolet;
+}
+
+.pageCountTr{
+  height: 2.5rem;
+}
+
+.pageList:hover {
+  cursor:pointer;
+}
+
+.currentPage {
+  text-align: center;
+  font-weight: bold;
+  margin:1.2rem;
+  //background-color: blanchedalmond;
+  cursor:auto;
+  text-decoration: underline;
 }
