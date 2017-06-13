@@ -1,0 +1,34 @@
+.ingame_DivStyle  {
+    width:85%;
+    height:100%;
+    text-align:center;
+    font-size:30px;
+    float:left;
+    margin-bottom: 3.5rem;
+    margin-left: 15.7rem;
+    margin-top:9.5rem;
+    padding-top: 5%;
+}
+.ingame_BlueDiv {
+  border:1px solid black;
+  float:left;
+  margin-left: 5%;
+  width:40%;
+}
+.ingame_RedDiv {
+  border:1px solid black;
+  float:left;
+  margin-right: 5%;
+  width:40%;
+}
+.ingame_CenterDiv {
+  float:left;
+  width:10%;
+}
+.ingame_tr {
+  border-bottom: 1px solid black;
+}
+.ingame_Container {
+  margin-left: auto;
+  margin-right: auto;
+}
