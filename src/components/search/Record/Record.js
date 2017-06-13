@@ -286,7 +286,7 @@ class RecordList extends Component {
                     <span>핑와 {this.props.pink}개 구매<br/></span>
                     <span className={styles.record_killinv}>킬관여 {this.props.killinv}%</span>
                 </td>
-                <td> 
+                <td>
                     {this.props.itemlist.map((ilist,i) => {
                         const itemUrl = "img/item/";
                         const itemImg = itemUrl + ilist.itemid + ".jpg";

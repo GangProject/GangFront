@@ -18,7 +18,9 @@
 }
 .tr1 {
   height:20%;
-  border-bottom:1px solid black;
+  border-bottom:1px solid red;
+
+
 }
 .tr2 {
   padding-top: 30rem;

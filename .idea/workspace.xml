@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8273237-3f43-4e1c-99fa-3b0b904f29ae" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/Rune/rune.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/bronze_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/bronze_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/bronze_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/bronze_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/bronze_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/challenger_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/diamond_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/diamond_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/diamond_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/diamond_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/diamond_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/gold_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/gold_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/gold_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/gold_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/gold_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/master_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/platinum_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/platinum_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/platinum_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/platinum_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/platinum_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/silver_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/silver_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/silver_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/silver_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/search/tier_img/silver_5.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Community/Community.js" afterPath="$PROJECT_DIR$/src/components/Community/Community.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Community/CommunityWrite.js" afterPath="$PROJECT_DIR$/src/components/Community/CommunityWrite.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.css" afterPath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" afterPath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Record/Record.css" afterPath="$PROJECT_DIR$/src/components/search/Record/Record.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Record/Record.js" afterPath="$PROJECT_DIR$/src/components/search/Record/Record.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Rune/Rune.css" afterPath="$PROJECT_DIR$/src/components/search/Rune/Rune.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Rune/Rune.js" afterPath="$PROJECT_DIR$/src/components/search/Rune/Rune.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Side/Side.js" afterPath="$PROJECT_DIR$/src/components/search/Side/Side.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,7 +25,7 @@
       <file leaf-file-name="Community.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Community/Community.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="510">
               <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="23" />
               <folding />
             </state>
@@ -78,8 +45,8 @@
       <file leaf-file-name="Record.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/search/Record/Record.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="288" column="21" lean-forward="false" selection-start-line="288" selection-start-column="21" selection-end-line="288" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -88,7 +55,7 @@
       <file leaf-file-name="Record.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/search/Record/Record.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
+            <state relative-caret-position="629">
               <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding />
             </state>
@@ -98,9 +65,11 @@
       <file leaf-file-name="Mmr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/search/Mmr/Mmr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="442">
+              <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,8 +77,18 @@
       <file leaf-file-name="Rune.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+            <state relative-caret-position="-969">
+              <caret line="0" column="39" lean-forward="true" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rune.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="77" column="1" lean-forward="true" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -143,12 +122,13 @@
         <option value="$PROJECT_DIR$/src/components/Community/CommunityWrite.js" />
         <option value="$PROJECT_DIR$/src/components/Community/Community.js" />
         <option value="$PROJECT_DIR$/src/components/search/Rune/Rune.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/components/search/Mmr/Mmr.css" />
-        <option value="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" />
-        <option value="$PROJECT_DIR$/src/components/search/Rune/Rune.js" />
         <option value="$PROJECT_DIR$/src/components/search/Record/Record.css" />
+        <option value="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/search/Side/Side.js" />
+        <option value="$PROJECT_DIR$/src/components/search/Rune/Rune.js" />
         <option value="$PROJECT_DIR$/src/components/search/Record/Record.js" />
       </list>
     </option>
@@ -184,7 +164,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,6 +227,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Side" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,9 +360,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="else" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,6 +405,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/search/img/else" />
       <recent name="$PROJECT_DIR$/src/components/search/Rune" />
       <recent name="$PROJECT_DIR$/src/img" />
       <recent name="$PROJECT_DIR$/src/components/search" />
@@ -481,7 +518,8 @@
       <workItem from="1497164313803" duration="247000" />
       <workItem from="1497166194213" duration="25320000" />
       <workItem from="1497275965733" duration="87000" />
-      <workItem from="1497279474788" duration="1362000" />
+      <workItem from="1497279474788" duration="2024000" />
+      <workItem from="1497319700139" duration="2181000" />
     </task>
     <task id="LOCAL-00001" summary="웹스톰으로 갈아탔다! 그리고 메인화면 게임정보 표시">
       <created>1496347967037</created>
@@ -609,11 +647,25 @@
       <option name="project" value="LOCAL" />
       <updated>1497280851507</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가">
+      <created>1497280918993</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1497280918993</updated>
+    </task>
+    <task id="LOCAL-00020" summary="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가&#10;++++">
+      <created>1497334694935</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1497334694935</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63446000" />
+    <option name="totallyTimeSpent" value="66289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1461" height="953" extended-state="0" />
@@ -664,7 +716,9 @@
     <MESSAGE value="최근경기기록 페이지" />
     <MESSAGE value="최근경기기록 페이지 ++" />
     <MESSAGE value="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능" />
-    <option name="LAST_COMMIT_MESSAGE" value="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능" />
+    <MESSAGE value="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가" />
+    <MESSAGE value="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가&#10;++++" />
+    <option name="LAST_COMMIT_MESSAGE" value="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가&#10;++++" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -838,13 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Side/Side.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/Ingame/Ingame.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -895,13 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/Champion/Champions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -913,13 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -952,16 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/img/item/1033.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -983,25 +1006,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Mmr/Mmr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Community/Community.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="510">
           <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="23" />
           <folding />
         </state>
@@ -1009,16 +1016,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/Record/Record.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="629">
           <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Side/Side.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="77" column="1" lean-forward="true" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Mmr/Mmr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/search/Rune/Rune.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-969">
+          <caret line="0" column="39" lean-forward="true" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/Record/Record.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="288" column="21" lean-forward="false" selection-start-line="288" selection-start-column="21" selection-end-line="288" selection-end-column="21" />
+        <state relative-caret-position="225">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
       </provider>

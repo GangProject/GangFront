@@ -31,7 +31,7 @@ import Champions from './components/search/Champion/Champions.js';
          <Route path="/searchMore" component={SearchMore}/>
            <Route path="/search" component={Search}>
                <IndexRoute component={Record}/>
-               <Route path="record" component={Record}/>
+               <Route path="" component={Record}/>
                <Route path="rune" component={Rune}/>
                <Route path="masterie" component={Masterie}/>
                <Route path="mmr" component={MMR}/>
