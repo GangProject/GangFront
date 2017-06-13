@@ -10,7 +10,7 @@ class Side extends React.Component {
                 <div className={styles.Sidediv}>
                   <table className={styles.tableStyle}>
                   <tbody>
-                    <tr><td className={styles.Sidetd}><Link to="/search/record">최근경기기록</Link></td></tr>
+                    <tr><td className={styles.Sidetd}><Link to="/search">최근경기기록</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/rune">룬</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/masterie">특성</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to="/search/mmr">MMR</Link></td></tr>

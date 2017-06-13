@@ -42,12 +42,15 @@ class Mmr extends Component {
     render(){
         var tier1 = this.state.tier1;
         var tier2 = this.state.tier2;
+        const imgUrl = 'img/tier_img/'+tier1+'_'+tier2+'.jpg';
+        tier1 = tier1.substring(0, 1).toUpperCase() + tier1.substring(1, tier1.length).toLowerCase();
         var mmr = this.state.mmr;
         var message1 = this.state.msg1;
         var message2 = this.state.msg2;
         var avgMmr = this.state.avgMmr;
         var lp = this.state.lp;
-        const imgUrl = 'img/tier_img/'+tier1+'_'+tier2+'.jpg';
+
+
 
         return (
             <div className={styles.mmr_divStyle}>
