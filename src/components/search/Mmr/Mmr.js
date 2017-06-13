@@ -6,12 +6,14 @@ class Mmr extends Component {
         super(props);
 
         this.state = {
-            tier1:"Diamond",
+            tier1:"diamond",
             tier2:"5",
+            lp:0,
             mmr:"2031",
             msg1:"평균 보다 조금 높습니다.",
             msg2:"연승을 해서 MMR을 올려보세요!",
-            avgMmr:"1994"
+            avgMmr:"1994",
+
         };
     }
 
@@ -22,6 +24,7 @@ class Mmr extends Component {
                 this.setState({
                     tier1: data.tier1,
                     tier2: data.tier2,
+                    lp:data.lp,
                     mmr:data.mmr,
                     msg:data.msg,
                     avgMmr:data.avgMmr
@@ -43,17 +46,18 @@ class Mmr extends Component {
         var message1 = this.state.msg1;
         var message2 = this.state.msg2;
         var avgMmr = this.state.avgMmr;
-        var imgSrc = '../tier_img/'+tier1+'_'+tier2+'.png';
-        console.log(imgSrc);
+        var lp = this.state.lp;
+        const imgUrl = 'img/tier_img/'+tier1+'_'+tier2+'.jpg';
+
         return (
             <div className={styles.mmr_divStyle}>
                 <div className={styles.mmr_div}>
                     <div className={styles.mmr_score}>MMR {mmr}</div>
                     <div className={styles.mmr_tier}>{tier1}&nbsp;{tier2}</div>
                     <div className={styles.mmr_message}>{message1}<br/>{message2}</div>
-                    <div><img src={require('../tier_img/diamond_5.png')} className={styles.mmr_tier_img}/></div>
+                    <div><img src={require('../'+imgUrl)} className={styles.mmr_tier_img}/></div>
                     <div className={styles.mmr_avgScore}>
-                        {tier1}&nbsp;{tier2} 0LP의 평균 점수는<br/>
+                        {tier1}&nbsp;{tier2} {lp}LP의 평균 점수는<br/>
                         {avgMmr} 입니다.
                     </div>
                 </div>

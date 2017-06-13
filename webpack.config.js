@@ -28,8 +28,11 @@ module.exports = {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
             }, {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192'
+                test: /\.jpg$/,
+                loader: 'url-loader?limit=20000'
+            }, {
+                test: /\.png$/,
+                loader: 'url-loader?limit=20000'
             }
         ]
     }

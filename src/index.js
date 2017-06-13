@@ -29,16 +29,16 @@ import Champions from './components/search/Champion/Champions.js';
          <Route path="/community/write" component={CommunityWrite}/>
          <Route path="/community/*" component={CommunityRead}/>
          <Route path="/searchMore" component={SearchMore}/>
-         <Route path="/search" component={Search}>
-            <IndexRoute component={Record}/>
-            <Route path="record" component={Record}/>
-            <Route path="rune" component={Rune}/>
-            <Route path="masterie" component={Masterie}/>
-            <Route path="mmr" component={MMR}/>
-            <Route path="tier" component={Tier}/>
-            <Route path="ingame" component={Ingame}/>
-            <Route path="champions" component={Champions}/>
-         </Route>
+           <Route path="/search" component={Search}>
+               <IndexRoute component={Record}/>
+               <Route path="record" component={Record}/>
+               <Route path="rune" component={Rune}/>
+               <Route path="masterie" component={Masterie}/>
+               <Route path="mmr" component={MMR}/>
+               <Route path="tier" component={Tier}/>
+               <Route path="ingame" component={Ingame}/>
+               <Route path="champions" component={Champions}/>
+           </Route>
          <Route path="feedback" component={Feedback}/>
        </Route>
      </Router>,

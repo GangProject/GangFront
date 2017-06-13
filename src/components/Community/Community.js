@@ -12,7 +12,7 @@ class Community extends Component {
       };
   }
 
-  GetList(page) {
+  getList(page) {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/article?currentPage='+page)
       .then((data) => {
@@ -32,7 +32,7 @@ class Community extends Component {
   }
 
   componentDidMount() {
-    this.GetList(1);
+    this.getList(1);
   }
 
   render() {
@@ -79,7 +79,7 @@ class Community extends Component {
                                   );
                               } else {
                                   return (
-                                    <span onClick={()=>this.GetList(list)} key={i} className={styles.pageList}>
+                                    <span onClick={()=>this.getList(list)} key={i} className={styles.pageList}>
                                          {list}
                                     </span>
                                   );

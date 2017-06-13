@@ -1,20 +1,90 @@
 .divStyle  {
     width:85%;
-    border:1px solid black;
-    text-align:center;
-    font-size:30px;
     float:left;
     margin-bottom: 3.5rem;
     margin-left: 15.7rem;
     margin-top:9.5rem;
 }
+
 .tableStyle {
-  width:100%;
+  width:95%;
   height:100%;
   border-collapse: collapse;
   border:none;
 }
+
 .tdStyle  {
   border: 1px solid black;
   height:9.8rem;
+}
+
+.record_listTr {
+    border-bottom: 1px solid #257cb6;
+    font-size:1.2rem;
+    text-align: center;
+}
+
+.record_info {
+    font-size:1rem;
+}
+
+.record_result{
+    color: darkred;
+    padding-top: 3rem;
+}
+
+.record_champIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.record_spellIcon {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+
+.record_kda {
+    font-size:1.3rem;
+}
+
+.record_avgKda {
+    font-weight: 600;
+    font-size:0.9rem;
+}
+
+.record_oncekill {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 7px;
+    background: #206ea1;
+    font-size: inherit;
+    padding:0.2rem;
+    color: #9E9E9E;
+}
+
+.record_info2{
+    font-size: 1.2rem;
+}
+
+.record_killinv {
+    color: darkmagenta;
+}
+
+.record_itemlist {
+    /*border:1px solid #257cb6;*/
+}
+
+.record_itemList_itemImg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.record_playerlist {
+    float: left;
+    text-align: left;
+}
+
+.record_playerList_champImg {
+    width: 1.2rem;
+    height: 1.2rem;
 }
