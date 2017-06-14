@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import styles from './Side.css';
 
 class Side extends React.Component {
-
+    
     render(){
 
         return (
