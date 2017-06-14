@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
@@ -19,30 +21,33 @@ import Tier from './components/search/Tier/Tier.js';
 import Ingame from './components/search/Ingame/Ingame.js';
 import Champions from './components/search/Champion/Champions.js';
 
-   ReactDOM.render(
-     <Router history={browserHistory}>
-       <Route path="/" component={App}>
-         <IndexRoute component={Main}/>
-         <Route path="/" component={Main}/>
-         <Route path="/login" component={Login}/>
-         <Route path="/community" component={Community}/>
-         <Route path="/community/write" component={CommunityWrite}/>
-         <Route path="/community/*" component={CommunityRead}/>
-         <Route path="/searchMore" component={SearchMore}/>
-           <Route path="/search" component={Search}>
-               <IndexRoute component={Record}/>
-               <Route path="" component={Record}/>
-               <Route path="rune*" component={Rune}/>
-               <Route path="masterie" component={Masterie}/>
-               <Route path="mmr" component={MMR}/>
-               <Route path="tier" component={Tier}/>
-               <Route path="ingame" component={Ingame}/>
-               <Route path="champions" component={Champions}/>
-           </Route>
-         <Route path="feedback" component={Feedback}/>
-         <Redirect from="/*" to="/" />
-       </Route>
+ReactDOM.render(
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Main}/>
+            <Route path="/" component={Main}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/community" component={Community}/>
+            <Route path="/community/write" component={CommunityWrite}/>
+            <Route path="/community/*" component={CommunityRead}/>
+            <Route path="feedback" component={Feedback}/>
+            <Route path="/searchMore" component={SearchMore}/>
+            <Route path="/search" component={Search}>
+                <IndexRoute component={Record}/>
+                <Route path="" component={Record}/>
+                <Route path="rune*" component={Rune}/>
+                <Route path="masterie" component={Masterie}/>
+                <Route path="mmr" component={MMR}/>
+                <Route path="tier" component={Tier}/>
+                <Route path="ingame" component={Ingame}/>
+                <Route path="champions" component={Champions}/>
+            </Route>
 
-     </Router>,
-     document.getElementById('app')
-   );
+            <Redirect from="/*" to="/"/>
+            <Redirect from="/*/*" to="/"/>
+            <Redirect from="/*/*/*" to="/"/>
+        </Route>
+
+    </Router>,
+    document.getElementById('app')
+);
