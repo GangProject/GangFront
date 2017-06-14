@@ -241,11 +241,6 @@ class Record extends Component {
                   <table className={styles.tableStyle}>
                     <tbody>
                         {this.state.recordList.map((list, i) => {
-                            if(list.win==true){
-                                list.win="승리";
-                            } else {
-                                list.win="패배";
-                            }
                             return (<RecordList num={list.id}
                                                gameType={list.subType}
                                                beforeTime={list.beforeTime}
@@ -290,13 +285,19 @@ class RecordList extends Component {
         const spell1 =  spellUrl + this.props.spell1+jpg;
         const spell2 =  spellUrl + this.props.spell2+jpg;
 
+        var win = this.props.win;
+        if(win==true){
+            win="승리";
+        } else {
+            win="패배";
+        }
         return (
             <tr className={styles.record_listTr}>
                 <td>
                     <div className={styles.record_info}>
                         <span>{this.props.gameType}</span><br/>
                         <span>{this.props.beforeTime} 전</span><br/>
-                        <span className={styles.record_result}>{this.props.win}</span><br/>
+                        <span className={styles.record_result}>{win}</span><br/>
                         <span>{this.props.playTime}</span>
                     </div>
                 </td>
