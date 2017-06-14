@@ -13,7 +13,6 @@ class Common extends Component {
     var api = 'http://52.79.215.66:8080/Gang/';
     return api;
   }
-
   static getDomain(){
     var dom = 'http://0.0.0.0:7777/';
     return dom;
