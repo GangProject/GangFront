@@ -19,6 +19,16 @@ class Common extends Component {
     return dom;
   }
 
+  static getUserName(){
+      var url = unescape(location.href);
+      url.replace(/,/gi, '');
+      var userNameArr = url.split("userName=");
+      userNameArr.splice(0,1);
+      var userName = userNameArr[0];
+      // console.log(userName);
+      return userName;
+  }
+
   static getPageCount(totalCount){
     var pageSize = 10;
     var tmp = totalCount/pageSize;

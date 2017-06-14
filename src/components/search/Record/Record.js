@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Record.css'
+import Common from '../../Common/js/Common.js';
 
 class Record extends Component {
     constructor(props) {
@@ -9,39 +10,48 @@ class Record extends Component {
             recordList:[
                 {
                     id:1,
-                    gameType:"자유랭",
+                    subType:"자유랭",
                     beforeTime:"1일",
-                    result:"승리",
+                    win:true,
                     playTime:"50분 20초",
-                    champName:"Rumble",
+                    champ:"Rumble",
                     spell1:"Teleport",
                     spell2:"Flash",
-                    k:11,
-                    d:1,
-                    a:9,
+                    kill:11,
+                    death:1,
+                    assist:9,
                     oncekill:"더블킬",
                     lv:18,
                     cs:200,
                     avgcs:5.7,
                     pink:3,
                     killinv:66,
+                    gold:9000,
                     itemlist:[
                         {
-                            itemid:3001,
+                            itemid:"3001",
                             name:"닌자의 신발"
                         },
                         {
-                            itemid:3009,
+                            itemid:"3009",
                             name:"빙하의 장막"
                         },
                         {
-                            itemid:3047,
+                            itemid:"3047",
                             name:"BF 대검"
                         },
                         {
-                            itemid:3071,
+                            itemid:"null",
+                            name:"아이템없음"
+                        },
+                        {
+                            itemid:"3071",
                             name:"가면"
                         },
+                        {
+                            itemid:"null",
+                            name:"아이템없음"
+                        }
                     ],
                     playerlist:[
                         {
@@ -100,35 +110,48 @@ class Record extends Component {
                 },
                 {
                     id:2,
-                    gameType:"솔랭",
+                    subType:"솔랭",
                     beforeTime:"11일",
-                    result:"패배",
+                    win:false,
                     playTime:"26분 2초",
-                    champName:"LeeSin",
+                    champ:"LeeSin",
                     spell1:"Smite",
                     spell2:"Flash",
-                    k:19,
-                    d:3,
-                    a:18,
+                    kill:19,
+                    death:3,
+                    assist:18,
                     oncekill:"트리플킬",
                     lv:17,
                     cs:150,
                     avgcs:3.7,
                     pink:5,
                     killinv:80,
+                    gold:12000,
                     itemlist:[
                         {
                             itemid:1033,
                             name:"요우무"
                         },
                         {
+                            itemid:"null",
+                            name:"아이템없음"
+                        },
+                        {
                             itemid:1036,
                             name:"칠흑의 양날도끼"
                         },
                         {
+                            itemid:"null",
+                            name:"아이템없음"
+                        },
+                        {
                             itemid:1054,
                             name:"헤르메스의 발걸음"
-                        }
+                        },
+                        {
+                            itemid:"null",
+                            name:"아이템없음"
+                        },
                     ],
                     playerlist:[
                         {
@@ -189,22 +212,50 @@ class Record extends Component {
         };
     }
 
+    getGameEntity() {
+        var addr = Common.getApi();
+        return $.getJSON(addr+'api/article')
+            .then((data) => {
+                Common.modDatetime(data.result.list); //Common.js에서 static메소드를 가져와서 날짜변환
+                Common.modCommentCount(data.result.list); //댓글갯수 []추가
+                //data.result.list.reverse(); //게시물을 제일 마지막부터 보기위해 reverse메소드로 리스트를 역순으로 변환..인데 성능문제?
+                //api를 desc로 변경함에 따라 reverse메소드 삭제
+                this.setState({
+                    list: data.result.list,
+                    currentPage:data.result.currentPage,
+                    totalCount:data.result.totalCount
+                });
+            })
+            .error(function() {
+                alert("서버로부터 데이터를 받아올 수 없습니다");
+            });
+    }
+
+    componentDidMount() {
+        // this.getGameEntity();
+    }
+
     render(){
         return (
                 <div className={styles.divStyle}>
                   <table className={styles.tableStyle}>
                     <tbody>
                         {this.state.recordList.map((list, i) => {
+                            if(list.win==true){
+                                list.win="승리";
+                            } else {
+                                list.win="패배";
+                            }
                             return (<RecordList num={list.id}
-                                               gameType={list.gameType}
+                                               gameType={list.subType}
                                                beforeTime={list.beforeTime}
-                                               result={list.result}
+                                               win={list.win}
                                                playTime={list.playTime}
-                                               champName={list.champName}
+                                               champName={list.champ}
                                                spell1={list.spell1}
                                                spell2={list.spell2}
-                                               kda={list.k+" / "+list.d+" / "+list.a}
-                                               avg={(list.k+list.a)/list.d}
+                                               kda={list.kill+" / "+list.death+" / "+list.assist}
+                                               avg={(list.kill+list.assist)/list.death}
                                                oncekill={list.oncekill}
                                                lv={list.lv}
                                                cs={list.cs}
@@ -230,10 +281,6 @@ class RecordList extends Component {
         super(props);
     }
 
-    componentDidMount() {
-
-    }
-
     render(){
         const champUrl = "img/champ/";
         const jpg = ".jpg";
@@ -243,24 +290,13 @@ class RecordList extends Component {
         const spell1 =  spellUrl + this.props.spell1+jpg;
         const spell2 =  spellUrl + this.props.spell2+jpg;
 
-
-        if(this.props.itemlist.length!=6){
-            for(var i=0; i<6; i++){
-                if(this.props.itemlist[i]==null){
-                    this.props.itemlist.push({
-                        itemid:"non",
-                        name:"아이템없음"
-                    });
-                }
-            }
-        }
         return (
             <tr className={styles.record_listTr}>
                 <td>
                     <div className={styles.record_info}>
                         <span>{this.props.gameType}</span><br/>
                         <span>{this.props.beforeTime} 전</span><br/>
-                        <span className={styles.record_result}>{this.props.result}</span><br/>
+                        <span className={styles.record_result}>{this.props.win}</span><br/>
                         <span>{this.props.playTime}</span>
                     </div>
                 </td>
@@ -288,6 +324,9 @@ class RecordList extends Component {
                 </td>
                 <td>
                     {this.props.itemlist.map((ilist,i) => {
+                        if(ilist.itemid=="null"){
+                            ilist.itemid="non";
+                        }
                         const itemUrl = "img/item/";
                         const itemImg = itemUrl + ilist.itemid + ".jpg";
                         if(i==3){

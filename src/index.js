@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import {Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
 
 import App from './components/App.js';
 import Main from './components/Main/Main.js';
@@ -32,7 +32,7 @@ import Champions from './components/search/Champion/Champions.js';
            <Route path="/search" component={Search}>
                <IndexRoute component={Record}/>
                <Route path="" component={Record}/>
-               <Route path="rune" component={Rune}/>
+               <Route path="rune*" component={Rune}/>
                <Route path="masterie" component={Masterie}/>
                <Route path="mmr" component={MMR}/>
                <Route path="tier" component={Tier}/>
@@ -40,7 +40,9 @@ import Champions from './components/search/Champion/Champions.js';
                <Route path="champions" component={Champions}/>
            </Route>
          <Route path="feedback" component={Feedback}/>
+         <Redirect from="/*" to="/" />
        </Route>
+
      </Router>,
      document.getElementById('app')
    );
