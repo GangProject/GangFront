@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 
 import styles from './Title.css';
 
+import Common from '../../Common/js/Common.js';
+
 class Title extends Component {
 
     constructor(props) {
@@ -10,8 +12,16 @@ class Title extends Component {
 
         this.state = {
             header: "GA.NG",
-            data:""
+            data:"",
         };
+    }
+
+    search(){
+        if($('#userName').val()==null||$('#userName').val()==""){
+            alert('소환사 이름을 입력하세요');
+        } else {
+            location.href=Common.getDomain()+"search?userName="+$('#userName').val();
+        }
     }
 
     render() {
@@ -19,8 +29,8 @@ class Title extends Component {
             <div>
                 <div className={styles.container}>
                   <div className={styles.header}>{this.state.header}</div>
-                  <input type="text" placeholder="소환사 이름" className={styles.searchForm}/>
-                  <Link to="search"><img src={require('./Img/search.png')} className={styles.searchBtn}/></Link>
+                  <input type="text" placeholder="소환사 이름" id="userName" className={styles.searchForm}/>
+                      <img src={require('./Img/search.png')} onClick={this.search} className={styles.searchBtn}/>
                 </div>
             </div>
         );

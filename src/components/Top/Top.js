@@ -4,6 +4,11 @@ import { Link } from 'react-router';
 import styles from './Top.css';
 
 class Top extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div className={styles.top}>
