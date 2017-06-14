@@ -12,12 +12,11 @@ class BestChamp extends React.Component {
       };
     }
     componentDidMount() {
-      this.getChampion();
+      this.getChampion("Bvest");
     }
-    getChampion() {
-      var addr = Common.getApi();
-      var id = "Bvest";
-      return $.getJSON('http://52.79.215.66:8080/core/api/rankedStats/info?name='+"군대가야되젠장")
+    getChampion(id) {
+      var addr = Common.getCoreApi();
+      return $.getJSON(addr+'api/rankedStats/info?name='+id)
         .then((data)=> {
           console.log(data);
 
