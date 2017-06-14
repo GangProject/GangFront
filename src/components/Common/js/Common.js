@@ -20,11 +20,6 @@ class Common extends Component {
     return api;
   }
 
-  static getDomain(){
-    var dom = 'http://0.0.0.0:7777/';
-    return dom;
-  }
-
   static getUserName(){
       var url = unescape(location.href);
       url.replace(/,/gi, '');

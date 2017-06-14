@@ -9,7 +9,6 @@ class Title extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             header: "GA.NG",
             data:"",
@@ -20,7 +19,7 @@ class Title extends Component {
         if($('#userName').val()==null||$('#userName').val()==""){
             alert('소환사 이름을 입력하세요');
         } else {
-            location.href=Common.getDomain()+"search?userName="+$('#userName').val();
+            location.href="search?userName="+$('#userName').val();
         }
     }
 
