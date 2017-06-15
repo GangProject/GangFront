@@ -12,18 +12,20 @@ class Champions extends React.Component {
       };
     }
     componentDidMount() {
-      this.getChampion("Bvest");
+      this.getChampion("군대가야되젠장");
     }
     getChampion(id) {
       var addr = Common.getCoreApi();
       return $.getJSON(addr+'api/rankedStats/info?name='+id)
         .then((data)=> {
+          console.log(data);
 
             this.setState({
               championList:data.stats,
               resultCount:data.resultCount
 
             });
+            console.log(this.state.championList);
         })
         .error(function() {
           alert("서버로부터 데이터를 받아올 수 없습니다.");
@@ -57,14 +59,14 @@ class Champions extends React.Component {
                   return (
                     <ChampionsList key={i}
                                    num={i+1}
-                                   avgAssist={list.avgAssist.toFixed(2)}
+                                   avgAssist={list.avgAssist}
                                    avgCs={list.avgCs}
-                                   avgDamageDealt= {list.avgDamageDealt.toFixed(0)}
-                                   avgDeath= {list.avgDeath.toFixed(2)}
-                                   avgGoldEarned= {list.avgGoldEarned.toFixed(0)}
-                                   avgKill= {list.avgKill.toFixed(2)}
+                                   avgDamageDealt= {list.avgDamageDealt}
+                                   avgDeath= {list.avgDeath}
+                                   avgGoldEarned= {list.avgGoldEarned}
+                                   avgKill= {list.avgKill}
                                    id= {list.id}
-                                   kda= {"KDA "+list.kda.toFixed(2)}
+                                   kda= {"KDA "+list.kda}
                                    name={list.name}
                                    played= {list.played}
                                    tier={list.tier}
@@ -74,7 +76,7 @@ class Champions extends React.Component {
                                    totalPentaKills= {list.totalPentaKills}
                                    totalQuadraKills= {list.totalQuadraKills}
                                    totalTripleKills= {list.totalTripleKills}
-                                   winningRate= {list.winningRate.toFixed(2)+"%"}
+                                   winningRate= {list.winningRate+"%"}
                     />
                   );
                 })
