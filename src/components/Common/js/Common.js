@@ -21,12 +21,10 @@ class Common extends Component {
 
   static getUserName(){
       var url = decodeURIComponent(location.href);
-      console.log(url);
       url.replace(/,/gi, '');
       var userNameArr = url.split("userName=");
       userNameArr.splice(0,1);
       var userName = userNameArr[0];
-      console.log(userName);
       return userName;
   }
 
