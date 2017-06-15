@@ -14,6 +14,7 @@ class Common extends Component {
     return api;
   }
 
+
   static getCoreApi(){
     var api = 'http://52.79.215.66:8080/core/';
     return api;

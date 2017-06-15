@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Record.css'
 import Common from '../../Common/js/Common.js';
+import { Link } from 'react-router';
 
 class Record extends Component {
     constructor(props) {
@@ -259,6 +260,7 @@ class Record extends Component {
                                     );
                             })
                         }
+
                     </tbody>
                   </table>
                 </div>
@@ -270,7 +272,6 @@ class RecordList extends Component {
     constructor(props) {
         super(props);
     }
-
     render(){
         const champUrl = "img/champ/";
         const jpg = ".jpg";
@@ -280,12 +281,17 @@ class RecordList extends Component {
         const spell1 =  spellUrl + this.props.spell1+jpg;
         const spell2 =  spellUrl + this.props.spell2+jpg;
 
+        var param = "?userName="+Common.getUserName();
+        var search = "/search";
+        var detail = "/detail";
+
         var win = this.props.win;
         if(win==true){
             win="승리";
         } else {
             win="패배";
         }
+
         return (
             <tr className={styles.record_listTr}>
                 <td>
@@ -371,7 +377,12 @@ class RecordList extends Component {
                         }
                     </div>
                 </td>
+                <td>
+                    <Link to={search+detail+param}>더보기</Link>
+                </td>
             </tr>
+
+
         );
     }
 }

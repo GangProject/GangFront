@@ -20,7 +20,7 @@ import MMR from './components/search/Mmr/Mmr.js';
 import Tier from './components/search/Tier/Tier.js';
 import Ingame from './components/search/Ingame/Ingame.js';
 import Champions from './components/search/Champion/Champions.js';
-
+import Detail from './components/search/Record/Detail/Detail.js'
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={App}>
@@ -41,6 +41,7 @@ ReactDOM.render(
                 <Route path="tier" component={Tier}/>
                 <Route path="ingame" component={Ingame}/>
                 <Route path="champions" component={Champions}/>
+                <Route path="detail" component={Detail}/>
             </Route>
 
             <Redirect from="/*" to="/"/>
