@@ -12,10 +12,12 @@ class Champions extends React.Component {
       };
     }
     componentDidMount() {
-      this.getChampion("군대가야되젠장");
+      var id = Common.getUserName();
+      this.getChampion(id);
     }
     getChampion(id) {
       var addr = Common.getCoreApi();
+
       return $.getJSON(addr+'api/rankedStats/info?name='+id)
         .then((data)=> {
           console.log(data);

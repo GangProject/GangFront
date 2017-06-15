@@ -9,7 +9,8 @@ class BestChamp extends React.Component {
 
       this.state = {
         championList:[],
-        resultCount:""
+        resultCount:"",
+        info:[]
       };
     }
     componentDidMount() {
@@ -22,6 +23,18 @@ class BestChamp extends React.Component {
             this.setState({
               championList:data.stats,
               resultCount:data.resultCount
+            });
+        })
+        .error(function() {
+          alert("서버로부터 데이터를 받아올 수 없습니다.");
+        });
+    }
+    getInfo(id) {
+      var addr = Common.getCoreApi();
+      return $.getJSON(addr+'api/summoner/info?name='+id)
+        .then((data)=> {
+            this.setState({
+              info:data.leagues
             });
         })
         .error(function() {
