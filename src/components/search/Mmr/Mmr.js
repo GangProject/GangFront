@@ -14,16 +14,11 @@ class Mmr extends Component {
         };
     }
 
-    componentDidMount() {
-
-    }
-
     getMmr() {
         var addr = Common.getCoreApi();
 
         return $.getJSON(addr+'api/summoner/soloMmr?name='+Common.getUserName())
             .then((data) => {
-
                 this.setState({
                     info:data.dto,
                     status:data.status,
@@ -42,7 +37,14 @@ class Mmr extends Component {
         const jpg = ".jpg";
         const lowerTierEng = this.state.info.myTierEng;
         const mmrImg =  imgUrl + lowerTierEng +"_"+this.state.info.myDivision + jpg;
-        console.log(mmrImg);
+
+        var messages = this.state.info.myTierEng+this.state.info.myDivision+"의 평균 점수는";
+        var messages2 = this.state.info.myMmr + "입니다.";
+        if(this.state.info.myTierEng==undefined){
+            messages = "";
+            messages2 = "로딩중이에요..!";
+        }
+
         return (
             <div className={styles.mmr_divStyle}>
                 <div className={styles.mmr_div}>
@@ -50,6 +52,9 @@ class Mmr extends Component {
                     <div className={styles.mmr_tier}>{this.state.info.myTierEng} {this.state.info.myDivision}</div>
                     <div className={styles.mmr_message}>
                       {(() => {
+                        if(this.state.info.myMmr==undefined){
+                            return(<p></p>);
+                        }
                         if(this.state.info.myMmr>this.state.info.predictMmr)
                         {
                           return(<p>평균보다 낮습니다.</p>);
@@ -65,8 +70,8 @@ class Mmr extends Component {
                     </div>
                     <div className={styles.mmr_avgScore}>
                         <img src={require('../'+mmrImg)}/><br/>
-                         {this.state.info.myTierEng} {this.state.info.myDivision} 의 평균 점수는<br/>
-                         {this.state.info.myMmr}입니다.
+                         {messages}<br/>
+                         {messages2}
                     </div>
                 </div>
           </div>
