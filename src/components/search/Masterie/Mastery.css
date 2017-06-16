@@ -97,6 +97,29 @@
     -ms-flex: 0 0 80%;
     flex: 0 0 70%;
     max-width: 70%;
+
+    font-size: 1rem;
+    color:#777777;
+    padding: 0.5rem;
+}
+
+.mastery_span2 {
+    color: #63717f;
+}
+
+.mastery_offen {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.mastery_defen {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.mastery_util {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .masterie_currentMasterie {

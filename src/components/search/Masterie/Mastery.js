@@ -19,6 +19,7 @@ class Mastery extends Component {
             console.log(data);
                 this.setState({
                     masteryList:data,
+                    message:""
                 });
             })
             .error(function() {
@@ -37,6 +38,7 @@ class Mastery extends Component {
     render(){
         return (
           <div className={styles.divStyle}>
+              {this.state.message}
                   {this.state.masteryList.map((list, i) => {
                       if(this.state.currentMastery==i+1){
                           return (
@@ -45,11 +47,16 @@ class Mastery extends Component {
                                   {i+1+". "+list.name}
                                 </div>
                                 <div className={styles.col_80}>
-                                    <div>{list.pointMastery}</div>
-                                    <div>{this.state.masteryList[this.state.currentMastery-1].ferocity.number}/
-                                        {this.state.masteryList[this.state.currentMastery-1].deceit.number}/
+                                    <span>핵심특성 : {list.pointMastery} </span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span>
+                                        <img src={require('../img/else/mastery_offense.jpg')} className={styles.mastery_offen}/>
+                                        {this.state.masteryList[this.state.currentMastery-1].ferocity.number}&nbsp;
+                                        <img src={require('../img/else/mastery_defense.jpg')} className={styles.mastery_defen}/>
+                                        {this.state.masteryList[this.state.currentMastery-1].deceit.number}&nbsp;
+                                        <img src={require('../img/else/mastery_util.jpg')} className={styles.mastery_util}/>
                                         {this.state.masteryList[this.state.currentMastery-1].resolution.number}
-                                    </div>
+                                    </span>
                                 </div>
                               </div>);
                       } else {
