@@ -2,7 +2,7 @@
     width:85%;
     height:100%;
     text-align:center;
-    font-size:30px;
+    font-size:20px;
     float:left;
     margin-bottom: 3.5rem;
     margin-left: 15.7rem;
@@ -31,4 +31,16 @@
 .detail_Container {
   margin-left: auto;
   margin-right: auto;
+}
+.detail_BludDiv td {
+  font-size:10px;
+}
+.detail_RedDiv td(1) {
+  width:10%;
+}
+.detail_RedDiv td {
+  font-size:14px;
+}
+.detail_thead_tr {
+  width:30rem;
 }
