@@ -48,7 +48,7 @@ class Mmr extends Component {
             <div className={styles.mmr_divStyle}>
                 <div className={styles.mmr_div}>
                     <div className={styles.mmr_score}>MMR {info.predictMmr}</div>
-                    <div className={styles.mmr_tier}>{info.myTierEng} {info.myDivision}</div>
+                    <div className={styles.mmr_tier}>{info.predictTierEng} {info.predictDivision}</div>
                     <div className={styles.mmr_message}>
                       {(() => {
                         if(info.myMmr>info.predictMmr)
@@ -64,8 +64,7 @@ class Mmr extends Component {
                         }
                       })()}
                     </div>
-                    //<img src={require('../'+imgUrl)} className={styles.mmr_tier_img}/>
-                    //이미지 오류
+
                     <div className={styles.mmr_avgScore}>
                          {info.myTierEng} {info.myDivision} 의 평균 점수는<br/>
                          {info.myMmr}입니다.

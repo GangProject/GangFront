@@ -17,8 +17,8 @@ class Title extends Component {
 
     search(){
         if($('#userName').val()==null||$('#userName').val()==""){
-            //alert('소환사 이름을 입력하세요');
-            location.href="search?userName=woncon"
+            alert('소환사 이름을 입력하세요');
+
         } else {
             location.href="search?userName="+$('#userName').val();
         }
