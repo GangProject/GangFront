@@ -82,6 +82,12 @@
 .record_playerlist {
     float: left;
     text-align: left;
+    width : 47%;
+}
+
+.record_playerlist2 {
+    float: left;
+    text-align: left;
 }
 
 .record_playerList_champImg {

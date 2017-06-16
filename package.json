@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alertifyjs": "^1.10.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-fetch": "0.0.9",
