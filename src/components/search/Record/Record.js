@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Record.css'
 import Common from '../../Common/js/Common.js';
-import alertify from '../../../../node_modules/alertifyjs/build/alertify.min';
-import '../../../../node_modules/alertifyjs/build/css/themes/default.min.css';
-import '../../../../node_modules/alertifyjs/build/css/alertify.css';
 import { Link } from 'react-router';
 
 class Record extends Component {
@@ -12,7 +9,7 @@ class Record extends Component {
 
         this.state = {
             recordList:[],
-            message:"로딩중입니다"
+            message:"잠시 기다려주세요!"
         };
     }
 ///////////////////////////////////////////API CALL /////////////////////////////////////////
@@ -40,7 +37,7 @@ class Record extends Component {
                 <div className={styles.divStyle}>
                   <table className={styles.tableStyle}>
                     <tbody>
-                    <h1>{this.state.message}</h1>
+                        <tr><td className={styles.record_loading}>{this.state.message}</td></tr>
                         {this.state.recordList.map((list, i) => {
                             return (<RecordList num={list.id}
                                                gameType={list.gameEntity.subType}

@@ -9,7 +9,7 @@ class Side extends React.Component {
         var param = "?userName="+Common.getUserName();
         var search = "/search";
         var rune = "/rune";
-        var mastery = "/masterie";
+        var mastery = "/mastery";
         var mmr = "/mmr";
         var tier = "/tier";
         var ingame = "/ingame";
