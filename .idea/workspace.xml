@@ -4,8 +4,6 @@
     <list default="true" id="d8273237-3f43-4e1c-99fa-3b0b904f29ae" name="Default" comment="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가&#10;++++">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Masterie/Mastery.css" afterPath="$PROJECT_DIR$/src/components/search/Masterie/Mastery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Masterie/Mastery.js" afterPath="$PROJECT_DIR$/src/components/search/Masterie/Mastery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Record/Record.css" afterPath="$PROJECT_DIR$/src/components/search/Record/Record.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +33,8 @@
       <file leaf-file-name="Mastery.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/search/Masterie/Mastery.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+            <state relative-caret-position="441">
+              <caret line="121" column="15" lean-forward="false" selection-start-line="121" selection-start-column="15" selection-end-line="121" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -628,7 +626,7 @@
       <workItem from="1497349016372" duration="1150000" />
       <workItem from="1497415330362" duration="9496000" />
       <workItem from="1497447448920" duration="274000" />
-      <workItem from="1497516640005" duration="23277000" />
+      <workItem from="1497516640005" duration="23430000" />
     </task>
     <task id="LOCAL-00001" summary="웹스톰으로 갈아탔다! 그리고 메인화면 게임정보 표시">
       <created>1496347967037</created>
@@ -781,7 +779,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102447000" />
+    <option name="totallyTimeSpent" value="102600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1405" height="953" extended-state="0" />
@@ -1212,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/Masterie/Mastery.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+        <state relative-caret-position="441">
+          <caret line="121" column="15" lean-forward="false" selection-start-line="121" selection-start-column="15" selection-end-line="121" selection-end-column="15" />
           <folding />
         </state>
       </provider>

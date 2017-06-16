@@ -100,7 +100,7 @@
 
     font-size: 1rem;
     color:#777777;
-    padding: 0.5rem;
+    padding: 0.3rem;
 }
 
 .mastery_span2 {
@@ -108,18 +108,18 @@
 }
 
 .mastery_offen {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .mastery_defen {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .mastery_util {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .masterie_currentMasterie {
