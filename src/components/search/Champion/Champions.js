@@ -34,7 +34,6 @@ class Champions extends React.Component {
         });
     }
     render(){
-
         return (
           <div className={styles.divStyle}>
             <table className={styles.tableStyle}>
@@ -63,9 +62,11 @@ class Champions extends React.Component {
                                    num={i+1}
                                    avgAssist={list.avgAssist}
                                    avgCs={list.avgCs}
-                                   avgDamageDealt= {list.avgDamageDealt}
+                                   win={list.win+"승"}
+                                   lost={list.lost+"패"}
+                                   avgDamageDealt= {list.avgDamageDealt.toFixed(0)}
                                    avgDeath= {list.avgDeath}
-                                   avgGoldEarned= {list.avgGoldEarned}
+                                   avgGoldEarned= {list.avgGoldEarned.toFixed(0)}
                                    avgKill= {list.avgKill}
                                    id= {list.id}
                                    kda= {"KDA "+list.kda}
@@ -95,7 +96,7 @@ class ChampionsList extends React.Component {
         <tr>
             <td className={styles.tdStyle}>{this.props.num}</td>
             <td className={styles.tdStyle}>{this.props.name}</td>
-            <td className={styles.tdStyle}>{this.props.winningRate}</td>
+            <td className={styles.tdStyle}>{this.props.win} {this.props.lost}<br/>{this.props.winningRate}</td>
             <td className={styles.tdStyle}>{this.props.avgKill}/{this.props.avgDeath}/{this.props.avgAssist}<br/>{this.props.kda}</td>
             <td className={styles.tdStyle}>{this.props.avgCs}</td>
             <td className={styles.tdStyle}>{this.props.avgGoldEarned}</td>

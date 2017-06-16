@@ -17,7 +17,8 @@ class Title extends Component {
 
     search(){
         if($('#userName').val()==null||$('#userName').val()==""){
-            alert('소환사 이름을 입력하세요');
+            //alert('소환사 이름을 입력하세요');
+            location.href="search?userName=woncon"
         } else {
             location.href="search?userName="+$('#userName').val();
         }
@@ -28,7 +29,7 @@ class Title extends Component {
             <div>
                 <div className={styles.container}>
                   <div className={styles.header}>{this.state.header}</div>
-                  <input type="text" placeholder="소환사 이름" id="userName" className={styles.searchForm}/>
+                  <input type="text" placeholder="소환사 이름" id="userName"  className={styles.searchForm}/>
                       <img src={require('./Img/search.png')} onClick={this.search} className={styles.searchBtn}/>
                 </div>
             </div>
