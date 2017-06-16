@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Ingame.css'
+
 class Ingame extends React.Component {
 
     render(){
@@ -7,13 +8,13 @@ class Ingame extends React.Component {
         return (
           <div className={styles.ingame_DivStyle}>
               <table className={styles.ingame_BlueDiv}>
-                <thead><tr><span>Blue Team</span></tr></thead>
+                <thead><tr><td><span>Blue Team</span></td></tr></thead>
                 <tbody>
-                  <tr>1</tr>
-                  <tr>2</tr>
-                  <tr>3</tr>
-                  <tr>4</tr>
-                  <tr>5</tr>
+                  <tr><td>1</td></tr>
+                  <tr><td>2</td></tr>
+                  <tr><td>3</td></tr>
+                  <tr><td>4</td></tr>
+                  <tr><td>5</td></tr>
                 </tbody>
               </table>
 
@@ -22,13 +23,13 @@ class Ingame extends React.Component {
               </div>
 
             <table className={styles.ingame_RedDiv}>
-              <thead><tr><span>Red Team</span></tr></thead>
+              <thead><tr><td><span>Red Team</span></td></tr></thead>
               <tbody>
-                <tr className={styles.ingame_tr}>1</tr>
-                <tr>2</tr>
-                <tr>3</tr>
-                <tr>4</tr>
-                <tr>5</tr>
+                <tr className={styles.ingame_tr}><td>1</td></tr>
+                <tr><td>2</td></tr>
+                <tr><td>3</td></tr>
+                <tr><td>4</td></tr>
+                <tr><td>5</td></tr>
               </tbody>
             </table>
           </div>

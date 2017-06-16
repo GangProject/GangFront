@@ -15,16 +15,13 @@ class Mmr extends Component {
     }
 
     getMmr() {
-        var addr = Common.getCoreApi();
-
-        return $.getJSON(addr+'api/summoner/soloMmr?name='+Common.getUserName())
+        return $.getJSON(Common.getCoreApi()+'api/summoner/soloMmr?name='+Common.getUserName())
             .then((data) => {
                 this.setState({
                     info:data.dto,
                     status:data.status,
                     message:data.message
                 });
-
             })
             .error(function() {
                 alert("서버로부터 데이터를 받아올 수 없습니다");
@@ -42,7 +39,7 @@ class Mmr extends Component {
         var messages2 = this.state.info.myMmr + "입니다.";
         if(this.state.info.myTierEng==undefined){
             messages = "";
-            messages2 = "로딩중이에요..!";
+            messages2 = "잠시 기다려주세요..!";
         }
 
         return (

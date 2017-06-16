@@ -13,7 +13,7 @@ class BestChamp extends React.Component {
       };
     }
     componentDidMount() {
-      this.getChampion("Bvest");
+      this.getChampion(Common.getUserName());
     }
     getChampion(id) {
       var addr = Common.getCoreApi();
