@@ -4,22 +4,24 @@ import Common from '../../Common/js/Common.js';
 
 class Mmr extends Component {
     constructor(props) {
-        super(props);
 
+        super(props);
+        this.getMmr();
         this.state = {
             info:[],
             status:"",
             message:""
         };
     }
+
     componentDidMount() {
-      var id = Common.getUserName();
-      this.getMmr(id);
+
     }
-    getMmr(id) {
+
+    getMmr() {
         var addr = Common.getCoreApi();
 
-        return $.getJSON(addr+'api/summoner/soloMmr?name='+id)
+        return $.getJSON(addr+'api/summoner/soloMmr?name='+Common.getUserName())
             .then((data) => {
 
                 this.setState({
@@ -27,6 +29,7 @@ class Mmr extends Component {
                     status:data.status,
                     message:data.message
                 });
+
             })
             .error(function() {
                 alert("서버로부터 데이터를 받아올 수 없습니다");
@@ -35,27 +38,23 @@ class Mmr extends Component {
 
 
     render(){
-
-        var info = this.state.info;
-
-        let tier = info.myTierEng;
-        let division = info.myDivision+"";
-        var imgUrl = 'img/tier_img/'+tier+'_'+division+'.jpg';
-        console.log(this);
-        console.log('1');
+        const imgUrl = "img/tier_img/";
+        const jpg = ".jpg";
+        const lowerTierEng = this.state.info.myTierEng;
+        const mmrImg =  imgUrl + lowerTierEng +"_"+this.state.info.myDivision + jpg;
+        console.log(mmrImg);
         return (
-
             <div className={styles.mmr_divStyle}>
                 <div className={styles.mmr_div}>
-                    <div className={styles.mmr_score}>MMR {info.predictMmr}</div>
-                    <div className={styles.mmr_tier}>{info.myTierEng} {info.myDivision}</div>
+                    <div className={styles.mmr_score}>MMR {this.state.info.predictMmr}</div>
+                    <div className={styles.mmr_tier}>{this.state.info.myTierEng} {this.state.info.myDivision}</div>
                     <div className={styles.mmr_message}>
                       {(() => {
-                        if(info.myMmr>info.predictMmr)
+                        if(this.state.info.myMmr>this.state.info.predictMmr)
                         {
                           return(<p>평균보다 낮습니다.</p>);
                         }
-                        else if(info.myMmr<info.predictMmr)
+                        else if(this.state.info.myMmr<this.state.info.predictMmr)
                         {
                           return(<p>평균보다 높습니다.</p>);
                         }
@@ -64,11 +63,10 @@ class Mmr extends Component {
                         }
                       })()}
                     </div>
-                    //<img src={require('../'+imgUrl)} className={styles.mmr_tier_img}/>
-                    //이미지 오류
                     <div className={styles.mmr_avgScore}>
-                         {info.myTierEng} {info.myDivision} 의 평균 점수는<br/>
-                         {info.myMmr}입니다.
+                        <img src={require('../'+mmrImg)}/><br/>
+                         {this.state.info.myTierEng} {this.state.info.myDivision} 의 평균 점수는<br/>
+                         {this.state.info.myMmr}입니다.
                     </div>
                 </div>
           </div>
