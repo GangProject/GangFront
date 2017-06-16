@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import styles from './Record.css'
 import Common from '../../Common/js/Common.js';
+import alertify from '../../../../node_modules/alertifyjs/build/alertify.min';
+import '../../../../node_modules/alertifyjs/build/css/themes/default.min.css';
+import '../../../../node_modules/alertifyjs/build/css/alertify.css';
 import { Link } from 'react-router';
 
 class Record extends Component {
@@ -8,218 +11,17 @@ class Record extends Component {
         super(props);
 
         this.state = {
-            recordList:[
-                {
-                    id:1,
-                    subType:"자유랭",
-                    beforeTime:"1일",
-                    win:true,
-                    playTime:"50분 20초",
-                    champ:"Rumble",
-                    spell1:"Teleport",
-                    spell2:"Flash",
-                    kill:11,
-                    death:1,
-                    assist:9,
-                    oncekill:"더블킬",
-                    lv:18,
-                    cs:200,
-                    avgcs:5.7,
-                    pink:3,
-                    killinv:66,
-                    gold:9000,
-                    itemlist:[
-                        {
-                            itemid:"3001",
-                            name:"닌자의 신발"
-                        },
-                        {
-                            itemid:"3009",
-                            name:"빙하의 장막"
-                        },
-                        {
-                            itemid:"3047",
-                            name:"BF 대검"
-                        },
-                        {
-                            itemid:"null",
-                            name:"아이템없음"
-                        },
-                        {
-                            itemid:"3071",
-                            name:"가면"
-                        },
-                        {
-                            itemid:"null",
-                            name:"아이템없음"
-                        }
-                    ],
-                    playerlist:[
-                        {
-                            playerid:1,
-                            name:"시기받기좋을시기",
-                            champ:"Singed"
-                        },
-                        {
-                            itemid:2,
-                            name:"군대가야되젠장",
-                            champ:"LeeSin"
-                        },
-                        {
-                            itemid:3,
-                            name:"류종하",
-                            champ:"Ekko"
-                        },
-                        {
-                            itemid:4,
-                            name:"woncon",
-                            champ:"Lucian"
-                        },
-                        {
-                            itemid:5,
-                            name:"bvest",
-                            champ:"Nami"
-                        }
-                    ],
-                    opplist:[
-                        {
-                            playerid:1,
-                            name:"성철이",
-                            champ:"Rumble"
-                        },
-                        {
-                            itemid:2,
-                            name:"양민학살용",
-                            champ:"LeeSin"
-                        },
-                        {
-                            itemid:3,
-                            name:"보석",
-                            champ:"Velkoz"
-                        },
-                        {
-                            itemid:4,
-                            name:"뚜우뿌뚜",
-                            champ:"Graves"
-                        },
-                        {
-                            itemid:5,
-                            name:"maruYeah",
-                            champ:"Nami"
-                        }
-                    ],
-                },
-                {
-                    id:2,
-                    subType:"솔랭",
-                    beforeTime:"11일",
-                    win:false,
-                    playTime:"26분 2초",
-                    champ:"LeeSin",
-                    spell1:"Smite",
-                    spell2:"Flash",
-                    kill:19,
-                    death:3,
-                    assist:18,
-                    oncekill:"트리플킬",
-                    lv:17,
-                    cs:150,
-                    avgcs:3.7,
-                    pink:5,
-                    killinv:80,
-                    gold:12000,
-                    itemlist:[
-                        {
-                            itemid:1033,
-                            name:"요우무"
-                        },
-                        {
-                            itemid:"null",
-                            name:"아이템없음"
-                        },
-                        {
-                            itemid:1036,
-                            name:"칠흑의 양날도끼"
-                        },
-                        {
-                            itemid:"null",
-                            name:"아이템없음"
-                        },
-                        {
-                            itemid:1054,
-                            name:"헤르메스의 발걸음"
-                        },
-                        {
-                            itemid:"null",
-                            name:"아이템없음"
-                        },
-                    ],
-                    playerlist:[
-                        {
-                            playerid:1,
-                            name:"시기받기좋을시기",
-                            champ:"Singed"
-                        },
-                        {
-                            itemid:2,
-                            name:"군대가야되젠장",
-                            champ:"LeeSin"
-                        },
-                        {
-                            itemid:3,
-                            name:"류종하",
-                            champ:"Karma"
-                        },
-                        {
-                            itemid:4,
-                            name:"woncon",
-                            champ:"Twitch"
-                        },
-                        {
-                            itemid:5,
-                            name:"bvest",
-                            champ:"Velkoz"
-                        }
-                    ],
-                    opplist:[
-                        {
-                            playerid:1,
-                            name:"성철이",
-                            champ:"Graves"
-                        },
-                        {
-                            itemid:2,
-                            name:"양민학살용",
-                            champ:"Lucian"
-                        },
-                        {
-                            itemid:3,
-                            name:"보석",
-                            champ:"Twitch"
-                        },
-                        {
-                            itemid:4,
-                            name:"뚜우뿌뚜",
-                            champ:"Karma"
-                        },
-                        {
-                            itemid:5,
-                            name:"maruYeah",
-                            champ:"Karma"
-                        }
-                    ],
-                },
-            ]
+            recordList:[]
         };
     }
-
+///////////////////////////////////////////API CALL /////////////////////////////////////////
     getGameEntity(userName) {
         var addr = Common.getCoreApi();
         return $.getJSON(addr+'api/recent/dbGame?name='+userName)
             .then((data) => {
-                console.log(data);
+                // alertify.alert('ready!');
                 this.setState({
-
+                    recordList:data
                 });
             })
             .error(function() {
@@ -238,29 +40,33 @@ class Record extends Component {
                     <tbody>
                         {this.state.recordList.map((list, i) => {
                             return (<RecordList num={list.id}
-                                               gameType={list.subType}
-                                               beforeTime={list.beforeTime}
-                                               win={list.win}
-                                               playTime={list.playTime}
-                                               champName={list.champ}
-                                               spell1={list.spell1}
-                                               spell2={list.spell2}
-                                               kda={list.kill+" / "+list.death+" / "+list.assist}
-                                               avg={(list.kill+list.assist)/list.death}
-                                               oncekill={list.oncekill}
-                                               lv={list.lv}
-                                               cs={list.cs}
-                                               avgcs={list.avgcs}
-                                               pink={list.pink}
-                                               killinv={list.killinv}
-                                               itemlist={list.itemlist}
-                                               playerlist={list.playerlist}
-                                               opplist={list.opplist}
+                                               gameType={list.gameEntity.subType}
+                                               beforeTime={list.gameEntity.playtime}
+                                               win={list.gameEntity.win}
+                                               playTime={list.gameEntity.durationTime}
+                                               champName={list.gameEntity.champion}
+                                               spell1={list.gameEntity.spell1}
+                                               spell2={list.gameEntity.spell2}
+                                               kda={list.gameEntity.kill+" / "+list.gameEntity.death+" / "+list.gameEntity.assist}
+                                               avg={(list.gameEntity.kill+list.gameEntity.assist)/list.gameEntity.death}
+                                               oncekill={list.gameEntity.rekill}
+                                               lv={list.gameEntity.level}
+                                               cs={list.gameEntity.cs}
+                                               avgcs={(list.gameEntity.cs/list.gameEntity.durationTime.split("분")[0]).toFixed(1)}
+                                               pink={list.gameEntity.pink}
+                                               ward={list.gameEntity.ward}
+                                               killinv={list.gameEntity.inkda.toFixed(0)}
+                                               item0={list.gameEntity.item0}
+                                               item1={list.gameEntity.item1}
+                                               item2={list.gameEntity.item2}
+                                               item3={list.gameEntity.item3}
+                                               item4={list.gameEntity.item4}
+                                               item5={list.gameEntity.item5}
+                                               playerlist={list.playerEntity}
                                                key={i}/>
                                     );
                             })
                         }
-
                     </tbody>
                   </table>
                 </div>
@@ -275,7 +81,7 @@ class RecordList extends Component {
     render(){
         const champUrl = "img/champ/";
         const jpg = ".jpg";
-        const champName =  champUrl + this.props.champName+jpg;
+        const champName =  champUrl + this.props.champName + jpg;
 
         const spellUrl = "img/spell/Summoner";
         const spell1 =  spellUrl + this.props.spell1+jpg;
@@ -285,7 +91,10 @@ class RecordList extends Component {
         var search = "/search";
         var detail = "/detail";
 
+        const itemUrl = "img/item/";
+
         var win = this.props.win;
+
         if(win==true){
             win="승리";
         } else {
@@ -297,7 +106,7 @@ class RecordList extends Component {
                 <td>
                     <div className={styles.record_info}>
                         <span>{this.props.gameType}</span><br/>
-                        <span>{this.props.beforeTime} 전</span><br/>
+                        <span>{this.props.beforeTime}</span><br/>
                         <span className={styles.record_result}>{win}</span><br/>
                         <span>{this.props.playTime}</span>
                     </div>
@@ -315,68 +124,77 @@ class RecordList extends Component {
                     <div>
                         <span className={styles.record_kda}>{this.props.kda}</span><br/>
                         <span className={styles.record_avgKda}>{this.props.avg.toFixed(2)}:1 평점</span><br/>
-                        <span className={styles.record_oncekill}>{this.props.oncekill}</span>
+                        {(()=> {
+                            if(this.props.oncekill===null){
+                                return(
+                                    <span></span>
+                                );
+                            } else {
+                                return(
+                                    <span className={styles.record_oncekill}>{this.props.oncekill}</span>
+                                );
+                            }
+                        }
+                        )()}
                     </div>
                 </td>
                 <td className={styles.record_info2}>
                     <span>레벨 {this.props.lv}<br/></span>
-                    <span>{this.props.cs}({this.props.avgcs.toFixed(1)})CS<br/></span>
+                    <span>{this.props.cs}({this.props.avgcs})CS<br/></span>
                     <span>핑와 {this.props.pink}개 구매<br/></span>
                     <span className={styles.record_killinv}>킬관여 {this.props.killinv}%</span>
                 </td>
                 <td>
-                    {this.props.itemlist.map((ilist,i) => {
-                        if(ilist.itemid=="null"){
-                            ilist.itemid="non";
-                        }
-                        const itemUrl = "img/item/";
-                        const itemImg = itemUrl + ilist.itemid + ".jpg";
-                        if(i==3){
-                            return (
-                                <span key={i}>
-                                    <br/>
-                                    <span className={styles.record_itemlist}>
-                                        <img src={require("../"+itemImg)} className={styles.record_itemList_itemImg}/>&nbsp;
-                                    </span>
-                                </span>
-                            );
-                        } else {
-                            return (<span className={styles.record_itemlist}
-                                          key={i}>
-                                        <img src={require("../"+itemImg)} className={styles.record_itemList_itemImg}/>&nbsp;
-                                </span>
-                            );
-                        }
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item0+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item1+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item2+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                    <br/>
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item3+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item4+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                    <span className={styles.record_itemlist}>
+                        <img src={require("../"+itemUrl+this.props.item5+jpg)} className={styles.record_itemList_itemImg}/>&nbsp;
+                    </span>
+                </td>
 
-                    })
-                    }
-                </td>
-                <td  className={styles.record_playerlist}>
-                    <div>
-                        {this.props.playerlist.map((plist,i) => {
-                            const playerChampUrl = "img/champ/"+plist.champ+".jpg";
-                                return (<div
-                                              key={i}>
-                                        <img src={require("../"+playerChampUrl)} className={styles.record_playerList_champImg}/>{plist.name}
-                                    </div>
-                                );
-                        })
-                        }
-                    </div>
-                </td>
                 <td className={styles.record_playerlist}>
                     <div>
-                        {this.props.opplist.map((plist,i) => {
-                            const oppChampUrl = "img/champ/"+plist.champ+".jpg";
-                            return (<div
-                                         key={i}>
-                                    <img src={require("../"+oppChampUrl)} className={styles.record_playerList_champImg}/>{plist.name}
+                        {this.props.playerlist.slice(0,this.props.playerlist.length/2).map((plist,i) => {
+                            const playerChampUrl = "img/champ/"+plist.champname+".jpg";
+                            return (
+                                <div key={i}>
+                                    <img src={require("../"+playerChampUrl)} className={styles.record_playerList_champImg}/>{plist.playername}
                                 </div>
                             );
+
                         })
                         }
                     </div>
                 </td>
+                <td className={styles.record_playerlist2}>
+                    <div>
+                        {this.props.playerlist.slice(this.props.playerlist.length/2,this.props.playerlist.length).map((plist,i) => {
+                            const playerChampUrl = "img/champ/"+plist.champname+".jpg";
+                            return (
+                                <div key={i}>
+                                    <img src={require("../"+playerChampUrl)} className={styles.record_playerList_champImg}/>{plist.playername}
+                                </div>
+                            );
+
+                        })
+                        }
+                    </div>
+                </td>
+
                 <td>
                     <Link to={search+detail+param}>더보기</Link>
                 </td>
