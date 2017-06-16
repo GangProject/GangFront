@@ -11,7 +11,8 @@ class Record extends Component {
         super(props);
 
         this.state = {
-            recordList:[]
+            recordList:[],
+            message:"로딩중입니다"
         };
     }
 ///////////////////////////////////////////API CALL /////////////////////////////////////////
@@ -21,7 +22,8 @@ class Record extends Component {
             .then((data) => {
                 // alertify.alert('ready!');
                 this.setState({
-                    recordList:data
+                    recordList:data,
+                    message:""
                 });
             })
             .error(function() {
@@ -38,6 +40,7 @@ class Record extends Component {
                 <div className={styles.divStyle}>
                   <table className={styles.tableStyle}>
                     <tbody>
+                    <h1>{this.state.message}</h1>
                         {this.state.recordList.map((list, i) => {
                             return (<RecordList num={list.id}
                                                gameType={list.gameEntity.subType}
