@@ -22,15 +22,16 @@ class CommunityRead extends Component {
     var addr = Common.getApi();
     return $.getJSON(addr+'api/article/read?articleId='+articleId)
       .then((data) => {
-        Common.modDatetime2(data.commentList);
-        Common.modDatetime3(data.lastModifiedTime);
+        console.log(data.result);
+        Common.modDatetime2(data.result.commentList);
+        Common.modDatetime3(data.result.lastModifiedTime);
         this.setState({
-          id:data.id,
-          title:data.title,
-          content:data.content,
-          createdBy:data.createdBy,
-          createdAt:data.lastModifiedTime.nano,
-          commentList: data.commentList
+          id:data.result.id,
+          title:data.result.title,
+          content:data.result.content,
+          createdBy:data.result.createdBy,
+          createdAt:data.result.lastModifiedTime.nano,
+          commentList: data.result.commentList
         });
       });
   }

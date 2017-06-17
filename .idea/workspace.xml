@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8273237-3f43-4e1c-99fa-3b0b904f29ae" name="Default" comment="최근경기기록 페이지 디자인 완성&#10;+api만 받아서 데이터모델만 맞추면 데이터도 바로 적용가능&#10;+커밋 덜된것 추가&#10;++++">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/BestChamp/BestChamp.css" afterPath="$PROJECT_DIR$/src/components/search/BestChamp/BestChamp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Champion/Champions.js" afterPath="$PROJECT_DIR$/src/components/search/Champion/Champions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" afterPath="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Community/CommunityRead.js" afterPath="$PROJECT_DIR$/src/components/Community/CommunityRead.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,101 +18,41 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BestChamp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/BestChamp/BestChamp.js">
+      <file leaf-file-name="Community.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Community/Community.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Champions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Champion/Champions.js">
+      <file leaf-file-name="CommunityRead.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Community/CommunityRead.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="62" column="82" lean-forward="false" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
-              <folding />
+            <state relative-caret-position="410">
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+              <folding>
+                <marker date="1497699302000" expanded="true" signature="2123:2168" ph="..." />
+                <marker date="1497699302000" expanded="false" signature="2212:2227" ph="..." />
+                <marker date="1497699302000" expanded="true" signature="2228:2556" ph="..." />
+                <marker date="1497699302000" expanded="false" signature="2255:2276" ph="..." />
+                <marker date="1497699302000" expanded="true" signature="2277:2441" ph="..." />
+                <marker date="1497699302000" expanded="false" signature="2307:2325" ph="..." />
+                <marker date="1497699302000" expanded="false" signature="2373:2411" ph="..." />
+                <marker date="1497699302000" expanded="false" signature="2469:2486" ph="..." />
+                <marker date="1497699302000" expanded="true" signature="2487:2538" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Champions.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Champion/Champions.css">
+      <file leaf-file-name="Common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Common/js/Common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestChamp.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/BestChamp/BestChamp.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mmr.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Mmr/Mmr.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="37" column="51" lean-forward="false" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Title.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Main/Title/Title.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Title.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Main/Title/Title.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Side.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Side/Side.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mastery.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/search/Masterie/Mastery.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="19" />
+            <state relative-caret-position="414">
+              <caret line="106" column="12" lean-forward="true" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -125,6 +63,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>his</find>
+      <find>nano</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,7 +77,6 @@
         <option value="$PROJECT_DIR$/src/components/Main/Info/Info.js" />
         <option value="$PROJECT_DIR$/src/components/Main/Info/Info.css" />
         <option value="$PROJECT_DIR$/src/components/Community/CommunityWrite.js" />
-        <option value="$PROJECT_DIR$/src/components/Community/Community.js" />
         <option value="$PROJECT_DIR$/src/components/search/Rune/Rune.css" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/components/search/Mmr/Mmr.css" />
@@ -168,6 +106,8 @@
         <option value="$PROJECT_DIR$/src/components/search/Champion/Champions.css" />
         <option value="$PROJECT_DIR$/src/components/search/BestChamp/BestChamp.css" />
         <option value="$PROJECT_DIR$/src/components/search/Mmr/Mmr.js" />
+        <option value="$PROJECT_DIR$/src/components/Community/Community.js" />
+        <option value="$PROJECT_DIR$/src/components/Community/CommunityRead.js" />
       </list>
     </option>
   </component>
@@ -375,6 +315,76 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Community" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GangFront-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -511,7 +521,7 @@
       <workItem from="1497349016372" duration="1150000" />
       <workItem from="1497415330362" duration="9496000" />
       <workItem from="1497447448920" duration="274000" />
-      <workItem from="1497516640005" duration="28741000" />
+      <workItem from="1497516640005" duration="29415000" />
     </task>
     <task id="LOCAL-00001" summary="웹스톰으로 갈아탔다! 그리고 메인화면 게임정보 표시">
       <created>1496347967037</created>
@@ -664,7 +674,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107911000" />
+    <option name="totallyTimeSpent" value="108585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1405" height="953" extended-state="0" />
@@ -825,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Community/CommunityRead.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="139" column="53" lean-forward="false" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -886,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Common/js/Common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1801">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/search/img/champ/Ekko.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -918,16 +913,6 @@
           <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Community/Community.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1101,6 +1086,40 @@
         <state relative-caret-position="137">
           <caret line="37" column="51" lean-forward="false" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Community/Community.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Common/js/Common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="106" column="12" lean-forward="true" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Community/CommunityRead.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <marker date="1497699302000" expanded="true" signature="2123:2168" ph="..." />
+            <marker date="1497699302000" expanded="false" signature="2212:2227" ph="..." />
+            <marker date="1497699302000" expanded="true" signature="2228:2556" ph="..." />
+            <marker date="1497699302000" expanded="false" signature="2255:2276" ph="..." />
+            <marker date="1497699302000" expanded="true" signature="2277:2441" ph="..." />
+            <marker date="1497699302000" expanded="false" signature="2307:2325" ph="..." />
+            <marker date="1497699302000" expanded="false" signature="2373:2411" ph="..." />
+            <marker date="1497699302000" expanded="false" signature="2469:2486" ph="..." />
+            <marker date="1497699302000" expanded="true" signature="2487:2538" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
