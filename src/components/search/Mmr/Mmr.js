@@ -40,7 +40,7 @@ class Mmr extends Component {
 
         let tier = info.myTierEng;
         let division = info.myDivision+"";
-        var imgUrl = 'img/tier_img/'+tier+'_'+division+'.jpg';
+        var imgUrl = "img/tier_img/"+tier+"_"+division+".jpg";
         console.log(this);
         console.log('1');
         return (
@@ -64,6 +64,7 @@ class Mmr extends Component {
                         }
                       })()}
                     </div>
+                    <img src={require("../"+imgUrl)} className={styles.mmr_tier_img}/>
 
                     <div className={styles.mmr_avgScore}>
                          {info.myTierEng} {info.myDivision} 의 평균 점수는<br/>
