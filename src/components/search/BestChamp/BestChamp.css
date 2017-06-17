@@ -64,6 +64,14 @@
   width:5%;
 }
 
+.best_name {
+  font-size:xx-large;
+}
+
+.best_tier {
+  color: lightskyblue;
+}
+
 .best_more {
   font-size: 1rem;
 }

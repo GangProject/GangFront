@@ -23,11 +23,11 @@ class Side extends React.Component {
                     <tr><td className={styles.Sidetd}><Link to={search+mastery+param}>특성</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to={search+mmr+param}>MMR</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to={search+tier+param}>시즌별 티어</Link></td></tr>
-                    <tr><td className={styles.Sidetd}><Link to={search+ingame+param}>인게임정보</Link></td></tr>
+                    {/*<tr><td className={styles.Sidetd}><Link to={search+ingame+param}>인게임정보</Link></td></tr>*/}
                   </tbody>
                   </table>
                   <div className={styles.Best}>
-                  &nbsp;<h1>원딜</h1>
+                  {/*&nbsp;<h1>원딜</h1>*/}
                   </div>
                 </div>
 

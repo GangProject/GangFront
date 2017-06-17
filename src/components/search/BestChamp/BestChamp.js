@@ -40,8 +40,13 @@ class BestChamp extends React.Component {
                   <tbody>
                     <tr>
                       <td>
-                          {this.state.info.name}<br/>
-                          {this.state.info.tier} {this.state.info.division} {this.state.info.leaguePoints}LP<br/>
+                          <span className={styles.best_name}>
+                              {this.state.info.name}
+                          </span><br/>
+                          <span className={styles.best_tier}>
+                              {this.state.info.tier}&nbsp;{this.state.info.division}&nbsp;
+                          </span>{this.state.info.leaguePoints}LP<br/>
+                          {this.state.info.wins}승&nbsp;{this.state.info.losses}패<br/>
                           승률 : {parseFloat(this.state.info.winingRate).toFixed(1)}%
                       </td>
                       <td> Best 5 </td>
