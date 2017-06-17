@@ -4,7 +4,24 @@ import styles from './Side.css';
 import Common from '../../Common/js/Common.js';
 
 class Side extends React.Component {
-    
+    constructor(props) {
+        super(props);
+    }
+
+    // componentDidMount(){
+    //
+    // }
+
+    // refresh(){
+    //     return $.getJSON(Common.getCoreApi()+'api/recent/game?name='+Common.getUserName())
+    //         .then((data)=> {
+    //
+    //         })
+    //         .error(function() {
+    //             alert("서버로부터 데이터를 받아올 수 없습니다.");
+    //         });
+    // }
+
     render(){
         var param = "?userName="+Common.getUserName();
         var search = "/search";
@@ -18,6 +35,7 @@ class Side extends React.Component {
                 <div className={styles.Sidediv}>
                   <table className={styles.tableStyle}>
                   <tbody>
+                    {/*<tr><td className={styles.SideRefresh} onClick={this.refresh}>전적갱신</td></tr>*/}
                     <tr><td className={styles.Sidetd}><Link to={search+param}>최근경기기록</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to={search+rune+param}>룬</Link></td></tr>
                     <tr><td className={styles.Sidetd}><Link to={search+mastery+param}>특성</Link></td></tr>
