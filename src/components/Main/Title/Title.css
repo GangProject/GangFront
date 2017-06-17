@@ -40,3 +40,7 @@
   height: 1.7rem;
   vertical-align: text-bottom;
 }
+
+.searchBtn:hover {
+  cursor:pointer;
+}
