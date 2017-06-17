@@ -16,7 +16,7 @@ class Mastery extends Component {
     getMastery() {
         return $.getJSON(Common.getCoreApi()+'api/mastery/summoner?SummonerName='+Common.getUserName())
             .then((data) => {
-            console.log(data);
+            // console.log(data);
                 this.setState({
                     masteryList:data,
                     message:""
