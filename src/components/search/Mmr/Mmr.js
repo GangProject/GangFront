@@ -35,7 +35,7 @@ class Mmr extends Component {
         const lowerTierEng = this.state.info.myTierEng;
         const mmrImg =  imgUrl + lowerTierEng +"_"+this.state.info.myDivision + jpg;
 
-        var messages = this.state.info.myTierEng+this.state.info.myDivision+"의 평균 점수는";
+        var messages = this.state.info.myTierEng+" "+this.state.info.myDivision+"의 평균 점수는";
         var messages2 = this.state.info.myMmr + "입니다.";
         if(this.state.info.myTierEng==undefined){
             messages = "";

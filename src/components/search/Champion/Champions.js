@@ -60,16 +60,16 @@ class Champions extends React.Component {
                   return (
                     <ChampionsList key={i}
                                    num={i+1}
-                                   avgAssist={list.avgAssist}
+                                   avgAssist={parseFloat(list.avgAssist).toFixed(1)}
                                    avgCs={list.avgCs}
                                    win={list.win+"승"}
                                    lost={list.lost+"패"}
-                                   avgDamageDealt= {list.avgDamageDealt.toFixed(0)}
-                                   avgDeath= {list.avgDeath}
-                                   avgGoldEarned= {list.avgGoldEarned.toFixed(0)}
-                                   avgKill= {list.avgKill}
+                                   avgDamageDealt= {parseFloat(list.avgDamageDealt).toFixed(0)}
+                                   avgDeath= {parseFloat(list.avgDeath).toFixed(1)}
+                                   avgGoldEarned= {parseFloat(list.avgGoldEarned).toFixed(2)}
+                                   avgKill= {parseFloat(list.avgKill).toFixed(1)}
                                    id= {list.id}
-                                   kda= {"KDA "+list.kda}
+                                   kda= {"KDA "+parseFloat(list.kda).toFixed(2)}
                                    name={list.name}
                                    played= {list.played}
                                    tier={list.tier}
@@ -79,7 +79,7 @@ class Champions extends React.Component {
                                    totalPentaKills= {list.totalPentaKills}
                                    totalQuadraKills= {list.totalQuadraKills}
                                    totalTripleKills= {list.totalTripleKills}
-                                   winningRate= {list.winningRate+"%"}
+                                   winningRate= {parseFloat(list.winningRate).toFixed(2)+"%"}
                     />
                   );
                 })
