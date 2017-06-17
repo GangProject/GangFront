@@ -8,19 +8,20 @@ class BestChamp extends React.Component {
       super(props);
 
       this.state = {
-        championList:[],
+        info:{},
         resultCount:""
       };
     }
+
     componentDidMount() {
-      this.getChampion(Common.getUserName());
+      this.getInfo();
     }
-    getChampion(id) {
-      var addr = Common.getCoreApi();
-      return $.getJSON(addr+'api/rankedStats/info?name='+id)
+
+    getInfo() {
+      return $.getJSON(Common.getCoreApi()+'api/summoner/info?name='+Common.getUserName())
         .then((data)=> {
             this.setState({
-              championList:data.stats,
+              info:data.leagues[0],
               resultCount:data.resultCount
             });
         })
@@ -28,6 +29,7 @@ class BestChamp extends React.Component {
           alert("서버로부터 데이터를 받아올 수 없습니다.");
         });
     }
+
     render(){
       var userName = Common.getUserName();
       var param = "?userName="+userName;
@@ -37,14 +39,18 @@ class BestChamp extends React.Component {
                 <table className={styles.tableStyle}>
                   <tbody>
                     <tr>
-                      <td>{userName}<br/>Gold 5<br/>24lp</td>
+                      <td>
+                          {this.state.info.name}<br/>
+                          {this.state.info.tier} {this.state.info.division} {this.state.info.leaguePoints}LP<br/>
+                          승률 : {parseFloat(this.state.info.winingRate).toFixed(1)}%
+                      </td>
                       <td> Best 5 </td>
                       <td>SS</td>
                       <td>A</td>
                       <td>A</td>
                       <td>A</td>
                       <td>B</td>
-                      <td><Link to={search+param}>더보기</Link></td>
+                      <td className={styles.best_more}><Link to={search+param}>더보기</Link></td>
                     </tr>
                   </tbody>
                 </table>
