@@ -1,3 +1,31 @@
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 7.5rem;
+  background-color: #555555;
+  width: 100%;
+  text-align: center;
+}
+
+.footMenu {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.info_title {
+  font-size: 1.7rem;
+}
+
+.info_blue {
+  color: deepskyblue;
+}
+
+.info_red {
+  color:palevioletred;
+}
+
 .container {
   padding: 2rem;
   max-width: 60rem;
@@ -14,22 +42,22 @@
   margin-bottom: 2rem;
   font-weight: 500;
   font-family: sans-serif;
-  color: #53313f;
-  text-shadow: 0.5px 0.5px;
+  color: #637777;
+  text-shadow: 1px 1px #FFFFFF;
 }
 
 .box {
   display: inline-block;
-  width: 17rem;
-  height: 13rem;
-  margin: 1rem;
+  width: 15rem;
+  height: 11rem;
+  margin: 0.7rem;
 
   padding-top: 3rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  background-color: gray;
+  /*background-color: white;*/
   text-align: center;
-
+  text-shadow: 1px 1px #637777;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 0.7rem;

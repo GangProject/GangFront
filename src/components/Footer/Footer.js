@@ -8,7 +8,7 @@ class Footer extends Component {
     render() {
         return (
           <div className={styles.foot}>
-              <div className={styles.footMenu} onClick={this.ad}>put ad here</div>
+              <div className={styles.footMenu} onClick={this.ad}></div>
           </div>
         );
     }

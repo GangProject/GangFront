@@ -15,7 +15,10 @@
   font-weight:bold;
   font-family: monospace;
   margin:2rem;
+  text-shadow: 1px 1px #FFFFFF;
+  opacity: 0.6;
 }
+
 
 .searchForm {
   width: 18rem;
@@ -33,14 +36,37 @@
   font-family: sans-serif;
   text-align: center;
   padding: 0rem;
+  opacity: 0.8;
 }
 
 .searchBtn {
-  width: 1.7rem;
-  height: 1.7rem;
-  vertical-align: text-bottom;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: -0.9rem;
+  opacity: 0.6;
 }
 
 .searchBtn:hover {
   cursor:pointer;
+}
+
+.title_field {
+  /*padding-top: 10rem;*/
+}
+
+.video_background {
+  background: #000;
+  position: fixed;
+  top: -7.5%; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+
+.video_foreground,
+.video_background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }

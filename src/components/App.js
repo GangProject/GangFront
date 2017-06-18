@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Top from './Top/Top';
-import Footer from './Footer/Footer';
+import Footer from './Main/Info/Info';
 
 class App extends Component {
     render() {
@@ -9,7 +9,7 @@ class App extends Component {
                 <div>
                     <Top/>
                     {this.props.children}
-                    <Footer/>
+                    {/*<Footer/>*/}
                 </div>
         );
     }
