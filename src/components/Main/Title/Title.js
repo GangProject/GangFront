@@ -48,7 +48,8 @@ class Title extends Component {
                 <div className={styles.container}>
                     <div className={styles.video_background}>
                         <div className={styles.video_foreground}>
-                            <iframe src="https://www.youtube.com/embed/sckt02Virsc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
+                            {/*<iframe src="https://www.youtube.com/embed/sckt02Virsc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>*/}
+                            <iframe src="https://www.youtube.com/embed/qmb-S_vgzPs?list=PLYLdoU7w8pK5nLHg5ulPhfxZIuSInfFaC&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
                         </div>
                     </div>
 
