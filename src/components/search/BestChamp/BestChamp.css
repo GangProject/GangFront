@@ -63,3 +63,15 @@
   border: 1px solid black;
   width:5%;
 }
+
+.best_name {
+  font-size:1.2rem;
+}
+
+.best_tier {
+  color: lightskyblue;
+}
+
+.best_more {
+  font-size: 1rem;
+}

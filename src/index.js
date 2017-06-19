@@ -15,7 +15,7 @@ import CommunityRead from './components/Community/CommunityRead.js';
 import Feedback from './components/Feedback/Feedback.js';
 import Record from './components/search/Record/record.js';
 import Rune from './components/search/Rune/Rune.js';
-import Masterie from './components/search/Masterie/Masterie.js';
+import Mastery from './components/search/Masterie/Mastery.js';
 import MMR from './components/search/Mmr/Mmr.js';
 import Tier from './components/search/Tier/Tier.js';
 import Ingame from './components/search/Ingame/Ingame.js';
@@ -36,7 +36,7 @@ ReactDOM.render(
                 <IndexRoute component={Record}/>
                 <Route path="" component={Record}/>
                 <Route path="rune*" component={Rune}/>
-                <Route path="masterie" component={Masterie}/>
+                <Route path="mastery" component={Mastery}/>
                 <Route path="mmr" component={MMR}/>
                 <Route path="tier" component={Tier}/>
                 <Route path="ingame" component={Ingame}/>

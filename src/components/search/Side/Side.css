@@ -30,3 +30,14 @@
   height:16.5rem;
   margin-top: 20rem;
 }
+
+.SideRefresh {
+  border: 1px solid black;
+  height:17%;
+}
+
+.SideRefresh:hover {
+  cursor:pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
