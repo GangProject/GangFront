@@ -21,10 +21,12 @@ class Mastery extends Component {
                     masteryList:data,
                     message:""
                 });
+                console.log(this.state.masteryList);
             })
             .error(function() {
                 alert("서버로부터 데이터를 받아올 수 없습니다");
             });
+
     }
 
     masteryClick(i){

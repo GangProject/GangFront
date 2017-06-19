@@ -5,29 +5,25 @@ import Common from '../../Common/js/Common.js';
 class Rune extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             runeList:[],
             currentRune:1
         };
+
     }
     componentDidMount() {
-      var id = Common.getUserName();
-      this.getRune(id);
+        this.getRune();
     }
-    getRune(id) {
+    getRune() {
       var addr = Common.getCoreApi();
-
+      var id = Common.getUserName();
       return $.getJSON(addr+'api/rune/summonerName?summonername='+id)
         .then((data)=> {
-
+          console.log(data[0]);
+          console.log(data);
             this.setState({
               runeList:data
             });
-            console.log(this.state.runeList);
-            console.log(this.state.runeList[0+1]);
-            console.log(this.state.runeList[1].name);
-            console.log(this.state.runeList[1].rune.black[0].name);
         })
         .error(function() {
           alert("서버로부터 데이터를 받아올 수 없습니다.");
@@ -38,38 +34,41 @@ class Rune extends Component {
     }
 
     render(){
+        var count = false;
+
         return (
+
           <div className={styles.divStyle}>
             <div className={styles.rune_div}>
             <table>
                 <tbody>
                     <tr>
-                            {this.state.runeList.map((list, i) => {
-                                if(i==0)
-                                {
-                                  return;
-                                }
-                                if(this.state.currentRune==i){
-                                    return (
-                                        <td
-                                            key={i} className={styles.rune_currentRune}>
-                                            <RuneList
-                                                runeName={list.name}
-                                                n={i}
-                                                />
-                                        </td>);
-                                } else {
-                                    return (
-                                        <td onClick={()=>this.runeClick(i)}
-                                            key={i} className={styles.rune_runeLists}>
-                                            <RuneList
-                                                runeName={list.name}
-                                                n={i}
-                                                />
-                                        </td>);
-                                }
-                            })
+
+
+                          {this.state.runeList.map((list, i) => {
+                            console.log(list.name);
+                                    if(this.state.currentRune==i+1){
+                                        return (
+                                            <td
+                                                key={i} className={styles.rune_currentRune}>
+                                                <RuneList
+                                                    runeName={list.runeName}
+                                                    n={i+1}
+                                                    />
+                                            </td>);
+                                    } else {
+                                        return (
+                                            <td onClick={()=>this.runeClick(i+1)}
+                                                key={i} className={styles.rune_runeLists}>
+                                                <RuneList
+                                                    runeName={list.runeName}
+                                                    n={i+1}
+                                                    />
+                                            </td>);
+                                    }
+                                })
                             }
+
                     </tr>
                 </tbody>
             </table>
@@ -102,7 +101,8 @@ class Rune extends Component {
                                 <hr/>
                             </div>
                             <div>
-
+                                <span className={styles.rune_cont_runeName}>
+                                </span>
                             </div>
                         </td>
                     </tr>
