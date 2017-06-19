@@ -31,7 +31,9 @@ class Info extends Component {
             });
     }
 
-
+    openTwitch(){
+        window.open("https://www.twitch.tv/ogn_lol","_blank")
+    }
 
     leftArrow() {
         alert('left');
@@ -46,14 +48,49 @@ class Info extends Component {
         if(this.state.gamelist.length==0){
             message+="오늘 경기는 없습니다";
         }
+        var left1 = "";
+        var right1 = "";
+        var status1 = "";
+        var time1 = "";
+        var left2 = "";
+        var right2 = "";
+        var status2 = "";
+        var time2 = "";
         return (
-            <div className={styles.container}>
-                <div className={styles.title}>
-                    대회정보<br/>
+            <div className={styles.foot}>
+                <div className={styles.footMenu}>
+                    <div className={styles.info_title}>대회정보</div>
+                    <span>
+                        {(()=> {
+                            if(this.state.gamelist.length!=0){
+                                if(this.state.gamelist[0].length!=0) {
+                                    left1 = this.state.gamelist[0].leftTeam;
+                                    right1 = this.state.gamelist[0].rightTeam;
+                                    status1 = this.state.gamelist[0].status;
+                                    if(this.state.gamelist[0].time!=""){
+                                        time1 = this.state.gamelist[0].time+" ";
+                                    }
+                                }
+                                if(this.state.gamelist[1].length!=0){
+                                    left2 = this.state.gamelist[1].leftTeam;
+                                    right2 = this.state.gamelist[1].rightTeam;
+                                    status2 = this.state.gamelist[1].status;
+                                    if(this.state.gamelist[1].time!=""){
+                                        time2 = this.state.gamelist[1].time+" ";
+                                    }
+                                }
+                            }
+                        }
+                        )()}
+                        {message}<span className={styles.info_blue}>{left1} </span>
+                        vs <span className={styles.info_red}>{right1} </span>({time1}{status1}),&nbsp;
+                        <span className={styles.info_blue}>{left2} </span>
+                        vs <span className={styles.info_red}>{right2} </span>({time2}{status2})
+                        </span>
+                    <br/>
+                    <span onClick={this.openTwitch} className={styles.info_cursor}>트위치에서 시청하기</span>
                 </div>
-                <span className={styles.nomsg}>
-                    {message}
-                </span>
+
                 {
                     this.state.gamelist.map((list, i) => {
                         return (
@@ -72,9 +109,7 @@ class Info extends Component {
 }
 
 class ChampionshipInfo extends Component {
-    openTwitch(){
-        window.open("https://www.twitch.tv/ogn_lol","_blank")
-    }
+
 
     render() {
 
@@ -86,7 +121,7 @@ class ChampionshipInfo extends Component {
                     </div>
                     <span className={styles.info}>
                         <div className={styles.info_status}>{this.props.gameTime}&nbsp;{this.props.status}</div>
-                        <div onClick={this.openTwitch} className={styles.info_cursor}>
+                        <div >
                             트위치에서 시청하기
                         </div>
                     </span>
