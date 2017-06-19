@@ -19,8 +19,6 @@ class Rune extends Component {
       var id = Common.getUserName();
       return $.getJSON(addr+'api/rune/summonerName?summonername='+id)
         .then((data)=> {
-          console.log(data[0]);
-          console.log(data);
             this.setState({
               runeList:data
             });
@@ -28,6 +26,7 @@ class Rune extends Component {
         .error(function() {
           alert("서버로부터 데이터를 받아올 수 없습니다.");
         });
+
     }
     runeClick(i){
         this.setState({currentRune:i});
@@ -43,31 +42,39 @@ class Rune extends Component {
             <table>
                 <tbody>
                     <tr>
-
-
-                          {this.state.runeList.map((list, i) => {
-                            console.log(list.name);
-                                    if(this.state.currentRune==i+1){
-                                        return (
-                                            <td
-                                                key={i} className={styles.rune_currentRune}>
-                                                <RuneList
-                                                    runeName={list.runeName}
-                                                    n={i+1}
-                                                    />
-                                            </td>);
-                                    } else {
-                                        return (
-                                            <td onClick={()=>this.runeClick(i+1)}
-                                                key={i} className={styles.rune_runeLists}>
-                                                <RuneList
-                                                    runeName={list.runeName}
-                                                    n={i+1}
-                                                    />
-                                            </td>);
-                                    }
-                                })
+                        {(()=> {
+                                console.log(this.state.runeList);
+                                console.log(this.state.runeList.length);
+                            for(var i=0; i<this.state.runeList.length; i++){
+                                console.log(this.state.runeList[i].name);
                             }
+                        }
+                        )()}
+
+                        
+                          {/*{this.state.runeList.map((list, i) => {*/}
+                            {/*console.log(list.name);*/}
+                                    {/*if(this.state.currentRune==i+1){*/}
+                                        {/*return (*/}
+                                            {/*<td*/}
+                                                {/*key={i} className={styles.rune_currentRune}>*/}
+                                                {/*<RuneList*/}
+                                                    {/*runeName={list.runeName}*/}
+                                                    {/*n={i+1}*/}
+                                                    {/*/>*/}
+                                            {/*</td>);*/}
+                                    {/*} else {*/}
+                                        {/*return (*/}
+                                            {/*<td onClick={()=>this.runeClick(i+1)}*/}
+                                                {/*key={i} className={styles.rune_runeLists}>*/}
+                                                {/*<RuneList*/}
+                                                    {/*runeName={list.runeName}*/}
+                                                    {/*n={i+1}*/}
+                                                    {/*/>*/}
+                                            {/*</td>);*/}
+                                    {/*}*/}
+                                {/*})*/}
+                            {/*}*/}
 
                     </tr>
                 </tbody>
