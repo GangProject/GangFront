@@ -6,21 +6,31 @@ import Common from '../../Common/js/Common.js';
 class Side extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            lane:[
+              {line:""},
+              {line:""}
+            ]
+        };
     }
 
-    // componentDidMount(){
-    //
-    // }
+     componentDidMount(){
+       this.getLine()
+     }
 
-    // refresh(){
-    //     return $.getJSON(Common.getCoreApi()+'api/recent/game?name='+Common.getUserName())
-    //         .then((data)=> {
-    //
-    //         })
-    //         .error(function() {
-    //             alert("서버로부터 데이터를 받아올 수 없습니다.");
-    //         });
-    // }
+     getLine(){
+       var api = Common.getCoreApi();
+       var id = Common.getUserName();
+         return $.getJSON(api+'api/recent/game/line?summonername='+id)
+            .then((data)=> {
+                this.setState({
+                  lane:data
+                });
+             })
+             .error(function() {
+                 alert("서버로부터 데이터를 받아올 수 없습니다.");
+             });
+     }
 
     render(){
         var param = "?userName="+Common.getUserName();
@@ -30,7 +40,42 @@ class Side extends React.Component {
         var mmr = "/mmr";
         var tier = "/tier";
         var ingame = "/ingame";
+        var line1 = this.state.lane[0];
+        var line2 = this.state.lane[1];
+        var line3 ;
+        var url="../img/lane/";
+        var lane="";
+        var ff;
+        if(line1.percent>line2.percent)
+        {
+           line3=line1;
+        }else {
+          line3=line2;
+        }
+        if(line3.line=="바텀")
+        {
+          lane="bottom";
+        }
+        else if(line3.line=="정글")
+        {
+          lane="jungle";
+        }
+        else if(line3.line=="탑")
+        {
+          lane="top";
+        }
+        else if(line3.line=="미드")
+        {
+          lane="mid";
+        }
+        else
+        {
+          lane=undefined;
+        }
 
+        console.log(line3);
+        console.log(lane);
+        console.log(url+lane);
         return (
                 <div className={styles.Sidediv}>
                   <table className={styles.tableStyle}>
@@ -45,10 +90,17 @@ class Side extends React.Component {
                   </tbody>
                   </table>
                   <div className={styles.Best}>
-                  {/*&nbsp;<h1>원딜</h1>*/}
+                        {ff=(()=> {
+                          if(lane==undefined)
+                          {
+                            return(<span></span>);
+                          }
+                          else {
+                            return(<p><img src={require('../img/lane/'+lane+'.jpg')} className={styles.laneJpg}/><br/>{line3.line}</p>);
+                          }
+                        })()}
                   </div>
                 </div>
-
         );
     }
 }

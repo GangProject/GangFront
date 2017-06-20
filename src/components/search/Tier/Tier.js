@@ -39,19 +39,19 @@ class Tier extends React.Component {
                       <h4>Unranked</h4>
                   </td>
                   <td>
-                      <img src={require('../img/tier_img/Silver_2.jpg')} className={styles.tier_jpg}/>
+                      <img src={require('../img/tier_img/Silver_4.jpg')} className={styles.tier_jpg}/>
                       <h4>Silver 4</h4>
                   </td>
                   <td>
-                      <img src={require('../img/tier_img/Silver_4.jpg')} className={styles.tier_jpg}/>
+                      <img src={require('../img/tier_img/Silver_3.jpg')} className={styles.tier_jpg}/>
                       <h4>Silver 2</h4>
                   </td>
                   <td>
-                      <img src={require('../img/tier_img/Silver_4.jpg')} className={styles.tier_jpg}/>
+                      <img src={require('../img/tier_img/Silver_5.jpg')} className={styles.tier_jpg}/>
                       <h4>Silver 3</h4>
                   </td>
                   <td>
-                      <img src={require('../img/tier_img/unranked.jpg')} className={styles.tier_jpg}/>
+                      <img src={require('../img/tier_img/Gold_5.jpg')} className={styles.tier_jpg}/>
                       <h4>Gold 5</h4>
                   </td>
                 </tr>
