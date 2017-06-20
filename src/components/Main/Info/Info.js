@@ -74,7 +74,6 @@ class Info extends Component {
                                 if(this.state.gamelist[1].length!=0){
                                     left2 = this.state.gamelist[1].leftTeam;
                                     right2 = this.state.gamelist[1].rightTeam;
-                                    status2 = this.state.gamelist[1].status;
                                     if(this.state.gamelist[1].time!=""){
                                         time2 = this.state.gamelist[1].time+" ";
                                     }
