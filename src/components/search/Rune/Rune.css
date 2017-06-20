@@ -1,10 +1,8 @@
 .divStyle  {
     width:85%;
-    height:36.5rem;
-    border:1px solid black;
+    height:38.5rem;
     font-size:30px;
     float:left;
-    margin-bottom: 3.5rem;
     margin-left: 15.7rem;
     margin-top:9.5rem;
 }
@@ -29,6 +27,7 @@
     font-size: 1.5rem;
     padding: 0.5rem;
     color: #63717f;
+
 }
 
 .rune_runeLists {
@@ -58,6 +57,7 @@
     border-radius: 7px;
     font-size: 1.2rem;
     color: #63717f;
+    width:30rem;
 }
 
 .rune_cont_runeName {

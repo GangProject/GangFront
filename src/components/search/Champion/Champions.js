@@ -66,7 +66,7 @@ class Champions extends React.Component {
                                    lost={list.lost+"패"}
                                    avgDamageDealt= {parseFloat(list.avgDamageDealt).toFixed(0)}
                                    avgDeath= {parseFloat(list.avgDeath).toFixed(1)}
-                                   avgGoldEarned= {parseFloat(list.avgGoldEarned).toFixed(2)}
+                                   avgGoldEarned= {parseFloat(list.avgGoldEarned).toFixed(0)}
                                    avgKill= {parseFloat(list.avgKill).toFixed(1)}
                                    id= {list.id}
                                    kda= {"KDA "+parseFloat(list.kda).toFixed(2)}
