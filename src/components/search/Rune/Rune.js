@@ -71,6 +71,39 @@ class Rune extends Component {
                           })
 
                         }
+                        {(()=> {
+                                console.log(this.state.runeList);
+                                console.log(this.state.runeList.length);
+                            for(var i=0; i<this.state.runeList.length; i++){
+                                console.log(this.state.runeList[i].name);
+                            }
+                        }
+                        )()}
+
+
+                          {/*{this.state.runeList.map((list, i) => {*/}
+                            {/*console.log(list.name);*/}
+                                    {/*if(this.state.currentRune==i+1){*/}
+                                        {/*return (*/}
+                                            {/*<td*/}
+                                                {/*key={i} className={styles.rune_currentRune}>*/}
+                                                {/*<RuneList*/}
+                                                    {/*runeName={list.runeName}*/}
+                                                    {/*n={i+1}*/}
+                                                    {/*/>*/}
+                                            {/*</td>);*/}
+                                    {/*} else {*/}
+                                        {/*return (*/}
+                                            {/*<td onClick={()=>this.runeClick(i+1)}*/}
+                                                {/*key={i} className={styles.rune_runeLists}>*/}
+                                                {/*<RuneList*/}
+                                                    {/*runeName={list.runeName}*/}
+                                                    {/*n={i+1}*/}
+                                                    {/*/>*/}
+                                            {/*</td>);*/}
+                                    {/*}*/}
+                                {/*})*/}
+                            {/*}*/}
 
                     </tr>
                 </thead>
@@ -161,7 +194,7 @@ class Rune extends Component {
                                   }
                                   else{
                                       {ff=this.state.runeList[this.state.currentRune-1].rune.black.map(f=(list, i)=> {
-                                      
+
                                         return(
                                           <p key={i}>{list.name}&nbsp;x
                                           &nbsp;{list.number}</p>
