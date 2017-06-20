@@ -50,11 +50,11 @@ class BestChamp extends React.Component {
                           승률 : {parseFloat(this.state.info.winingRate).toFixed(1)}%
                       </td>
                       <td> Best 5 </td>
-                      <td>SS</td>
-                      <td>A</td>
-                      <td>A</td>
-                      <td>A</td>
-                      <td>B</td>
+                      <td>Gold 3</td>
+                      <td>Gold 5</td>
+                      <td>Silver 1</td>
+                      <td>Silver 1</td>
+                      <td>Silver 2</td>
                       <td className={styles.best_more}><Link to={search+param}>더보기</Link></td>
                     </tr>
                   </tbody>

@@ -29,33 +29,33 @@
   border: 1px solid black;
   width:3%;
 }
-.divStyle td:nth-child(3)
+.divStyle td:nth-child(7)
 {
-  background:url('./img/zin.jpg');
+  background:url('./img/illa.jpg');
   background-size: 100% 100%;
 
 }
-.divStyle td:nth-child(4)
+.divStyle td:nth-child(3)
 {
-  background:url('./img/leesin.jpg');
+  background:url('./img/lusian.jpg');
   background-size: 100% 100%;
 }
 
 .divStyle td:nth-child(5)
 {
-  background:url('./img/zed.jpg');
+  background:url('./img/zing.jpg');
+  background-size: 100% 100%;
+}
+
+.divStyle td:nth-child(4)
+{
+  background:url('./img/zira.jpg');
   background-size: 100% 100%;
 }
 
 .divStyle td:nth-child(6)
 {
-  background:url('./img/grave.jpg');
-  background-size: 100% 100%;
-}
-
-.divStyle td:nth-child(7)
-{
-  background:url('./img/brang.jpg');
+  background:url('./img/zin.jpg');
   background-size: 100% 100%;
 }
 .divStyle td:nth-child(8)
